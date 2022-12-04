@@ -1,0 +1,22 @@
+. ${PLUGINS}/plugin_load_databag.sh _gitconfig.cfg
+
+local current_user="root"
+
+# ----------------------------------
+# Aliases: easy to switch to ruby dev user - rubyuser / php dev user - phpuser
+# ----------------------------------
+# alias r='su - rubyuser'
+local alias_su_rubyuser="r"
+
+# alias p='su - phpuser'
+local alias_su_phpuser="p"
+
+local alias_su_pythonuser="pu"
+
+local alias_su_jsuser="ju"
+
+# ----------------------------------------------------
+# DO NOT MODIFY HERE
+# ----------------------------------------------------
+# User home dir
+. ${PLUGINS}/plugin_load_databag.sh __current_user_home.cfg

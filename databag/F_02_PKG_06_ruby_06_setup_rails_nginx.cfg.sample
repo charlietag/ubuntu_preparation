@@ -1,0 +1,18 @@
+. ${PLUGINS}/plugin_load_databag.sh _ruby_rails.cfg
+
+# ***************************************************
+# * change your domain name here                    *
+# ***************************************************
+local server_name="myrails.centos8stream.localdomain"  # ---> ex: myrails.centos8stream.localdomain
+local site_app_name="myrails"                    # ---> ex: myrails
+
+
+
+# ***************************************************
+# * web root setting (DO NOT MODIFY HERE)           *
+# ***************************************************
+. ${PLUGINS}/plugin_load_databag.sh __helper_nginx_site_config.cfg
+# [ rails | laravel | disable]
+# This is defined in _ruby_rails.cfg
+#local site_type="disable"
+

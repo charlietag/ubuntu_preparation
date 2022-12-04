@@ -1,0 +1,4 @@
+. ${PLUGINS}/plugin_load_databag.sh _gitconfig.cfg
+
+. ${PLUGINS}/plugin_load_databag.sh _ruby_rails.cfg
+

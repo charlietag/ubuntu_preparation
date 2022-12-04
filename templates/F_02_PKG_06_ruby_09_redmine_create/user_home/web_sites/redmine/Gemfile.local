@@ -1,0 +1,4 @@
+gem 'puma'
+
+# sd_notify - puma5 integrated with Systemd(type=notify)
+gem 'sd_notify', group: 'production'

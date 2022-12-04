@@ -1,0 +1,24 @@
+#Put local vars here for the specific function
+
+# Specify php user
+local current_user="phpuser"
+
+_task_check_and_useradd
+
+# Specify Laravel version here
+# ex. 8   presents 8.*
+# ex. 7   presents 7.*
+# ex. 6.0 presents 6.0.*  #-> 6.0 requires php7.2+
+# ex. 5.8 presents 5.8.*
+local laravel_version="9"
+
+
+# ----------------------------------------------------
+# DO NOT MODIFY HERE
+# ----------------------------------------------------
+# User home dir
+. ${PLUGINS}/plugin_load_databag.sh __current_user_home.cfg
+
+# web_sites dir
+local site_type="laravel"
+. ${PLUGINS}/plugin_load_databag.sh __helper_nginx_site_config.cfg

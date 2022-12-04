@@ -1,0 +1,17 @@
+#Put local vars here for the specific function
+
+# Set Timezone
+local current_timezone="Asia/Taipei"
+
+# Network
+local host_name="centos9stream.localdomain"
+local disable_ipv6=1
+local nameserver1="8.8.8.8"
+local nameserver2="8.8.4.4"
+
+# ----------------------------------------------------
+# RECOMMEND NOT TO MODIFY HERE
+# ----------------------------------------------------
+# inotify , file monitor, linux default is 8192
+# set to higher for special usage , like Rails develope
+local os_fs_inotify_max_user_watches="524288"
