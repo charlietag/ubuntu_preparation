@@ -45,21 +45,21 @@ This is a small light bash project.  Suit small companies which have only few se
 
 # Environment
   * Ubuntu 22.04
-    * os_preparation_ubuntu
+    * ubuntu_preparation
       * release : `master` `v1.0.0`
 
 # Notice
   * Before [os_security_ubuntu](https://github.com/charlietag/os_security_ubuntu)
-    * After finish first run [os_preparation_ubuntu](https://github.com/charlietag/os_preparation_ubuntu), you'd better **DO A REBOOT** before implementing [os_security_ubuntu](https://github.com/charlietag/os_security_ubuntu)
+    * After finish first run [ubuntu_preparation](https://github.com/charlietag/ubuntu_preparation), you'd better **DO A REBOOT** before implementing [os_security_ubuntu](https://github.com/charlietag/os_security_ubuntu)
   * **Systemd target**
-    * **Default** target (*[os_preparation_ubuntu](https://github.com/charlietag/os_preparation_ubuntu) will force to use this target*)
+    * **Default** target (*[ubuntu_preparation](https://github.com/charlietag/ubuntu_preparation) will force to use this target*)
       * **multi-user.target**
     * Ref. /etc/inittab
       *  **multi-user.target: analogous to runlevel 3**
       *  graphical.target: analogous to runlevel 5
     * **WARNING** If you are under **graphical.target** **NOT** under **multi-user.target**.
       * It is highly recommended that you do the following:
-        * **Reinstall whole CentOS** using **"Minimal Install" / "Server"**
+        * **Reinstall whole Ubuntu** using **"Ubuntu Server"**
       * Or at least try the following:
         * `systemctl set-default multi-user`
         * `reboot`
@@ -68,14 +68,14 @@ This is a small light bash project.  Suit small companies which have only few se
         * `reboot`
         * you can start with **os_prepation** now
       * Reference description here
-        * [F_01_ENV_02_os_00_env_groupinstall.cfg.sample](https://github.com/charlietag/os_preparation_ubuntu/blob/master/databag/F_01_ENV_02_os_00_env_groupinstall.cfg.sample)
-         * [F_01_ENV_00_systemd_default_target.sh](https://github.com/charlietag/os_preparation_ubuntu/blob/master/functions/F_01_ENV_00_systemd_default_target.sh)
+        * [F_01_ENV_02_os_00_env_groupinstall.cfg.sample](https://github.com/charlietag/ubuntu_preparation/blob/master/databag/F_01_ENV_02_os_00_env_groupinstall.cfg.sample)
+         * [F_01_ENV_00_systemd_default_target.sh](https://github.com/charlietag/ubuntu_preparation/blob/master/functions/F_01_ENV_00_systemd_default_target.sh)
     * **Check method**
       * `systemctl get-default`
   * **Environment Groups**
-    * **Based on** (*[os_preparation_ubuntu](https://github.com/charlietag/os_preparation_ubuntu) will make sure this environment group is installed*)
+    * **Based on** (*[ubuntu_preparation](https://github.com/charlietag/ubuntu_preparation) will make sure this environment group is installed*)
       * **"Minimal Install"**
-    * **Removing** Environment Groups (*[os_preparation_ubuntu](https://github.com/charlietag/os_preparation_ubuntu) will remove these environment groups by default*)
+    * **Removing** Environment Groups (*[ubuntu_preparation](https://github.com/charlietag/ubuntu_preparation) will remove these environment groups by default*)
       * **"Server with GUI"**
       * **"Workstation"**
       * **"KDE Plasma Workspaces"**
@@ -128,9 +128,10 @@ This is a small light bash project.  Suit small companies which have only few se
   * Before installation
 
     ```bash
-    dnf clean all
-    dnf install -y git
-    git clone https://github.com/charlietag/os_preparation_ubuntu.git
+    apt clean
+    apt update
+    apt install git -y
+    git clone https://github.com/charlietag/ubuntu_preparation.git
     ```
 
   * Make sure config files exists , you can copy from sample to **modify**.
@@ -238,17 +239,17 @@ I'm a lazy person.  I want to install **ALL** and give me default configurations
 * Config your own hosts file (/etc/hosts)
 
   ```bash
-  <192.168.x.x> myrails.centos8.localdomain
-  <192.168.x.x> redmine.centos8.localdomain
-  <192.168.x.x> mylaravel.centos8.localdomain
+  <192.168.x.x> myrails.ubuntu.localdomain
+  <192.168.x.x> redmine.ubuntu.localdomain
+  <192.168.x.x> mylaravel.ubuntu.localdomain
   ```
 
 * Browse URL
 
   ```bash
-  http://myrails.centos8.localdomain
-  http://redmine.centos8.localdomain (default account: admin/admin)
-  http://mylaravel.centos8.localdomain
+  http://myrails.ubuntu.localdomain
+  http://redmine.ubuntu.localdomain (default account: admin/admin)
+  http://mylaravel.ubuntu.localdomain
   ```
 
 # Advanced Installation
@@ -320,7 +321,7 @@ I want to choose specific part to install.
   * tasks/
     * Write your own script here, **file** named start with **task_YourOwnTaskName.sh** , **_task_YourOwnTaskName.sh**
     * Scripts here will automatically transfer to function, just like scripts under "functions/"
-    * But this is for global use for os_preparation_ubuntu , os_security.  So it's been moved to os_preparation_ubuntu_lib
+    * But this is for global use for ubuntu_preparation , os_security.  So it's been moved to ubuntu_preparation_lib
 
   * plugins/
     * Only scripts which can be called everywhere like, ${HELPERS}/plugins_scripts.sh
@@ -355,32 +356,32 @@ RUN: hwclock -w
         F_00_debug
 ==========================================================================================
 -----------lib use only--------
-CURRENT_SCRIPT : /root/os_preparation_ubuntu/start.sh
-CURRENT_FOLDER : /root/os_preparation_ubuntu
-FUNCTIONS      : /root/os_preparation_ubuntu/functions
-LIB            : /root/os_preparation_ubuntu/../os_preparation_ubuntu_lib/lib
-TEMPLATES      : /root/os_preparation_ubuntu/templates
-TASKS          : /root/os_preparation_ubuntu/../os_preparation_ubuntu_lib/tasks
-HELPERS        : /root/os_preparation_ubuntu/helpers
-HELPERS_VIEWS  : /root/os_preparation_ubuntu/helpers_views
+CURRENT_SCRIPT : /root/ubuntu_preparation/start.sh
+CURRENT_FOLDER : /root/ubuntu_preparation
+FUNCTIONS      : /root/ubuntu_preparation/functions
+LIB            : /root/ubuntu_preparation/../ubuntu_preparation_lib/lib
+TEMPLATES      : /root/ubuntu_preparation/templates
+TASKS          : /root/ubuntu_preparation/../ubuntu_preparation_lib/tasks
+HELPERS        : /root/ubuntu_preparation/helpers
+HELPERS_VIEWS  : /root/ubuntu_preparation/helpers_views
 
 -----------lib use only - predefined vars--------
 FIRST_ARGV     : -i
 ALL_ARGVS      : F_00_debug
 
 -----------function use only--------
-PLUGINS            : /root/os_preparation_ubuntu/plugins
-TMP                : /root/os_preparation_ubuntu/tmp
-CONFIG_FOLDER      : /root/os_preparation_ubuntu/templates/F_00_debug
-DATABAG            : /root/os_preparation_ubuntu/databag
-DATABAG_FILE       : /root/os_preparation_ubuntu/databag/F_00_debug.cfg
+PLUGINS            : /root/ubuntu_preparation/plugins
+TMP                : /root/ubuntu_preparation/tmp
+CONFIG_FOLDER      : /root/ubuntu_preparation/templates/F_00_debug
+DATABAG            : /root/ubuntu_preparation/databag
+DATABAG_FILE       : /root/ubuntu_preparation/databag/F_00_debug.cfg
 
 -----------function extended use only--------
 IF_IS_SOURCED_SCRIPT  : True: use 'return 0' to skip script
 IF_IS_FUNCTION        : True: use 'return 0' to skip script
 IF_IS_SOURCED_OR_FUNCTION  : True: use 'return 0' to skip script
 
-${BASH_SOURCE[0]}    : /root/os_preparation_ubuntu/functions/F_00_debug.sh
+${BASH_SOURCE[0]}    : /root/ubuntu_preparation/functions/F_00_debug.sh
 ${0}                 : ./start.sh
 ${FUNCNAME[@]}          : source F_00_debug L_RUN L_RUN_SPECIFIED_FUNC source source main
 Skip script sample    : [[ -n "$(eval "${IF_IS_SOURCED_OR_FUNCTION}")" ]] && return 0 || exit 0
@@ -392,7 +393,7 @@ Skip script sample short : eval "${SKIP_SCRIPT}"
 -------------------------------------------------------------------
         helper_debug
 -------------------------------------------------------------------
-HELPER_VIEW_FOLDER : /root/os_preparation_ubuntu/helpers_views/helper_debug
+HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
 
 
 ----------Task Debug Use-------->>>
@@ -929,5 +930,5 @@ For some cases, we need to upgrade MariaDB without data lost.  Here is my note a
 # CHANGELOG
 * 2022/11/27
   * tag: v0.0.1
-    * changelog: https://github.com/charlietag/os_preparation_ubuntu/compare/v0.0.1...master
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v0.0.1...master
       * Initial Ubuntu Preparation
