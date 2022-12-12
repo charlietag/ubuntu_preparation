@@ -1,3 +1,7 @@
-local remove_pkg_names=(
-  "cloud-init"
-)
+local remove_pkg_names=""
+
+# disable through:
+#   `touch /etc/cloud/cloud-init.disabled`
+# local remove_pkg_names=(
+#   "cloud-init"
+# )
