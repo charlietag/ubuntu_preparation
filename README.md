@@ -49,8 +49,8 @@ This is a small light bash project.  Suit small companies which have only few se
       * release : `master` `v1.0.0`
 
 # Notice
-  * Before [os_security_ubuntu](https://github.com/charlietag/os_security_ubuntu)
-    * After finish first run [ubuntu_preparation](https://github.com/charlietag/ubuntu_preparation), you'd better **DO A REBOOT** before implementing [os_security_ubuntu](https://github.com/charlietag/os_security_ubuntu)
+  * Before [ubuntu_security](https://github.com/charlietag/ubuntu_security)
+    * After finish first run [ubuntu_preparation](https://github.com/charlietag/ubuntu_preparation), you'd better **DO A REBOOT** before implementing [ubuntu_security](https://github.com/charlietag/ubuntu_security)
   * **Systemd target**
     * **Default** target (*[ubuntu_preparation](https://github.com/charlietag/ubuntu_preparation) will force to use this target*)
       * **multi-user.target**
@@ -321,7 +321,7 @@ I want to choose specific part to install.
   * tasks/
     * Write your own script here, **file** named start with **task_YourOwnTaskName.sh** , **_task_YourOwnTaskName.sh**
     * Scripts here will automatically transfer to function, just like scripts under "functions/"
-    * But this is for global use for ubuntu_preparation , os_security.  So it's been moved to ubuntu_preparation_lib
+    * But this is for global use for ubuntu_preparation , ubuntu_security.  So it's been moved to ubuntu_preparation_lib
 
   * plugins/
     * Only scripts which can be called everywhere like, ${HELPERS}/plugins_scripts.sh
