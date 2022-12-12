@@ -54,19 +54,13 @@ This is a small light bash project.  Suit small companies which have only few se
   * **Systemd target**
     * **Default** target (*[ubuntu_preparation](https://github.com/charlietag/ubuntu_preparation) will force to use this target*)
       * **multi-user.target**
-    * Ref. /etc/inittab
+        * This command will be executed `systemctl set-default multi-user`
+    * Comparision
       *  **multi-user.target: analogous to runlevel 3**
       *  graphical.target: analogous to runlevel 5
     * **WARNING** If you are under **graphical.target** **NOT** under **multi-user.target**.
       * It is highly recommended that you do the following:
-        * **Reinstall whole Ubuntu** using **"Ubuntu Server"**
-      * Or at least try the following:
-        * `systemctl set-default multi-user`
-        * `reboot`
-        * `dnf groupinstall 'Minimal Install'` (If this is not working, try also `dnf groupinstall 'Server'`)
-        * `dnf groupremove 'Server with GUI'`
-        * `reboot`
-        * you can start with **os_prepation** now
+        * **Reinstall whole Ubuntu** using **"Ubuntu Server"** ~~Ubuntu Server (minimized)~~
       * Reference description here
         * [F_01_ENV_02_os_00_env_groupinstall.cfg.sample](https://github.com/charlietag/ubuntu_preparation/blob/master/databag/F_01_ENV_02_os_00_env_groupinstall.cfg.sample)
          * [F_01_ENV_00_systemd_default_target.sh](https://github.com/charlietag/ubuntu_preparation/blob/master/functions/F_01_ENV_00_systemd_default_target.sh)
