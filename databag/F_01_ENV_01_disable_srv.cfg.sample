@@ -9,6 +9,7 @@ local disabled_services
 # -------------------------------------------------------------------------------------------------------
 # disable no used basic services
 # -------------------------------------------------------------------------------------------------------
+# cups:   default installed in RHEL, but not installed in Ubuntu
 # apport: just like kdump in RHEL
 # ufw:    just like firewalld in RHEL
 # chrony: chronyd is an alias of chrony, will dissapear if chrony is disabled
