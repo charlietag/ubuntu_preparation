@@ -11,7 +11,8 @@ for remove_pkg_name in ${remove_pkg_names[@]}; do
 
   if [[ -n "${pkg_exists}" ]]; then
     echo "Removing pkg :  ${remove_pkg_name} ..."
-    apt purge -y ${remove_pkg_name}
+    # apt purge -y ${remove_pkg_name}
+    apt remove --purge --autoremove -y ${remove_pkg_name}
   fi
 
   if [[ "${pkg_exists}" = "cloud-init" ]]; then
