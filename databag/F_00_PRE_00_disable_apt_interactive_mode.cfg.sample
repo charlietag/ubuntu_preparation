@@ -1,0 +1,2 @@
+local disable_apt_interactive_mode="y"
+
