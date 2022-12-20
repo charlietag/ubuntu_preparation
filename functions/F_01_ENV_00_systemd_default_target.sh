@@ -29,19 +29,12 @@ if [[ -z "${check_target}" ]]; then
     echo "--------------------------------------------"
     echo "You are under \"${current_default_target}\""
     echo "--------------------------------------------"
-    echo "It is highly recommended to:"
-    echo ""
-    echo "    \"REINSTALL Whole CentOS using \"Minimal Install\""
-    echo ""
-    echo "Or please be sure to set default target to \"${default_target}\" then reboot first"
+    echo "It is highly recommended to: use ${default_target}"
     echo ""
     echo "-- HOW TO: --"
     echo "1. systemctl set-default multi-user"
     echo "2. reboot"
-    echo '3. dnf groupinstall "Minimal Install" (If this is not working, try also: dnf groupinstall "Server")'
-    echo "4. dnf groupremove 'Server with GUI'"
-    echo "5. reboot"
-    echo "6. you can start with os_prepation now"
+    echo "6. you can start with ubuntu_prepation now"
     echo ""
 
     exit
@@ -83,7 +76,6 @@ fi
 #     /usr/lib/systemd/system/multipathd.service
 #     /usr/lib/systemd/system/multipathd.socket
 
-# ref. /etc/inittab
 # multi-user.target: analogous to runlevel 3
 # graphical.target: analogous to runlevel 5
 
@@ -93,15 +85,11 @@ fi
 # Success:
 #    1. systemctl set-default multi-user
 #    2. reboot
-#    3. dnf groupremove 'Server with GUI'
-#    4. done
 # Fail:
 #    1. systemctl set-default multi-user
 #    2. systemctl isolate multi-user
-#    3. dnf groupremove 'Server with GUI'
 #    4. reboot
 #    5. failed
-#    6. dnf remove plymouth -y
 #    7. failed again
 #     ->  Because if no reboot is triggered, spinning icon will not be able to removed
 #     ->  Even some packages, some libs, cannot be fully removed
