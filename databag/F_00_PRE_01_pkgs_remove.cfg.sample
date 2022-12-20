@@ -1,4 +1,6 @@
-local remove_pkg_names=""
+local remove_pkg_names=(
+  "snapd"
+)
 
 # disable through:
 #   `touch /etc/cloud/cloud-init.disabled`
