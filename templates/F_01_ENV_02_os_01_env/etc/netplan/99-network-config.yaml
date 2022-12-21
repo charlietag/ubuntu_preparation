@@ -3,6 +3,8 @@
 # default renderer is networkd (NetworkManager is already move to snapd)
 # so FORCE to use systemd-networkd here
 # force to use ipv4 only (link-local)
+# although 'use-dns' can be set to false, but when command 'resolvectl' executed, systemd-resolv.service will be started
+#   so leave it to default use-dns: true (using systemd-resolv)
 # ----------------------------------------------------
 # static ip sample
 # ----------------------------------------------------
