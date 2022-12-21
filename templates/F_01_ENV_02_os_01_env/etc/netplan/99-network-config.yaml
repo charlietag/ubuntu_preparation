@@ -1,0 +1,35 @@
+# https://netplan.io/examples
+# /run/systemd/{network,resolve}
+# default renderer is networkd (NetworkManager is already move to snapd)
+# so FORCE to use systemd-networkd here
+# force to use ipv4 only (link-local)
+# ----------------------------------------------------
+# static ip sample
+# ----------------------------------------------------
+#network:
+#  renderer: networkd
+#  version: 2
+#  ethernets:
+#    enp3s0:
+#      link-local: [ ipv4 ]
+#      addresses:
+#        - 192.168.1.11/24
+#      nameservers:
+#        search: [localdomain, localhostlocaldomain]
+#        addresses: [8.8.8.8, 1.1.1.1]
+#      routes:
+#        - to: default
+#          via: 192.168.1.254
+# ----------------------------------------------------
+# DHCP
+# ----------------------------------------------------
+network:
+  renderer: networkd
+  version: 2
+  ethernets:
+    {{this_network_interface}}:
+      link-local: [ ipv4 ]
+      dhcp4: true
+      nameservers:
+        search: []
+        addresses: [{{nameserver1}}, {{nameserver2}}]
