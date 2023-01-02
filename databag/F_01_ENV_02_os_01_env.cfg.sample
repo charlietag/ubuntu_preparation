@@ -7,6 +7,10 @@ local current_timezone="Asia/Taipei"
 local host_name="ubuntu22.localdomain"
 local disable_ipv6=1
 
+# NTP (use cron job instead of chronyd.service)
+ntp_using_cron="y"
+ntp_url="pool.ntp.org"
+
 # ----------------------------------------------------
 # RECOMMEND NOT TO MODIFY HERE
 # ----------------------------------------------------

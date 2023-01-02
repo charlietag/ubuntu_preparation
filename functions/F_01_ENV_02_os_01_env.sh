@@ -32,7 +32,7 @@ timedatectl set-timezone "${current_timezone}"
 
 if [[ "${ntp_using_cron}" = "y" ]]; then
   sed -i /chronyd/d /etc/crontab
-  echo '*/5 * * * * root chronyd -q "pool pool.ntp.org iburst" >/dev/null 2>/dev/null ; hwclock -w  >/dev/null 2>/dev/null' >> /etc/crontab
+  echo "*/5 * * * * root chronyd -q \"pool ${ntp_url} iburst\" >/dev/null 2>/dev/null ; hwclock -w  >/dev/null 2>/dev/null" >> /etc/crontab
 else
   systemctl start chronyd
   systemctl enable chronyd
