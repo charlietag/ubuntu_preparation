@@ -1,0 +1,27 @@
+#Put local vars here for the specific function
+
+# ----------------------------------------------------
+# DNS
+# ----------------------------------------------------
+local nameservers="8.8.8.8 1.1.1.1"
+local searches=""
+
+# ex:
+# local searches="localdomainA.localdomain localdomainB.localdomain"
+
+# ----------------------------------------------------
+# Setting up IP
+# ----------------------------------------------------
+# --- DHCP ---
+local use_protocol="dhcp"
+
+# --- Static IP ---
+# local use_protocol="static"
+# local this_ip="192.168.1.99/24"
+# local this_gateway="192.168.1.254"
+
+# ----------------------------------------------------
+# RECOMMEND NOT TO MODIFY HERE
+# ----------------------------------------------------
+# Get first network interface name
+local this_network_interface="$(ip -o link show | awk -F': ' '{print $2}' | grep -v lo | head -n 1)"

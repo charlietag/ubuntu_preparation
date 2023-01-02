@@ -8,30 +8,30 @@
 # ----------------------------------------------------
 # static ip sample
 # ----------------------------------------------------
-#network:
-#  renderer: networkd
-#  version: 2
-#  ethernets:
-#    enp3s0:
-#      link-local: [ ipv4 ]
-#      addresses:
-#        - 192.168.1.11/24
-#      nameservers:
-#        search: [localdomain, localhostlocaldomain]
-#        addresses: [8.8.8.8, 1.1.1.1]
-#      routes:
-#        - to: default
-#          via: 192.168.1.254
-# ----------------------------------------------------
-# DHCP
-# ----------------------------------------------------
 network:
   renderer: networkd
   version: 2
   ethernets:
     {{this_network_interface}}:
       link-local: [ ipv4 ]
-      dhcp4: true
+      addresses:
+        - {{this_ip}}
+      routes:
+        - to: default
+          via: {{this_gateway}}
       nameservers:
-        search: []
-        addresses: [{{nameserver1}}, {{nameserver2}}]
+        search: [ {{search}} ]
+        addresses: [ {{nameserver}} ]
+# ----------------------------------------------------
+# DHCP
+# ----------------------------------------------------
+#network:
+#  renderer: networkd
+#  version: 2
+#  ethernets:
+#    {{this_network_interface}}:
+#      link-local: [ ipv4 ]
+#      dhcp4: true
+#      nameservers:
+#        search: [ {{search}} ]
+#        addresses: [ {{nameserver}} ]

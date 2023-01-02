@@ -1,0 +1,37 @@
+# https://netplan.io/examples
+# /run/systemd/{network,resolve}
+# default renderer is networkd (NetworkManager is already move to snapd)
+# so FORCE to use systemd-networkd here
+# force to use ipv4 only (link-local)
+# although 'use-dns' can be set to false, but when command 'resolvectl' executed, systemd-resolv.service will be started
+#   so leave it to default use-dns: true (using systemd-resolv)
+# ----------------------------------------------------
+# static ip sample
+# ----------------------------------------------------
+#network:
+#  renderer: networkd
+#  version: 2
+#  ethernets:
+#    {{this_network_interface}}:
+#      link-local: [ ipv4 ]
+#      addresses:
+#        - {{this_ip}}
+#      routes:
+#        - to: default
+#          via: {{this_gateway}}
+#      nameservers:
+#        search: [ {{search}} ]
+#        addresses: [ {{nameserver}} ]
+# ----------------------------------------------------
+# DHCP
+# ----------------------------------------------------
+network:
+  renderer: networkd
+  version: 2
+  ethernets:
+    {{this_network_interface}}:
+      link-local: [ ipv4 ]
+      dhcp4: true
+      nameservers:
+        search: [ {{search}} ]
+        addresses: [ {{nameserver}} ]
