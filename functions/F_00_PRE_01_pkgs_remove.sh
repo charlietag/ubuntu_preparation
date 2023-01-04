@@ -14,6 +14,7 @@ for remove_pkg_name in ${remove_pkg_names[@]}; do
     # apt purge -y ${remove_pkg_name}
     # apt autoremove -y ${remove_pkg_name}
     apt remove --purge --autoremove -y ${remove_pkg_name}
+    systemctl daemon-reload
   fi
 
   if [[ "${pkg_exists}" = "cloud-init" ]]; then
