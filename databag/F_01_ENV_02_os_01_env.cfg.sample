@@ -7,9 +7,16 @@ local current_timezone="Asia/Taipei"
 local host_name="ubuntu22.localdomain"
 local disable_ipv6=1
 
+# -------- NTP ------
+local ntp_urls="pool.ntp.org"
+
+# Sample
+# local ntp_urls="pool.ntp.org 0.ubuntu.pool.ntp.org 1.ubuntu.pool.ntp.org"
+
+# -------- NTP for chrony ------
+# Prefer using systemd-timesyncd now!
 # NTP (use cron job instead of chronyd.service)
-ntp_using_cron="y"
-ntp_url="pool.ntp.org"
+local ntp_use_chrony_crontab="n"
 
 # ----------------------------------------------------
 # RECOMMEND NOT TO MODIFY HERE

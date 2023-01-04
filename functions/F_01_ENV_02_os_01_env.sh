@@ -23,17 +23,36 @@ task_copy_using_render_sed
 timedatectl set-timezone "${current_timezone}"
 
 #-----------------------------------------------------------------------------------------
-#Setup chrony
+#Setup NTP
 #-----------------------------------------------------------------------------------------
-# triggered by ubuntu_preparation_lib already
-# apt install -y chrony
-# systemctl stop chrony
-# systemctl disable chrony
+local if_chrony_found="$(dpkg -l chrony 2>/dev/null | grep "ii")"
+local if_timesyncd_found="$(dpkg -l systemd-timesyncd | grep "ii")"
 
-if [[ "${ntp_using_cron}" = "y" ]]; then
-  sed -i /chronyd/d /etc/crontab
-  echo "*/5 * * * * root chronyd -q \"pool ${ntp_url} iburst\" >/dev/null 2>/dev/null ; hwclock -w  >/dev/null 2>/dev/null" >> /etc/crontab
-else
-  systemctl start chronyd
-  systemctl enable chronyd
+# ------------------------------------
+# Chrony
+# ------------------------------------
+if [[ -n "${if_chrony_found}" ]]; then
+  if [[ "${ntp_use_chrony_crontab}" = "y" ]]; then
+    systemctl stop chronyd
+    systemctl disable chronyd
+    sed -i /chronyd/d /etc/crontab
+    echo "*/5 * * * * root chronyd -q \"pool ${ntp_url} iburst\" >/dev/null 2>/dev/null ; hwclock -w  >/dev/null 2>/dev/null" >> /etc/crontab
+  else
+    echo "" > /etc/chrony/conf.d/99_ntp_pool.conf
+    for ntp_url in ${ntp_urls[@]}; do
+      echo "pool ${ntp_url} iburst maxsources 1" >> /etc/chrony/conf.d/99_ntp_pool.conf
+    done
+    systemctl restart chronyd
+    systemctl enable chronyd
+  fi
+# ------------------------------------
+# timesyncd
+# ------------------------------------
+elif [[ -n "${if_timesyncd_found}" ]]; then
+  sed -re '/^[[:space:]]*NTP/ s/^#*/#/' -i /etc/systemd/timesyncd.conf
+  echo "NTP=${ntp_urls}" >> /etc/systemd/timesyncd.conf
+  systemctl restart systemd-timesyncd
+  systemctl enable systemd-timesyncd
+  timedatectl set-ntp yes
+  timedatectl set-local-rtc 0
 fi

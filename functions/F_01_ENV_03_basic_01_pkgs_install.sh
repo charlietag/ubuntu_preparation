@@ -60,7 +60,8 @@ fi
 #-----------------------------------------------------------------------------------------
 # NTP update date time and hwclock to prevent mariadb cause systemd warning
 #-----------------------------------------------------------------------------------------
-pkgs_list="${pkgs_list} chrony"
+# default now: use systemd-timesyncd
+# pkgs_list="${pkgs_list} chrony"
 
 
 #-----------------------------------------------------------------------------------------
