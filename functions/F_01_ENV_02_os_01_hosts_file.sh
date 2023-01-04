@@ -1,5 +1,5 @@
 # for fail2ban WARNING !
-#   - Ref. https://github.com/charlietag/os_security#fail2ban-usage
+#   - Ref. https://github.com/charlietag/ubuntu_security#fail2ban-usage
 #   * Classify /etc/hosts
 #   * Add current hostname into /etc/hosts
 
