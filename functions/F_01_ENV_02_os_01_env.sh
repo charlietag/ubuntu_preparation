@@ -33,8 +33,8 @@ local if_timesyncd_found="$(dpkg -l systemd-timesyncd | grep "ii")"
 # ------------------------------------
 if [[ -n "${if_chrony_found}" ]]; then
   if [[ "${ntp_use_chrony_crontab}" = "y" ]]; then
-    systemctl stop chronyd
-    systemctl disable chronyd
+    systemctl stop chrony
+    systemctl disable chrony
     sed -i /chronyd/d /etc/crontab
     echo "*/5 * * * * root chronyd -q \"pool ${ntp_url} iburst\" >/dev/null 2>/dev/null ; hwclock -w  >/dev/null 2>/dev/null" >> /etc/crontab
   else
@@ -42,8 +42,8 @@ if [[ -n "${if_chrony_found}" ]]; then
     for ntp_url in ${ntp_urls[@]}; do
       echo "pool ${ntp_url} iburst maxsources 1" >> /etc/chrony/conf.d/99_ntp_pool.conf
     done
-    systemctl restart chronyd
-    systemctl enable chronyd
+    systemctl restart chrony
+    systemctl enable chrony
   fi
 # ------------------------------------
 # timesyncd
