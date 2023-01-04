@@ -25,10 +25,10 @@ if [[ "${use_protocol}" = "dhcp" ]]; then
   local this_gateway="192.168.1.254"
   # ----------------------------------
 
-  RENDER_CP_SED ${CONFIG_FOLDER}/99-network-config_dhcp.yaml /etc/netplan/99-network-config_dhcp.yaml
+  RENDER_CP_SED ${CONFIG_FOLDER}/etc/netplan/99-network-config_dhcp.yaml /etc/netplan/99-network-config_dhcp.yaml
 else
   if [[ "${use_protocol}" = "static" ]]; then
-    RENDER_CP_SED ${CONFIG_FOLDER}/99-network-config_static.yaml /etc/netplan/99-network-config_static.yaml
+    RENDER_CP_SED ${CONFIG_FOLDER}/etc/netplan/99-network-config_static.yaml /etc/netplan/99-network-config_static.yaml
   fi
 fi
 
