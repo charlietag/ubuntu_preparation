@@ -7,8 +7,11 @@
 # Backup default config under /etc/netplan
 #-----------------------------------------------------------------------------------------
 test -d /etc/netplan/bak || mkdir /etc/netplan/bak
-\cp -a --backup=t /etc/netplan/*.yaml /etc/netplan/bak/
-rm -fr rm -f /etc/netplan/*.yaml
+local if_found_netplan_yaml="$(ls /etc/netplan | grep -E "\.yaml$")"
+if [[ -n "${if_found_netplan_yaml}" ]]; then
+  \cp -a --backup=t /etc/netplan/*.yaml /etc/netplan/bak/
+  rm -fr rm -f /etc/netplan/*.yaml
+fi
 
 
 #-----------------------------------------------------------------------------------------
