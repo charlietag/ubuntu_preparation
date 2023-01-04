@@ -39,6 +39,7 @@ if [[ -n "${if_chrony_found}" ]]; then
     local ntp_url="$(echo "${ntp_urls}" | awk '{print $1}')"
     echo "*/5 * * * * root chronyd -q \"pool ${ntp_url} iburst\" >/dev/null 2>/dev/null ; hwclock -w  >/dev/null 2>/dev/null" >> /etc/crontab
   else
+    sed -i /chronyd/d /etc/crontab
     echo "" > /etc/chrony/conf.d/99_ntp_pool.conf
     for ntp_url in ${ntp_urls[@]}; do
       echo "pool ${ntp_url} iburst maxsources 1" >> /etc/chrony/conf.d/99_ntp_pool.conf
