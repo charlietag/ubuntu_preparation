@@ -12,12 +12,10 @@ echo "==============================="
 # Dependencies
 #-----------------------------------------------------------------------------------------
 # For Tmux
-#dnf install -y libevent libevent-devel ncurses ncurses-libs ncurses-base ncurses-devel
-pkgs_list="${pkgs_list} libevent libevent-devel ncurses ncurses-libs ncurses-base ncurses-devel"
+pkgs_list="${pkgs_list} libevent-dev libncurses-dev ncurses-dev build-essential bison pkg-config"
 
 # For Tmux compile from git clone
-#dnf install -y autoconf automake pkgconfig
-pkgs_list="${pkgs_list} autoconf automake pkgconf-pkg-config"
+pkgs_list="${pkgs_list} autoconf automake"
 
 # For tmux plugin copycat (for better UTF-8 character support)
 #dnf install -y gawk
@@ -33,7 +31,7 @@ pkgs_list="${pkgs_list} bc"
 #-----------------------------------------------------------------------------------------
 #Package Start to Install
 #-----------------------------------------------------------------------------------------
-dnf install -y ${pkgs_list}
+apt install -y ${pkgs_list}
 
 #-----------------------------------------------------------------------------------------
 # Compile and install tmux
