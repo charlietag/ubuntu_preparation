@@ -5,3 +5,5 @@ local default_editor="$(update-alternatives --list editor |grep vim |grep -v tin
 update-alternatives --set editor ${default_editor}
 
 task_copy_using_cat
+
+export EDITOR="vim"
