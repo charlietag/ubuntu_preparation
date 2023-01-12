@@ -212,3 +212,13 @@ AUTO_FETCH_REMOTE_STATUS=1
 
 source $HOME/.bash_base/.prompt_for_git/.init.sh
 
+
+#------------------------------------------------------
+#               custom bin
+#------------------------------------------------------
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
