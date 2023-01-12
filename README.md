@@ -132,7 +132,7 @@ This is a small light bash project.  Suit small companies which have only few se
 
     ```bash
     cd databag
-    ls |xargs -i bash -c "cp {} \$(echo {}|sed 's/\.sample//g')"
+    ls |xargs -I{} bash -c "cp {} \$(echo {}|sed 's/\.sample//g')"
     ```
 
   * Mostly used configuration :
@@ -151,7 +151,7 @@ This is a small light bash project.  Suit small companies which have only few se
     cd databag
 
     echo ; \
-    ls *.cfg | xargs -i bash -c " \
+    ls *.cfg | xargs -I{} bash -c " \
     echo -e '\e[0;33m'; \
     echo ---------------------------; \
     echo {}; \
@@ -169,7 +169,7 @@ This is a small light bash project.  Suit small companies which have only few se
     cd databag
 
     echo ; \
-    ls *.cfg | xargs -i bash -c " \
+    ls *.cfg | xargs -I{} bash -c " \
     echo -e '\e[0;33m'; \
     echo ---------------------------; \
     echo {}; \
@@ -511,7 +511,7 @@ After this installation repo, the server will setup with "Nginx + Puma (socket)"
     * If you are always get disconnected, and you want to ***kill last failed connection of SSH***
 
       ```bash
-      netstat -palunt |grep -i est | awk '{print $7}'| cut -d'/' -f1 |xargs -i bash -c "ps aux |grep sshd |grep {}|grep -v grep" | head -n -1 | awk '{print $2}' |xargs -i kill {}
+      netstat -palunt |grep -i est | awk '{print $7}'| cut -d'/' -f1 |xargs -I{} bash -c "ps aux |grep sshd |grep {}|grep -v grep" | head -n -1 | awk '{print $2}' |xargs -I{} kill {}
       ```
 
     * If you want to restart network for new config, instead of using `systemctl restart network`, which is deprecated in **CentOS 8**
@@ -699,7 +699,7 @@ After this installation repo, the server will setup with "Nginx + Puma (socket)"
 * Display all stash contents
 
   ```bash
-  git stash list | cut -d':' -f1 | xargs -i bash -c "\
+  git stash list | cut -d':' -f1 | xargs -I{} bash -c "\
     echo; \
     echo ----------------------------------------------- {} -----------------------------------------------;\
     git stash show -p {}; echo\
@@ -773,7 +773,7 @@ After this installation repo, the server will setup with "Nginx + Puma (socket)"
   ```bash
   git co 4.0.7 -b redmine_4.0.7
   git stash pop
-  git status |grep 'both modified:' |awk '{print $3}' |xargs -i bash -c "echo --- git reset HEAD {} ---; git reset HEAD {}"
+  git status |grep 'both modified:' |awk '{print $3}' |xargs -I{} bash -c "echo --- git reset HEAD {} ---; git reset HEAD {}"
   ```
 
 * Fix conflicts
