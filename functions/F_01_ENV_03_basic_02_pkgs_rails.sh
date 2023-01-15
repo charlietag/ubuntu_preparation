@@ -37,8 +37,8 @@ pkgs_list="${pkgs_list} poppler-utils libpoppler-dev"
 # Instead, using gem "wkhtmltopdf_binary_gem"
 #pkgs_list="${pkgs_list} wkhtmltopdf wkhtmltopdf-devel"
 
-# ImageMagick latest version - 6.9+
-# pkgs_list="${pkgs_list} imagemagick"
+# ImageMagick latest version - 6.9+ (for image uploading apps, like redmine)
+pkgs_list="${pkgs_list} imagemagick libmagickwand-dev"
 
 # ----- Rails 7+ Active Storage (gem 'ruby-vips') -----
 # libvips
