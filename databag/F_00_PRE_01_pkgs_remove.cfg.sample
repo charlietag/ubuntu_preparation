@@ -1,6 +1,10 @@
-local remove_pkg_names=(
-  "snapd"
-)
+local remove_pkg_names=""
+
+# snapd will be needed while installing libvips
+
+# local remove_pkg_names=(
+#   "snapd"
+# )
 
 # disable through:
 #   `touch /etc/cloud/cloud-init.disabled`
