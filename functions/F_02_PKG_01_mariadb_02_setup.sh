@@ -7,9 +7,9 @@
 echo "==============================="
 echo "  Setup mariadb config"
 echo "==============================="
-local mariadb_server_config="$(ls /etc/my.cnf.d/ |grep -oiE "[[:print:]]*server[[:print:]]*.cnf" | head -n 1)"
-sed -e '/^bind-address/ s/^#*/#/' -i /etc/my.cnf.d/${mariadb_server_config}
-sed -e "/^\[mysqld\]/a bind-address = ${mariadb_listen_address}" -i /etc/my.cnf.d/${mariadb_server_config}
+local mariadb_server_config="$(ls retc/mysql/mariadb.conf.d/ |grep -oiE "[[:print:]]*server[[:print:]]*.cnf" | head -n 1)"
+sed -e '/^bind-address/ s/^#*/#/' -i /etc/mysql/mariadb.conf.d/${mariadb_server_config}
+sed -e "/^\[mysqld\]/a bind-address = ${mariadb_listen_address}" -i /etc/mysql/mariadb.conf.d/${mariadb_server_config}
 
 systemctl restart mariadb
 
