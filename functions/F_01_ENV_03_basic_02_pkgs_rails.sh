@@ -65,4 +65,4 @@ apt install -y ${pkgs_list}
 #-----------------------------------------------------------------------------------------
 # Disable redis by default
 #-----------------------------------------------------------------------------------------
-systemctl disable redis
+systemctl disable redis-server.service
