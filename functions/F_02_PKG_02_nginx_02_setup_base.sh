@@ -1,8 +1,3 @@
-# =====================
-# Enable databag
-# =====================
-# DATABAG_CFG:enable
-
 #--------------------------
 #  Setup nginx sample configs
 #--------------------------
@@ -12,7 +7,7 @@ task_copy_using_cp
 #--------------------------
 #  Setup nginx sample configs
 #--------------------------
-# Default rpm installed: 
+# Default installed:
 # /usr/share/vim/vimfiles/ftdetect/nginx.vim
 # /usr/share/vim/vimfiles/indent/nginx.vim
 # /usr/share/vim/vimfiles/syntax/nginx.vim
