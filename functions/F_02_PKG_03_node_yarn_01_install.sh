@@ -3,6 +3,27 @@
 # =====================
 # DATABAG_CFG:enable
 
+
+if $(command -v nodejs > /dev/null); then
+  if ! [[ -f /etc/apt/sources.list.d/nodesource.list ]]; then
+    echo "NodeJS is already installed, through ubuntu repo !!"
+    echo ""
+    apt purge -y nodejs
+  fi
+fi
+
+if $(command -v yarn > /dev/null); then
+  if ! [[ -f /etc/apt/sources.list.d/yarn.list ]]; then
+    echo "Yarn is already installed, through ubuntu repo !!"
+    echo ""
+    apt purge -y yarn
+  fi
+fi
+
+
+
+
+
 # ###########################################################
 ## Run `sudo apt-get install -y nodejs` to install Node.js 18.x and npm
 ## You may also need development tools to build native addons:
@@ -38,3 +59,26 @@ test -f /etc/apt/sources.list.d/yarn.list && rm -f /etc/apt/sources.list.d/yarn.
 
 echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 apt-get update && apt-get install yarn
+
+
+# --------------------------------------------------------------------------------------
+# origin:   F_02_PKG_04_yarn_install.sh
+# --------------------------------------------------------------------------------------
+# Make sure NodeJs is installed
+#if ! $(command -v npm > /dev/null); then
+#  echo "NodeJS is not installed correctly !!!"
+#  echo ""
+#  exit
+#fi
+
+#----------------------------------------
+# Yarn 1.22.x, just use apt repo above
+#----------------------------------------
+
+#----------------------------------------
+# Yarn 2.x
+#----------------------------------------
+#For Rails 5.1+ , which is supporting yarn
+#npm install -g yarn
+
+# --------------------------------------------------------------------------------------
