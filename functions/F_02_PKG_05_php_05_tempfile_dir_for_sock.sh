@@ -1,11 +1,9 @@
 # =====================
 # Enable databag
 # =====================
-# DATABAG_CFG:disable
+# DATABAG_CFG:enable
 
 #--------------------------
 #  Setup tmpfiles.d configs
 #--------------------------
-# task_copy_using_render
-echo "Skip this function:"
-echo "Use TCP port listening instead of socket file listening"
+task_copy_using_render
