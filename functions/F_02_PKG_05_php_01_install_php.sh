@@ -1,3 +1,8 @@
+# =====================
+# Enable databag
+# =====================
+# DATABAG_CFG:enable
+
 # ###########################################################
 # php default version
 # ###########################################################
@@ -29,7 +34,7 @@ apt install -y \
   php-json \
   php-redis \
   php-tidy \
-  php8.1-opcache \
+  php${php_version}-opcache \
   php-zip
 
 
@@ -73,6 +78,9 @@ apt install -y \
 # You should add "extension=sqlsrv.so" to php.ini
 # You should add "extension=pdo_sqlsrv.so" to php.ini
 
+# Default Ubuntu php config path: /etc/php/8.1/
+# Higher PHP version: Ref. https://techvblogs.com/blog/install-php-8-2-ubuntu-22-04
+
 # --------------------------------------------------------------------------------------
 
 # Disable apache2.service
@@ -81,9 +89,9 @@ systemctl stop apache2.service
 systemctl disable apache2.service
 echo ""
 
-echo "systemctl disable php8.1-fpm.service......"
-systemctl stop php8.1-fpm.service
-systemctl disable php8.1-fpm.service
+echo "systemctl disable php${php_version}-fpm.service......"
+systemctl stop php${php_version}-fpm.service
+systemctl disable php${php_version}-fpm.service
 echo ""
 
 # --------------------------------------------------------------------------

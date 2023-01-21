@@ -5,6 +5,8 @@ local current_user="phpuser"
 
 _task_check_and_useradd
 
+local php_version="8.1"
+
 # Specify Laravel version here
 # ex. 8   presents 8.*
 # ex. 7   presents 7.*
