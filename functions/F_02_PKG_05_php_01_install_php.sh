@@ -34,9 +34,11 @@ apt install -y \
   php-json \
   php-redis \
   php-tidy \
+  php-curl \
   php${php_version}-opcache \
   php-zip
 
+# php-curl is required by laravel (for curl dep packages)
 
 # --- no need by default ---
   #
