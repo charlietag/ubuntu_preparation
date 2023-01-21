@@ -94,6 +94,7 @@ alias gpush='
 
 export HISTTIMEFORMAT='%F %T '
 export HISTSIZE=5000000
+export HISTFILESIZE=5000000
 umask 022
 
 #------------------------------------------------------
