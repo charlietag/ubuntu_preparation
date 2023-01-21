@@ -19,7 +19,7 @@ pkgs_list="${pkgs_list} libxml2-dev libxslt1-dev libcurl4-openssl-dev"
 # suggested by gorails - no need.
 #      can manage repo by creating files under /etc/apt/sources.list.d
 #      ex: add-apt-repository 'deb [arch=amd64] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse'
-# pkgs_list="${pkgs_list} software-properties-common"
+pkgs_list="${pkgs_list} software-properties-common"
 
 
 # default ruby
