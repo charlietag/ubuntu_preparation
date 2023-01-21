@@ -17,7 +17,7 @@ function set_php {
   local php_color_end="\033[00m"
 
   local laravel_ver=""
-  local php_prompt="${php_dark_yellow}(php $(rpm -qi "$(rpm -qf "$(which php)")" |grep Version |awk '{print $3}'))${php_color_end}"
+  local php_prompt="${php_dark_yellow}(php $(php -v | head -n 1 | awk -F' |-' '{print $2}'))${php_color_end}"
   local prompt_for_php="${php_prompt}"
 
   [[ -f "composer.lock" ]] && laravel_ver="$(cat composer.lock |grep -A 1 'laravel/framework' | grep version |grep -Eo "[[:digit:]]+.[[:digit:]]+.[[:digit:]]+")"
