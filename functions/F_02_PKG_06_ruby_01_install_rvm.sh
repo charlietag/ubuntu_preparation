@@ -38,15 +38,26 @@ for ((i=1; ; i++)); do
   # su -l $current_user -c "gpg --keyserver ${rvm_gpg_key_src} --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB"
 
   # (less secure way) comment out above to manually install through rvm.io
-  su -l $current_user -c "curl -sSL https://rvm.io/mpapis.asc | gpg --import - ; \
-                          curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -; \
+  # su -l $current_user -c "curl -sSL https://rvm.io/mpapis.asc | gpg --import - ; \
+  #                         curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -; \
+  su -l $current_user -c "curl -sSL https://raw.githubusercontent.com/charlietag/github_share_folder/master/rvm_gpg_public_keys/mpapis.asc | gpg --import - ; \
+                          curl -sSL https://raw.githubusercontent.com/charlietag/github_share_folder/master/rvm_gpg_public_keys/pkuczynski.asc | gpg --import -; \
                           echo 409B6B1796C275462A1703113804BB82D39DC0E3:6: | gpg2 --import-ownertrust ; \
                           echo 7D2BAF1CF37B13E2069D6956105BD0E739499BDB:6: | gpg2 --import-ownertrust; \
                           echo --------------------------------------------- ; \
                           gpg --list-keys; \
                           echo ---------------------------------------------"
 
-  if [[ $? -ne 0 ]]; then
+  # if [[ $? -ne 0 ]]; then
+  #   echo "rvm gpg keyserver installation failed!"
+  #   continue
+  # fi
+
+  local rvm_key_status=0
+  test -z "$(su -l $current_user -c "gpg --list-keys | grep 409B6B1796C275462A1703113804BB82D39DC0E3")" && rvm_key_status=1
+  test -z "$(su -l $current_user -c "gpg --list-keys | grep 7D2BAF1CF37B13E2069D6956105BD0E739499BDB")" && rvm_key_status=1
+
+  if [[ ${rvm_key_status} -ne 0 ]]; then
     echo "rvm gpg keyserver installation failed!"
     continue
   fi
