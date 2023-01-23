@@ -1,5 +1,8 @@
 
 local toggle="disable" # enable | disable
 # dnsmasq, installed by podman-compose (dep)
-local toggle_services=(mariadb php-fpm nginx redis-server.service)
+
+local php_fpm_service_name="$(systemctl list-unit-files |grep php | grep fpm | awk '{print $1}')"
+
+local toggle_services=(mariadb ${php_fpm_service_name} nginx redis-server.service)
 
