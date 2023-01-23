@@ -12,9 +12,8 @@ local service_name=""
 echo "================================"
 echo "    Toggling Services"
 echo "================================"
-echo "${toggle}: --->"
+echo "${toggle}: ---------------->"
 echo "${toggle_services[@]}"
-echo "${toggle}: ---> done"
 
 if [ "${toggle}" == "enable" ]
 then
@@ -25,6 +24,7 @@ else
   systemctl stop ${toggle_services[@]}
 fi
 
+echo "${toggle}: ----------------> done"
 # for toggle_service in ${toggle_services[@]}
 # do
 #   service_name="${toggle_service}.service"
