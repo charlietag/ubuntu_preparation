@@ -15,4 +15,5 @@ RENDER_CP_SED ${CONFIG_FOLDER}/etc/php/php_version/fpm/pool.d/www.conf /etc/php/
 #---------------
 # make sure default session is writeable by php user
 #---------------
-chown -R ${current_user}.${current_user} /var/lib/php/*
+test -d /var/log/php-fpm || mkdir -p /var/log/php-fpm
+chown -R ${current_user}.${current_user} /var/lib/php/* /var/log/php-fpm
