@@ -19,7 +19,7 @@ function set_ruby {
   local ruby_color_end="\033[00m"
   local python_prompt=""
 
-  python_prompt="${ruby_dark_yellow}($(python3 -V))${ruby_color_end}"
+  python_prompt="${ruby_dark_yellow}(podman $(podman --version | grep -Eo "[[:digit:]\.]+"))${ruby_color_end}"
 
   local prompt_for_python="${python_prompt}"
 
