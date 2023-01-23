@@ -20,7 +20,7 @@ local rvm_version="1.29.12"
 
 # Specify ruby version (installing with rvm)
 #local ruby_version="2.6.0"
-local ruby_version="3.1.2"
+local ruby_version="3.2.0"
 
 # Specify rails version here
 # ex. 5.0 presents ~> 5.0.0
@@ -32,22 +32,6 @@ local rails_version="7.0"
 # https://github.com/rails/rails/blob/master/.travis.yml
 # https://travis-ci.org/rails/rails/builds/517573851/config
 # ----------------------------------------------------
-
-
-# ###########################################################
-# @AppStream
-# For using dnf module (obey variable name rules)
-# ###########################################################
-# variable defining rules:
-#                            local pkgname_dnf_module_version="{stream}"
-# try look up version(stream) this way:
-#                                         dnf module list pkgname #
-# ----------------------------------------------------------
-
-# Enabled dnf module version of ruby by default
-local ruby_dnf_module_version="3.1"
-
-
 
 # ----------------------------------------------------
 # DO NOT MODIFY HERE
