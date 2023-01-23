@@ -220,6 +220,6 @@ source $HOME/.bash_base/.prompt_for_git/.init.sh
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
 then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+    PATH="$PATH:$HOME/.local/bin:$HOME/bin"
 fi
 export PATH
