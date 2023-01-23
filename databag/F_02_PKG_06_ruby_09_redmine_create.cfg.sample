@@ -21,14 +21,14 @@ local redmine_db_name="redmine"
 # local redmine_version="4.2.3"
 
 # --- Redmine 5.x ---
-local redmine_ruby_version="3.1.2"
-local redmine_version="5.0.3"
+local redmine_ruby_version="3.1.3"
+local redmine_version="5.0.4"
 
 # Specify gem:bundler version here
 # ex. 2.1 presents ~> 2.1.0
 #     this means 2.1.x
 # local redmine_bundler_version="2.1"
-local redmine_bundler_version="2.3"
+local redmine_bundler_version="2.4"
 
 # -------------------------- Redmine Plugins ----------------------------
 # -- redmine_wysiwyg_editor --
@@ -49,8 +49,8 @@ local redmine_bundler_version="2.3"
 #  "https://github.com/tkusukawa/redmine_work_time/archive/0.4.0.zip"
 #  "https://github.com/akiko-pusu/redmine_issue_templates/archive/1.1.0.zip"
 local redmine_plugins=(
-  "https://raw.githubusercontent.com/charlietag/github_share_folder/master/redmine_plugins/redmine_agile-1_6_3-light.zip"
-  "https://raw.githubusercontent.com/charlietag/github_share_folder/master/redmine_plugins/redmine_checklists-3_1_21-light.zip"
+  "https://raw.githubusercontent.com/charlietag/github_share_folder/master/redmine_plugins/redmine_agile-1_6_4-light.zip"
+  "https://raw.githubusercontent.com/charlietag/github_share_folder/master/redmine_plugins/redmine_checklists-3_1_22-light.zip"
 )
 
 # -- May not be compatible with Redmine 5 anymore --
@@ -62,8 +62,8 @@ local redmine_plugins=(
 # -------------------------- Redmine Themes ----------------------------
 local redmine_themes=(
   "https://github.com/mrliptontea/PurpleMine2/archive/v2.15.0.zip"
-  "https://raw.githubusercontent.com/charlietag/github_share_folder/master/redmine_themes/a1_theme-3_0_0.zip"
-  "https://raw.githubusercontent.com/charlietag/github_share_folder/master/redmine_themes/circle_theme-2_1_5.zip"
+  "https://raw.githubusercontent.com/charlietag/github_share_folder/master/redmine_themes/a1_theme-4_0_0.zip"
+  "https://raw.githubusercontent.com/charlietag/github_share_folder/master/redmine_themes/circle_theme-2_1_6.zip"
 )
 # -------------------------- Redmine Themes ----------------------------
 
