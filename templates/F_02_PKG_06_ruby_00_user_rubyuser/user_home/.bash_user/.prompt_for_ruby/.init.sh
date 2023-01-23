@@ -23,7 +23,11 @@ function set_ruby {
   #if [[ -s "$HOME/.rvm/bin/rvm-prompt" ]]; then
   #  rvm_prompt="${ruby_dark_yellow}($($HOME/.rvm/bin/rvm-prompt))${ruby_color_end}"
   #fi
-  rvm_prompt="${ruby_dark_yellow}($(ruby -v 2>/dev/null| grep -Eo 'ruby[[:space:]]+[[:digit:]\.]+'))${ruby_color_end}"
+  local ruby_ver=""
+  ruby_ver="$(ruby -v --yjit 2>/dev/null| grep -Eo 'ruby[[:space:]]+[[:digit:]\.]+|\+YJIT' | xargs echo)"
+  test -z "${ruby_ver}" && ruby_ver="$(ruby -v 2>/dev/null| grep -Eo 'ruby[[:space:]]+[[:digit:]\.]+')"
+
+  rvm_prompt="${ruby_dark_yellow}(${ruby_ver})${ruby_color_end}"
 
   local prompt_for_ruby="${rvm_prompt}"
 
