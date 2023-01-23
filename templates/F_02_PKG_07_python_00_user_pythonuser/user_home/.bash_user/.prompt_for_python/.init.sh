@@ -11,24 +11,24 @@ unset PS1
 
 
 #------------------------------------------------------
-#             Bash Prompt Setting - Ruby
+#             Bash Prompt Setting - General user
 #------------------------------------------------------
-function set_ruby {
-  local ruby_dark_yellow="\e[33m"
-  local ruby_dark_cyan="\e[36m"
-  local ruby_color_end="\033[00m"
-  local python_prompt=""
+function set_prompt_setting {
+  local prompt_setting_dark_yellow="\e[33m"
+  local prompt_setting_dark_cyan="\e[36m"
+  local prompt_setting_color_end="\033[00m"
+  local this_prompt=""
 
-  python_prompt="${ruby_dark_yellow}($(python3 -V))${ruby_color_end}"
+  this_prompt="${prompt_setting_dark_yellow}($(python3 -V))${prompt_setting_color_end}"
 
-  local prompt_for_python="${python_prompt}"
+  local prompt_for_this="${this_prompt}"
 
-  echo -e "${prompt_for_python}"
+  echo -e "${prompt_for_this}"
 }
 
 
 #------------------------------------------------------
 #             Bash Prompt Setting - Start
 #------------------------------------------------------
-append_here="\$(set_ruby)"
+append_here="\$(set_prompt_setting)"
 PS1="${ORIGIN_PS} ${append_here}\n${PROMPT_SYM} "
