@@ -18,11 +18,9 @@ pkgs_list="${pkgs_list} libevent-dev libncurses-dev ncurses-dev build-essential 
 pkgs_list="${pkgs_list} autoconf automake"
 
 # For tmux plugin copycat (for better UTF-8 character support)
-#dnf install -y gawk
 pkgs_list="${pkgs_list} gawk"
 
 # Add this to avoid unknown dependencies
-#dnf install -y tmux
 pkgs_list="${pkgs_list} tmux"
 
 # for compare float in shell script

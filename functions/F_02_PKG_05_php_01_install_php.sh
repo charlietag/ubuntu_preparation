@@ -68,7 +68,7 @@ apt install -y \
   # php-opcache \
 
 # --- For connecting to SQL server ---
-# dnf install -y unixODBC-devel
+# apt install -y unixODBC-devel
 # pecl install pdo_sqlsrv sqlsrv
 
 # --- successfully installed messages ---
