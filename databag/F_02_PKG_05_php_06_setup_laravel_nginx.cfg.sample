@@ -3,7 +3,7 @@
 # ***************************************************
 # * change your domain name here                    *
 # ***************************************************
-local server_name="mylaravel.centos8stream.localdomain"  # ---> ex: myrails.centos8stream.localdomain
+local server_name="mylaravel.ubuntu22.localdomain"  # ---> ex: myrails.ubuntu22.localdomain
 local site_app_name="mylaravel"                    # ---> ex: myrails
 
 
