@@ -25,6 +25,14 @@ pkgs_list="${pkgs_list} software-properties-common"
 # default ruby
 pkgs_list="${pkgs_list} ruby"
 
+# for ruby 3.2YJIT enabled (rvm install 3.2.0 -C "--enable-yjit")
+pkgs_list="${pkgs_list} rustc"
+# rustc: libllvm14 libstd-rust-1.61 libstd-rust-dev libllvm14 libstd-rust-1.61 libstd-rust-dev rustc
+
+
+# (optional) Suggested packages by rustc
+pkgs_list="${pkgs_list} cargo llvm-14 lld-14 clang-14"
+
 # ----- Rails 6+ Preview use -----
 # FFmpeg for video
 pkgs_list="${pkgs_list} ffmpeg"

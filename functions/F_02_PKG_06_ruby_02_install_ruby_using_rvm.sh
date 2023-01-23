@@ -16,7 +16,11 @@ echo "========================================="
 # fi
 # -------------------------------------------------------------------------------------------------
 
-su -l $current_user -c "rvm install ${ruby_version}"
+if [[ "${ruby_version}" = "3.2.0" ]]; then
+  su -l $current_user -c "rvm install ${ruby_version} -C \"--enable-yjit\""
+else
+  su -l $current_user -c "rvm install ${ruby_version}"
+fi
 
 # ------------------------------------------------------------
 # do not gem update to avoid rails compatibility
