@@ -11,8 +11,8 @@ pkgs_list="${pkgs_list} podman buildah skopeo"
 #-----------------------------------------------------------------------------------------
 apt install -y ${pkgs_list}
 
+apt install -y python3-pip python3-venv
 # WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
-apt install -y python3-pip
 # pip3 install podman-compose
 
 
