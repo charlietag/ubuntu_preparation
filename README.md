@@ -333,13 +333,8 @@ Already up to date.
 #############################################
 
 ---------------------------------------------------
-NTP(chrony) ---> pool.ntp.org
+NTP(systemd-timesyncd) ---> pool.ntp.org
 ---------------------------------------------------
-RUN: chronyd -q 'pool pool.ntp.org iburst'
-2020-09-08T01:47:33Z chronyd version 3.5 starting (+CMDMON +NTP +REFCLOCK +RTC +PRIVDROP +SCFILTER +SIGND +ASYNCDNS +SECHASH +IPV6 +DEBUG)
-2020-09-08T01:47:38Z System clock wrong by -0.002320 seconds (step)
-2020-09-08T01:47:38Z chronyd exiting
-RUN: hwclock -w
 ---------------------------------------------------
 
 
