@@ -218,8 +218,7 @@ source $HOME/.bash_base/.prompt_for_git/.init.sh
 #               custom bin
 #------------------------------------------------------
 # User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
-then
-    PATH="$PATH:$HOME/.local/bin:$HOME/bin"
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+  PATH="$PATH:$HOME/.local/bin:$HOME/bin"
 fi
 export PATH
