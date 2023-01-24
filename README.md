@@ -227,12 +227,12 @@ I'm a lazy person.  I want to install **ALL** and give me default configurations
   /home/phpuser/laravel_sites/myrails/
   ```
 
-* Config your own hosts file (/etc/hosts)
+* Config your client hosts file (/etc/hosts) for browser
 
   ```bash
-  <192.168.x.x> myrails.ubuntu.localdomain
-  <192.168.x.x> redmine.ubuntu.localdomain
-  <192.168.x.x> mylaravel.ubuntu.localdomain
+  <192.168.x.x> myrails.ubuntu22.localdomain
+  <192.168.x.x> redmine.ubuntu22.localdomain
+  <192.168.x.x> mylaravel.ubuntu22.localdomain
   ```
 
 * Browse URL
