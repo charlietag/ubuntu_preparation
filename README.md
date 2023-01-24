@@ -507,52 +507,10 @@ After this installation repo, the server will setup with "Nginx + Puma (socket)"
       netstat -palunt |grep -i est | awk '{print $7}'| cut -d'/' -f1 |xargs -I{} bash -c "ps aux |grep sshd |grep {}|grep -v grep" | head -n -1 | awk '{print $2}' |xargs -I{} kill {}
       ```
 
-    * If you want to restart network for new config, instead of using `systemctl restart network`, which is deprecated in **CentOS 8**
-      * Reload network config (mostly, this would work)
-
-        ```bash
-        nmcli c reload
-        ```
-
-      * Stop networking and start networking in **NetworkManager (NM)**
-
-        ```bash
-        nmcli n off; nmcli n on
-        ```
-
-    * Since RHEL 9 , no more configs under `/etc/sysconfig/network-scripts/`, instead, keyfile under `/etc/NetworkManager/system-connections` only. So config network using `nmcli` will be a better method
-
-    * Modify network static IP using `nmcli`
-      * Setup static ip
-
-        ```bash
-        nmcli connection modify eth0 \
-          ipv4.addresses 192.168.122.7/24 \
-          ipv4.gateway 192.168.122.1 \
-          ipv4.dns 192.168.122.1 \
-          ipv4.method manual
-        ```
-
-      * Disable IPv6, and peerDNS
-
-        ```bash
-        nmcli connection modify eth0 \
-          ipv4.ignore-auto-dns "true"
-
-        nmcli connection modify eth0 \
-          ipv6.method "disabled" \
-          ipv6.addr-gen-mode "stable-privacy" \
-          ipv6.ignore-auto-dns "true" \
-          ipv6.ignore-auto-routes "true" \
-          ipv6.never-default "true"
-        ```
-
-      * List only device name except loop 0 using `nmcli`
-
-        ```bash
-        nmcli -g name connection show
-        ```
-
+    * **Network** for Ubuntu 22
+      * By default - no more NetworkManager, use **netplan + Systemd-networkd** instead
+        * Ref. https://netplan.io/
+        * Ref. [99-network-config_static.yaml](https://github.com/charlietag/ubuntu_preparation/blob/main/templates/F_01_ENV_02_os_00_ip/etc/netplan/99-network-config_static.yaml)
 
 ## Ruby gem config
 * gem install without making document
