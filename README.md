@@ -88,10 +88,15 @@ This is a small light bash project.  Suit small companies which have only few se
         ```
 
         ```bash
-        chmod 755 /etc/rc.d/rc.local
-        echo "/sbin/swapon /swap/swapfile" >> /etc/rc.d/rc.local
+        cat << EOF >> /etc/rc.local
+        #!/bin/bash
+        /sbin/swapon /swap/swapfile
+        EOF
+
+        chmod 755 /etc/rc.local
         ```
 
+        (based on `rc-local.service`)
 
 # Configuration
   * ssh `without` `SendEnv`
