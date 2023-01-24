@@ -88,8 +88,9 @@ This is a small light bash project.  Suit small companies which have only few se
         ```
 
         ```bash
-        cat << EOF >> /etc/rc.local
+        cat << EOF > /etc/rc.local
         #!/bin/bash
+        touch /var/lock/subsys/local
         /sbin/swapon /swap/swapfile
         EOF
 
