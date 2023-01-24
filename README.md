@@ -428,7 +428,7 @@ After this installation repo, the server will setup with "Nginx + Puma (socket)"
   * Rails Project
 
     ```bash
-    rails new <rails_project> -d mysql --skip-spring
+    rails new <rails_project> -d mysql -j esbuild -c bootstrap
     cd <rails_project>
     chown -R ${current_user}.${current_user} log tmp
     ```
@@ -447,9 +447,10 @@ After this installation repo, the server will setup with "Nginx + Puma (socket)"
   * Rails
 
     ```bash
-    rails new <rails_project> -d mysql --skip-spring
+    rails new <rails_project> -d mysql -j esbuild -c bootstrap
     ```
 
+  * **Rails 7 has intergrated with stimulusjs, stop using jquery**
   * Rails 5.1 has dropped dependency on jQuery, you might want it back via yarn
 
     1. Add npm of jquery using Yarn
