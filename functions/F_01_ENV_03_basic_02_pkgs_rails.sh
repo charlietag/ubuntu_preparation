@@ -48,6 +48,9 @@ pkgs_list="${pkgs_list} poppler-utils libpoppler-dev"
 # ImageMagick latest version - 6.9+ (for image uploading apps, like redmine)
 pkgs_list="${pkgs_list} imagemagick libmagickwand-dev"
 
+# For redmine - pdf preview
+# sed -re '/coder[[:print:]]+pattern[[:print:]]+PDF/ s/none/READ|WRITE/g' -i /etc/ImageMagick-6/policy.xml
+
 # ----- Rails 7+ Active Storage (gem 'ruby-vips') -----
 # libvips
 pkgs_list="${pkgs_list} libvips libvips-tools libjpeg-dev"

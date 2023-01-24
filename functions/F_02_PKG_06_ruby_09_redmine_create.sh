@@ -229,3 +229,8 @@ echo "--------------------------------------------------------------------------
 systemctl stop mariadb
 echo -n "stopping mariadb"
 sleep 1; echo -n "."; sleep 1; echo -n "."; sleep 1; echo -n "."; echo ""
+
+
+
+# For redmine - pdf preview
+sed -re '/coder[[:print:]]+pattern[[:print:]]+PDF/ s/none/READ|WRITE/g' -i /etc/ImageMagick-6/policy.xml
