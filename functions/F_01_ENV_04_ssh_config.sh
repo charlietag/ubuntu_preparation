@@ -29,3 +29,7 @@ echo "ListenAddress ${ssh_listen_address}" >> /etc/ssh/sshd_config
 sed -i '/DenyGroups /d' /etc/ssh/sshd_config
 echo "DenyGroups no-ssh-group" >> /etc/ssh/sshd_config
 
+#-----------------------------------------------------------------------------------------
+# Make ssh known hosts plain
+#-----------------------------------------------------------------------------------------
+sed -re '/HashKnownHosts/ s/yes/no/g' -i /etc/ssh/ssh_config
