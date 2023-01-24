@@ -21,7 +21,7 @@ pkgs_list="${pkgs_list} build-essential"
 
 pkgs_list="${pkgs_list} whois"
 
-pkgs_list="${pkgs_list} lsb-release"
+pkgs_list="${pkgs_list} lsb-release gnupg2"
 
 # for command: nslookup, dig
 pkgs_list="${pkgs_list} bind9-dnsutils"
