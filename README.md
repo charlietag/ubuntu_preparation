@@ -874,10 +874,9 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
 
 # CHANGELOG
 * 2022/11/27
-  * tag: v0.0.1
-    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v0.0.1...master
+  * tag: v0.0.0
       * Initial Ubuntu Preparation
 * 2023/01/25
   * tag: v1.0.0
-    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v0.0.1...v1.0.0
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v0.0.0...v1.0.0
       * First release of ubuntu_preparation
