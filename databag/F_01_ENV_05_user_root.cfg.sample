@@ -11,9 +11,15 @@ local alias_su_rubyuser="r"
 # alias p='su - phpuser'
 local alias_su_phpuser="p"
 
+# alias pu='su - pythonuser'
 local alias_su_pythonuser="pu"
 
+# alias ju='su - jsuser'
 local alias_su_jsuser="ju"
+
+# alias pn='su - podmanuser'
+local alias_su_podmanuser="pn"
+
 
 # ----------------------------------------------------
 # DO NOT MODIFY HERE
