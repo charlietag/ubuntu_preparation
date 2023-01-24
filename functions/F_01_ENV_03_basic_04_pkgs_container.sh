@@ -26,3 +26,8 @@ systemctl list-unit-files|grep podman | awk '{print $1}' | xargs echo  | xargs -
 if [[ -f /etc/containers/libpod.conf ]]; then
   sed -re '/cgroup_manager/ s/systemd/cgroupfs/g' -i /etc/containers/libpod.conf
 fi
+
+if [[ ! -f /etc/containers/containers.conf ]]; then
+  echo "[engine]" > /etc/containers/containers.conf
+  echo 'cgroup_manager = "cgroupfs"' >> /etc/containers/containers.conf
+fi
