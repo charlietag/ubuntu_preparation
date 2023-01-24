@@ -42,7 +42,7 @@ This is a small light bash project.  Suit small companies which have only few se
   * You are building Ruby on Rails / Laravel dev server.
 
 * This repo contains packages below
-  * **NGINX + PUMA + PHP-FPM + MariaDB + Rails + Laravel + Redmine**
+  * **NGINX + PUMA + PHP-FPM + MariaDB + Rails + Laravel + Redmine + Redis**
 
 # Environment
   * Ubuntu 22.04
@@ -176,7 +176,7 @@ This is a small light bash project.  Suit small companies which have only few se
     ```
 
 # Easy Installation
-I'm a lazy person.  I want to install **ALL** and give me default configurations running **Nginx , MariaDB, php-fpm, puma 5 (rails)**.  And help me to create default projects about "Rails" and "Laravel"
+I'm a lazy person.  I want to install **ALL** and give me default configurations running **Nginx , MariaDB, php-fpm, puma 5 (rails), redis**.  And help me to create default projects about "Rails" and "Laravel"
 
 * Command
 
@@ -187,7 +187,7 @@ I'm a lazy person.  I want to install **ALL** and give me default configurations
 
 * Default project path
   * DEFAULT user for rails/laravel developer is not ssh allowed
-    * /etc/ssh/sshd
+    * /etc/ssh/sshd_config
 
       ```bash
       DenyGroups no-ssh-group
@@ -196,6 +196,9 @@ I'm a lazy person.  I want to install **ALL** and give me default configurations
   * group "no-ssh-group" add to default dev user
     * phpuser (this name can be modified)
     * rubyuser (this name can be modified)
+    * jsuser (this name can be modified)
+    * pythonuser (this name can be modified)
+    * podmanuser (this name can be modified)
 
   * rails
     * default user: rubyuser (can be changed)
@@ -235,9 +238,9 @@ I'm a lazy person.  I want to install **ALL** and give me default configurations
 * Browse URL
 
   ```bash
-  http://myrails.ubuntu.localdomain
-  http://redmine.ubuntu.localdomain (default account: admin/admin)
-  http://mylaravel.ubuntu.localdomain
+  http://myrails.ubuntu22.localdomain
+  http://redmine.ubuntu22.localdomain (default account: admin/admin)
+  http://mylaravel.ubuntu22.localdomain
   ```
 
 # Advanced Installation
