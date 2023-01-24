@@ -47,7 +47,7 @@ This is a small light bash project.  Suit small companies which have only few se
 # Environment
   * Ubuntu 22.04
     * ubuntu_preparation
-      * release : `master` `v1.0.0`
+      * release : `master` `v1.x.x`
 
 # Notice
   * Before [ubuntu_security](https://github.com/charlietag/ubuntu_security)
@@ -801,7 +801,7 @@ After this installation repo, the server will setup with "Nginx + Puma (socket)"
 
 ## Upgrading MariaDB
 
-For some cases, we need to upgrade MariaDB without data lost.  Here is my note about this.
+For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is my note about this.
 
 ### Reference (mariadb.com)
 * https://mariadb.com/kb/en/upgrading-from-mariadb-104-to-mariadb-105/#how-to-upgrade
@@ -823,20 +823,20 @@ For some cases, we need to upgrade MariaDB without data lost.  Here is my note a
 * Uninstall the old version of MariaDB
 
   ```bash
-  dnf remove -y MariaDB-common MariaDB-client MariaDB-shared MariaDB-server MariaDB-devel
+  apt purge -y mariadb-server libmariadb-dev libmariadb-dev-compat
   ```
 
 * Modify the repository configuration to newer version
 * Install the new version of MariaDB
 
   ```bash
-  dnf install -y MariaDB-common MariaDB-client MariaDB-shared MariaDB-server MariaDB-devel
+  apt install -y mariadb-server libmariadb-dev libmariadb-dev-compat
   ```
 
 * Make any desired changes to configuration options in option files, such as my.cnf. This includes removing any options that are no longer supported.
 
   ```bash
-  # cat /etc/my.cnf.d/server.cnf | grep -B1 '127.0.0'
+  # cat /etc/mysql/mariadb.conf.d/50-server.cnf | grep -B1 '127.0.0'
   [mysqld]
   bind-address = 127.0.0.1
   ```
@@ -877,3 +877,7 @@ For some cases, we need to upgrade MariaDB without data lost.  Here is my note a
   * tag: v0.0.1
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v0.0.1...master
       * Initial Ubuntu Preparation
+* 2023/01/25
+  * tag: v1.0.0
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v0.0.1...v1.0.0
+      * First release of ubuntu_preparation
