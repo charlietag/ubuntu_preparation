@@ -392,22 +392,22 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
 # Note
 
 ## Installed Packages
-  * PHP 8.1 (AppStream) ~~(Ref. https://rpms.remirepo.net/wizard/)~~
-  * PHP-FPM (AppStream) ~~(Ref. https://rpms.remirepo.net/wizard/)~~
+  * PHP 8.1
+  * PHP-FPM
   * Laravel 9.x (Ref. https://laravel.com/)
-  * MariaDB 10.5 (AppStream) (equals to MySQL 5.7)
-  * nodejs (AppStream) (stable version - 16)
-  * Nginx 1.20 (dnf module) ~~(latest version - via Nginx Official Repo)~~
-  * Redis 6.2
-  * Ruby 3.1.2
+  * MariaDB 10.6 (equals to MySQL 5.7)
+  * nodejs 18 (Ref. https://nodejs.org/en/)
+  * Nginx 1.22 (Ref. https://nginx.org/)
+  * Redis 7 (Ref. https://redis.io/)
+  * Ruby 3.2.0 +YJIT (rvm)
   * Rails 7.0
     * puma 5 (systemd integrated, puma-systemd-mgr, ~~puma-mgr~~)
-  * Redmine 5.0.3
-    * ruby 3.1.2
+  * Redmine 5.0.4
+    * ruby 3.1.3
     * rails 6.1.7
   * Useful tools
     * Enhanced tail
-      * ~~multitail~~ (not found in RHEL 9)
+      * multitail
         * multitail /var/log/nginx/*.access.log
     * Enhanced grep
       * ack
