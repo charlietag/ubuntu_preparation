@@ -16,7 +16,7 @@ echo "========================================="
 # fi
 # -------------------------------------------------------------------------------------------------
 
-if [[ "${ruby_version}" = "3.2.0" ]]; then
+if [[ "${ruby_version}" =~ "3.2" ]]; then
   su -l $current_user -c "rvm install ${ruby_version} -C \"--enable-yjit\""
 else
   su -l $current_user -c "rvm install ${ruby_version}"
