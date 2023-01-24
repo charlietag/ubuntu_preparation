@@ -66,18 +66,6 @@ This is a small light bash project.  Suit small companies which have only few se
          * [F_01_ENV_00_systemd_default_target.sh](https://github.com/charlietag/ubuntu_preparation/blob/master/functions/F_01_ENV_00_systemd_default_target.sh)
     * **Check method**
       * `systemctl get-default`
-  * **Environment Groups**
-    * **Based on** (*[ubuntu_preparation](https://github.com/charlietag/ubuntu_preparation) will make sure this environment group is installed*)
-      * **"Minimal Install"**
-    * **Removing** Environment Groups (*[ubuntu_preparation](https://github.com/charlietag/ubuntu_preparation) will remove these environment groups by default*)
-      * **"Server with GUI"**
-      * **"Workstation"**
-      * **"KDE Plasma Workspaces"**
-      * **"Virtualization Host"**
-      * **"Custom Operating System"**
-    * **Check method**
-      * `dnf grouplist`
-
 
 # Warning
   * Please do this in fresh install OS
