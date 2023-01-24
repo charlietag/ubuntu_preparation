@@ -233,4 +233,5 @@ sleep 1; echo -n "."; sleep 1; echo -n "."; sleep 1; echo -n "."; echo ""
 
 
 # For redmine - pdf preview
+# Ref. https://imagemagick.org/script/security-policy.php
 sed -re '/coder[[:print:]]+pattern[[:print:]]+PDF/ s/none/READ|WRITE/g' -i /etc/ImageMagick-6/policy.xml

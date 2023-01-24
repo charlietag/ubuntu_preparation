@@ -49,6 +49,7 @@ pkgs_list="${pkgs_list} poppler-utils libpoppler-dev"
 pkgs_list="${pkgs_list} imagemagick libmagickwand-dev"
 
 # For redmine - pdf preview
+# Ref. https://imagemagick.org/script/security-policy.php
 # sed -re '/coder[[:print:]]+pattern[[:print:]]+PDF/ s/none/READ|WRITE/g' -i /etc/ImageMagick-6/policy.xml
 
 # ----- Rails 7+ Active Storage (gem 'ruby-vips') -----
