@@ -30,7 +30,7 @@ Table of Contents
 - [CHANGELOG](#changelog)
 
 # Ubuntu Linux Server OS Preparation
-You want initialize your linux server by your own script.  But you **DO NOT** want to use **PUPPET , CHEF , Ansible**.  You can just leverage my initialization project here.
+You want initialize your linux server by your own script.  But you **DO NOT** want to use **PUPPET , CHEF , Ansible**.  You can just leverage this initialization project.
 
 This is a small light bash project.  Suit small companies which have only few servers to maintain.  **GIVE IT A TRY!!**
 
@@ -39,8 +39,9 @@ This is a small light bash project.  Suit small companies which have only few se
 * This is useful when
   * You have less than 5 Ubuntu servers to maintain.
   * You are deploying monolithic architecture app.
+  * You are building Ruby on Rails / Laravel dev server.
 
-* This repo is TOTALLY transfer from passenger to puma for rails.
+* This repo contains packages below
   * **NGINX + PUMA + PHP-FPM + MariaDB + Rails + Laravel + Redmine**
 
 # Environment
@@ -62,7 +63,6 @@ This is a small light bash project.  Suit small companies which have only few se
       * It is highly recommended that you do the following:
         * **Reinstall whole Ubuntu** using **"Ubuntu Server"** ~~Ubuntu Server (minimized)~~
       * Reference description here
-        * [F_01_ENV_02_os_00_env_groupinstall.cfg.sample](https://github.com/charlietag/ubuntu_preparation/blob/master/databag/F_01_ENV_02_os_00_env_groupinstall.cfg.sample)
          * [F_01_ENV_00_systemd_default_target.sh](https://github.com/charlietag/ubuntu_preparation/blob/master/functions/F_01_ENV_00_systemd_default_target.sh)
     * **Check method**
       * `systemctl get-default`
