@@ -964,7 +964,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
     export EDITOR="vim"
     ```
 
-### Add or Delete User
+### User manipulation
 
 * Add user
   * **(PREFERED)** Have to specify `shell` and `create home` manually
@@ -973,7 +973,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
     useradd -m -s /bin/bash {user}
     ```
 
-  * (Alternative , **NOT** prefered) use ~perl script~ - adduser
+  * (Alternative , **NOT** prefered) use ~~perl script~~ - adduser
     * Interactive (Ask a lot of questions)
 
       ```bash
@@ -985,6 +985,37 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
       ```bash
       adduser -q --disabled-login --gecos "" <user>
       ```
+
+* Delete user
+  * **(PREFERED)** Delete home directory
+
+    ```bash
+    userdel -r {user}
+    ```
+
+  * (Alternative , **NOT** prefered) use ~~perl script~~ - deluser
+
+    ```bash
+    deluser --remove-home {user}
+    ```
+
+* Delete user (**DANGER**)
+  * **DANGER DO NOT USE** ~~perl script~~
+    * find / belongs to username and delete it
+      * ~deluser --remove-all-files {user}~
+
+* Lock user
+
+  ```bash
+  usermod -s "/bin/false"
+  ```
+
+* List users (useful)
+
+  ```bash
+  lslogin
+  ```
+
 
 # CHANGELOG
 * 2022/11/27
