@@ -1147,21 +1147,39 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * (CentOS) openssl openssl-libs openssl-devel
   * (Ubuntu) openssl libssl-dev
 
-### Official 3rd party repo (Launchpad - PPA)
+### 3rd party repo (BE CAREFUL)
 
+**Be CAREFUL using this**
+
+> packages here are not verified by Ubuntu
+
+* Platform (Launchpad - PPA) hosted by Ubuntu, but **packages are not maintained by Ubuntu**
 * You can contribute your own packages on PPA platform
   * Ref. https://launchpad.net/
 * Install package `software-properties-common` (add-apt-repository) first
-* Install php 8.2 in Ubuntu 22.04
-  * Ref. [install-php-8-2-ubuntu-22-04](https://techvblogs.com/blog/install-php-8-2-ubuntu-22-04)
-  * add-apt-repository ppa:ondrej/php
-  * apt update
-  * apt install php8.2 php8.2-fpm php8.2-mysql
+* Install PPA
+  * Install php 8.2 in Ubuntu 22.04
+    * `ppa:ondrej/php` is like `remi` in RedHat world
+    * Ref. [install-php-8-2-ubuntu-22-04](https://techvblogs.com/blog/install-php-8-2-ubuntu-22-04)
+
+      ```bash
+      add-apt-repository ppa:ondrej/php
+      apt update
+      apt install php8.2 php8.2-fpm php8.2-mysql
+      ```
+
 * Remove PPA
-  * Uninstall package entirely
-    * apt remove --purge --autoremove -y php8.2 php8.2-fpm php8.2-mysql
+  * Uninstall package **entirely**
+
+    ```bash
+    apt remove --purge --autoremove -y php8.2 php8.2-fpm php8.2-mysql
+    ```
+
   * Remove PPA
-    * add-apt-repository --remove ppa:ondrej/php
+
+    ```bash
+    add-apt-repository --remove ppa:ondrej/php
+    ```
 
 ### snapd
 
