@@ -1018,6 +1018,8 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
 
 ### snapd
 
+![snapd.png](https://raw.githubusercontent.com/charlietag/github_share_folder/master/doc_images/snapd/snapd.png)
+
 * Useful sandbox application - out-of-the-box application (same as RedHat - flatpak)
   * Pros - Easy to use
   * Cons - needs more disk spaces
