@@ -27,6 +27,16 @@ Table of Contents
   * [Upgrading MariaDB](#upgrading-mariadb)
     + [Reference (mariadb.com)](#reference-mariadbcom)
     + [How to Upgrade](#how-to-upgrade)
+  * [Ubuntu notes](#ubuntu-notes)
+    + [Network](#network)
+    + [APT - Interactive settings](#apt---interactive-settings)
+    + [ssh client known_hosts hash](#ssh-client-known-hosts-hash)
+    + [APT command](#apt-command)
+    + [DPKG usage](#dpkg-usage)
+    + [Package name convention](#package-name-convention)
+    + [snapd](#snapd)
+    + [Editor](#editor)
+    + [User manipulation](#user-manipulation)
 - [CHANGELOG](#changelog)
 
 # Ubuntu Linux Server OS Preparation
