@@ -953,10 +953,33 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
     curl -fsSL https://packages.redis.io/gpg | gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
     ```
 
-> How to do the following at once
->
 > gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 
+* How the command above does
+  * import 2 public keys
+
+    ```bash
+    curl -sSL https://raw.githubusercontent.com/charlietag/github_share_folder/master/rvm_gpg_public_keys/mpapis.asc | gpg --import -
+    curl -sSL https://raw.githubusercontent.com/charlietag/github_share_folder/master/rvm_gpg_public_keys/pkuczynski.asc | gpg --import -
+    ```
+
+  * Add 2 public keys into **ownertrust**
+
+    ```bash
+    echo 409B6B1796C275462A1703113804BB82D39DC0E3:6: | gpg2 --import-ownertrust
+    echo 7D2BAF1CF37B13E2069D6956105BD0E739499BDB:6: | gpg2 --import-ownertrust
+    ```
+
+  * Ownertrust
+    * Ref. [how-to-raise-a-key-to-ultimate-trust-on-another-machine](https://security.stackexchange.com/questions/129474/how-to-raise-a-key-to-ultimate-trust-on-another-machine)
+
+    ```bash
+    1 = I don't know or won't say => will be = 2
+    2 = I do NOT trust => will be = 3
+    3 = I trust marginally => will be = 4
+    4 = I trust fully => will be = 5
+    5 = I trust ultimately => will be = 6
+    ```
 
 ### APT - Interactive settings
 * Ref [F_00_PRE_00_disable_apt_interactive_mode.sh](https://github.com/charlietag/ubuntu_preparation/blob/main/functions/F_00_PRE_00_disable_apt_interactive_mode.sh)
