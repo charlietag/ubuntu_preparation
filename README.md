@@ -874,7 +874,30 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
     * Ref. https://netplan.io/
     * Ref. [99-network-config_static.yaml](https://github.com/charlietag/ubuntu_preparation/blob/main/templates/F_01_ENV_02_os_00_ip/etc/netplan/99-network-config_static.yaml)
 
-### APT Interactive
+  * [https://netplan.io/](https://netplan.io/)
+    * ![netplan_design_overview.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b5ed472d-94bd-4658-96cf-96d8fe062130/netplan_design_overview.png)
+
+      * Netplan currently works with these supported renderers
+        * [NetworkManager](https://help.ubuntu.com/community/NetworkManager)
+        * [Systemd-networkd](http://manpages.ubuntu.com/manpages/bionic/man5/systemd.network.5.html)
+
+      * Senario
+        * NetworkManager
+          * Use for Desktop, such as wifi
+        * Systemd-networkd
+          * Use for server, such as netplan use
+
+      * Commands
+        * Netplan uses a set of subcommands to drive its behavior:
+          * **netplan generate**: Use `/etc/netplan` to generate the required configuration for the renderers.
+          * **netplan apply**: Apply all configuration for the renderers, restarting them as necessary.
+          * **netplan try**: Apply configuration and wait for user confirmation; will roll back if network is broken or no confirmation is given.
+
+  * check current DNS setting
+    * `resolvectl`
+
+
+### APT - Interactive settings
 * Ref [F_00_PRE_00_disable_apt_interactive_mode.sh](https://github.com/charlietag/ubuntu_preparation/blob/main/functions/F_00_PRE_00_disable_apt_interactive_mode.sh)
 * **needrestart**
   * When install packages this will check related services and prompt window to ask user decide whether to restart related services
@@ -883,6 +906,40 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
 * **ucf**
   * When install some packages (like openssh-server), this will check if the config files are modified and prompt window to ask user to decide whether to override the config files
     * Ref. [askubuntu-automatically-keep-current-sshd-config-file-when-upgrading-openssh-server](https://askubuntu.com/questions/1421676/automatically-keep-current-sshd-config-file-when-upgrading-openssh-server)
+
+### DPKG usage
+
+* Find specific package
+
+  ```bash
+  dpkg -l | grep {package}
+  ```
+
+* Fine specific file **belongs to what package**
+
+  ```bash
+  dpkg -S {filename}
+  ```
+
+* List all files belongs to specific package
+
+  ```bash
+  dpkg -L {package}
+  ```
+
+* Find config files of specific package
+
+  ```bash
+  dpkg -L {package} |grep "^\/etc"
+  ```
+
+* Show info of specific package
+
+  ```bash
+  apt show {package}
+  ```
+
+  (apt `info` {package} is an alias of `show`)
 
 ### ssh client known_hosts hash
 
