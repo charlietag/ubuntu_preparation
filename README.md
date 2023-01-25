@@ -29,6 +29,7 @@ Table of Contents
     + [How to Upgrade](#how-to-upgrade)
   * [Ubuntu notes](#ubuntu-notes)
     + [Network](#network)
+    + [gnupg2 (gpg)](#gnupg2-gpg)
     + [APT - Interactive settings](#apt---interactive-settings)
     + [APT command](#apt-command)
     + [DPKG usage](#dpkg-usage)
@@ -923,6 +924,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
     ```
 
 > How to do the following at once
+>
 > gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 
 ### APT - Interactive settings
