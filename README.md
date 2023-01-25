@@ -885,7 +885,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
     * Ref. [99-network-config_static.yaml](https://github.com/charlietag/ubuntu_preparation/blob/main/templates/F_01_ENV_02_os_00_ip/etc/netplan/99-network-config_static.yaml)
 
   * [https://netplan.io/](https://netplan.io/)
-    * ![netplan_design_overview.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b5ed472d-94bd-4658-96cf-96d8fe062130/netplan_design_overview.png)
+    * ![netplan_design_overview.svg](https://assets.ubuntu.com/v1/a1a80854-netplan_design_overview.svg)
 
       * Netplan currently works with these supported renderers
         * [NetworkManager](https://help.ubuntu.com/community/NetworkManager)
