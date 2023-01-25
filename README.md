@@ -1146,6 +1146,22 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * (CentOS) openssl openssl-libs openssl-devel
   * (Ubuntu) openssl libssl-dev
 
+### Official 3rd party repo (Launchpad - PPA)
+
+* You can contribute your own packages on PPA platform
+  * Ref. https://launchpad.net/
+* Install package `software-properties-common` (add-apt-repository) first
+* Install php 8.2 in Ubuntu 22.04
+  * Ref. [install-php-8-2-ubuntu-22-04](https://techvblogs.com/blog/install-php-8-2-ubuntu-22-04)
+  * add-apt-repository ppa:ondrej/php
+  * apt update
+  * apt install php8.2 php8.2-fpm php8.2-mysql
+* Remove PPA
+  * Uninstall package entirely
+    * apt remove --purge --autoremove -y php8.2 php8.2-fpm php8.2-mysql
+  * Remove PPA
+    * add-apt-repository --remove ppa:ondrej/php
+
 ### snapd
 
 ![snapd.png](https://raw.githubusercontent.com/charlietag/github_share_folder/master/doc_images/snapd/snapd.png)
