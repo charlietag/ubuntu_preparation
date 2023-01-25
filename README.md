@@ -507,11 +507,6 @@ After this installation repo, the server will setup with "Nginx + Puma (socket)"
       netstat -palunt |grep -i est | awk '{print $7}'| cut -d'/' -f1 |xargs -I{} bash -c "ps aux |grep sshd |grep {}|grep -v grep" | head -n -1 | awk '{print $2}' |xargs -I{} kill {}
       ```
 
-    * **Network** for Ubuntu 22
-      * By default - no more NetworkManager, use **netplan + Systemd-networkd** instead
-        * Ref. https://netplan.io/
-        * Ref. [99-network-config_static.yaml](https://github.com/charlietag/ubuntu_preparation/blob/main/templates/F_01_ENV_02_os_00_ip/etc/netplan/99-network-config_static.yaml)
-
 ## Ruby gem config
 * gem install without making document
   * Deprecated
@@ -871,6 +866,125 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
     # systemctl restart mariadb
     ```
 
+## Ubuntu notes
+
+### Network
+* **Network** for Ubuntu 22
+  * By default - no more NetworkManager, use **netplan + Systemd-networkd** instead
+    * Ref. https://netplan.io/
+    * Ref. [99-network-config_static.yaml](https://github.com/charlietag/ubuntu_preparation/blob/main/templates/F_01_ENV_02_os_00_ip/etc/netplan/99-network-config_static.yaml)
+
+### APT Interactive
+* Ref [F_00_PRE_00_disable_apt_interactive_mode.sh](https://github.com/charlietag/ubuntu_preparation/blob/main/functions/F_00_PRE_00_disable_apt_interactive_mode.sh)
+* **needrestart**
+  * When install packages this will check related services and prompt window to ask user decide whether to restart related services
+    * Ref. [askubuntu-apt-get-upgrade-auto-restart-services](https://askubuntu.com/questions/1367139/apt-get-upgrade-auto-restart-services)
+    * Ref. [stackoverflow-how-to-stop-ubuntu-pop-up-daemons-using-outdated-libraries-when-using-apt-to-i](https://stackoverflow.com/questions/73397110/how-to-stop-ubuntu-pop-up-daemons-using-outdated-libraries-when-using-apt-to-i)
+* **ucf**
+  * When install some packages (like openssh-server), this will check if the config files are modified and prompt window to ask user to decide whether to override the config files
+    * Ref. [askubuntu-automatically-keep-current-sshd-config-file-when-upgrading-openssh-server](https://askubuntu.com/questions/1421676/automatically-keep-current-sshd-config-file-when-upgrading-openssh-server)
+
+### ssh client known_hosts hash
+
+* **/etc/ssh/ssh_config**
+  * By default - debian based ssh client , `HashKnownHosts=yes`, for some cases you might want to set it to `no`
+  * Otherwise, you need to find public key of hosts by command as below
+    * Check existence
+
+      ```bash
+      ssh-keygen -F dev.server.name
+      ```
+
+    * Remove existence
+
+      ```bash
+      ssh-keygen -R dev.server.name
+      ```
+
+### APT command
+
+* Remove package
+  * Remove packages only (Mostly used)
+
+    ```bash
+    apt remove -y {package}
+    ```
+
+  * Remove packages + delete config files (Mostly used - Useful for some cases)
+
+    ```bash
+    apt remove -y --purge {package}
+    ```
+
+    ```bash
+    apt purge -y {package}
+    ```
+
+  * Remove packages + remove related packages without warning message
+
+    ```bash
+    apt remove --autoremove -y {package}
+    ```
+
+    ```bash
+    apt autoremove -y {package}
+    ```
+
+  * Combined usage
+
+    ```bash
+    apt autoremove -y --purge {package}
+    ```
+
+    ```bash
+    apt remove --purge --autoremove -y {package}
+    ```
+
+### snapd
+
+* Useful sandbox application - out-of-the-box application (same as RedHat - flatpak)
+  * Pros - Easy to use
+  * Cons - needs more disk spaces
+* Almost a lot of Desktop UI features are based on Snapd
+* Cannot be removed, especial rails package `libvips` is based on Snapd
+
+### Editor
+
+* Default - `nano`
+* Switch default editor to `vim`
+  * Ref. [F_00_PRE_03_default_editor_vim.sh](https://github.com/charlietag/ubuntu_preparation/blob/main/functions/F_00_PRE_03_default_editor_vim.sh)
+
+    ```bash
+    update-alternatives --set editor /usr/bin/vim.basic
+    ```
+
+  * Ref. [zz99-default_editor.sh](https://github.com/charlietag/ubuntu_preparation/blob/main/templates/F_00_PRE_03_default_editor_vim/etc/profile.d/zz99-default_editor.sh)
+
+    ```bash
+    export EDITOR="vim"
+    ```
+
+### Add or Delete User
+
+* Add user
+  * **(PREFERED)** Have to specify `shell` and `create home` manually
+
+    ```bash
+    useradd -m -s /bin/bash {user}
+    ```
+
+  * (Alternative , **NOT** prefered) use ~perl script~ - adduser
+    * Interactive (Ask a lot of questions)
+
+      ```bash
+      adduser {user}
+      ```
+
+    * Don't ask, just create user like `useradd -m -s {user}` does
+
+      ```bash
+      adduser -q --disabled-login --gecos "" <user>
+      ```
 
 # CHANGELOG
 * 2022/11/27
