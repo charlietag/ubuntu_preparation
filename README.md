@@ -907,40 +907,6 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * When install some packages (like openssh-server), this will check if the config files are modified and prompt window to ask user to decide whether to override the config files
     * Ref. [askubuntu-automatically-keep-current-sshd-config-file-when-upgrading-openssh-server](https://askubuntu.com/questions/1421676/automatically-keep-current-sshd-config-file-when-upgrading-openssh-server)
 
-### DPKG usage
-
-* Find specific package
-
-  ```bash
-  dpkg -l | grep {package}
-  ```
-
-* Fine specific file **belongs to what package**
-
-  ```bash
-  dpkg -S {filename}
-  ```
-
-* List all files belongs to specific package
-
-  ```bash
-  dpkg -L {package}
-  ```
-
-* Find config files of specific package
-
-  ```bash
-  dpkg -L {package} |grep "^\/etc"
-  ```
-
-* Show info of specific package
-
-  ```bash
-  apt show {package}
-  ```
-
-  (apt `info` {package} is an alias of `show`)
-
 ### ssh client known_hosts hash
 
 * **/etc/ssh/ssh_config**
@@ -997,6 +963,50 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
     apt remove --purge --autoremove -y {package}
     ```
 
+### DPKG usage
+
+* Find specific package
+
+  ```bash
+  dpkg -l | grep {package}
+  ```
+
+* Fine specific file **belongs to what package**
+
+  ```bash
+  dpkg -S {filename}
+  ```
+
+* List all files belongs to specific package
+
+  ```bash
+  dpkg -L {package}
+  ```
+
+* Find config files of specific package
+
+  ```bash
+  dpkg -L {package} |grep "^\/etc"
+  ```
+
+* Show info of specific package
+
+  ```bash
+  apt show {package}
+  ```
+
+  (apt `info` {package} is an alias of `show`)
+
+### Package name convention
+
+* {pkg}
+* lib{pkg}
+* lib{pkg}-dev
+  * Usually this contains `lib{pkg}`
+* Sample
+  * (CentOS) openssl openssl-libs openssl-devel
+  * (Ubuntu) openssl libssl-dev
+
 ### snapd
 
 * Useful sandbox application - out-of-the-box application (same as RedHat - flatpak)
@@ -1004,6 +1014,13 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * Cons - needs more disk spaces
 * Almost a lot of Desktop UI features are based on Snapd
 * Cannot be removed, especial rails package `libvips` is based on Snapd
+
+* Note
+  * If `apt remove snapd` (**NOT RECOMMEND**) is triggered, the `systemd` is changed, the follow command should be executed
+
+    ```bash
+    systemctl daemon-reload
+    ```
 
 ### Editor
 
