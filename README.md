@@ -30,7 +30,7 @@ Table of Contents
   * [Ubuntu notes](#ubuntu-notes)
     + [Network](#network)
     + [APT - Interactive settings](#apt---interactive-settings)
-    + [ssh client known_hosts hash](#ssh-client-known-hosts-hash)
+    + [ssh client known hosts hash](#ssh-client-known-hosts-hash)
     + [APT command](#apt-command)
     + [DPKG usage](#dpkg-usage)
     + [Package name convention](#package-name-convention)
@@ -916,7 +916,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * When install some packages (like openssh-server), this will check if the config files are modified and prompt window to ask user to decide whether to override the config files
     * Ref. [askubuntu-automatically-keep-current-sshd-config-file-when-upgrading-openssh-server](https://askubuntu.com/questions/1421676/automatically-keep-current-sshd-config-file-when-upgrading-openssh-server)
 
-### ssh client known_hosts hash
+### ssh client known hosts hash
 
 * **/etc/ssh/ssh_config**
   * By default - debian based ssh client , `HashKnownHosts=yes`, for some cases you might want to set it to `no`
