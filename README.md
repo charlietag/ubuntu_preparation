@@ -973,13 +973,13 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * Ownertrust
     * Ref. [how-to-raise-a-key-to-ultimate-trust-on-another-machine](https://security.stackexchange.com/questions/129474/how-to-raise-a-key-to-ultimate-trust-on-another-machine)
 
-    ```bash
-    1 = I don't know or won't say => will be = 2
-    2 = I do NOT trust => will be = 3
-    3 = I trust marginally => will be = 4
-    4 = I trust fully => will be = 5
-    5 = I trust ultimately => will be = 6
-    ```
+      ```bash
+      1 = I don't know or won't say => will be = 2
+      2 = I do NOT trust => will be = 3
+      3 = I trust marginally => will be = 4
+      4 = I trust fully => will be = 5
+      5 = I trust ultimately => will be = 6
+      ```
 
 ### APT - Interactive settings
 * Ref [F_00_PRE_00_disable_apt_interactive_mode.sh](https://github.com/charlietag/ubuntu_preparation/blob/main/functions/F_00_PRE_00_disable_apt_interactive_mode.sh)
