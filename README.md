@@ -981,6 +981,78 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
       5 = I trust ultimately => will be = 6
       ```
 
+* Generate self gpg key pairs
+  * Ref. https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key
+
+* Use for software (apt sign_by)
+  * Ref. [verify-pgp-signature-software-downloads-linux](https://www.linuxbabe.com/security/verify-pgp-signature-software-downloads-linux)
+  * Verify packages via public key procedure
+    * wget VeraCrypt/VeraCrypt_PGP_public_key.asc
+    * gpg --show-keys VeraCrypt_PGP_public_key.asc
+    * compare keys listed above with website mentioned (use like md5sum)
+    * gpg --import VeraCrypt_PGP_public_key.asc
+    * gpg --verify veracrypt-1.24-Update7-Ubuntu-20.04-amd64.deb.sig veracrypt-1.24-Update7-Ubuntu-20.04-amd64.deb
+      * **good signature**
+
+* Use for apt-key (keyring.gpg)
+  * Ref. [apt-key-deprecated](https://itsfoss.com/apt-key-deprecated/)
+    * The gpg --dearmor part is important because the mechanism expects you to have the keys in binary format.
+  * Old school (deprecated)
+    * ~~apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10~~
+  * Nowadays
+    * Just put binary format gpg keyring under `/etc/apt/trusted.gpg.d`
+
+      ```bash
+      curl -sSL https://www.mongodb.org/static/pgp/server-6.0.asc | gpg --dearmor -o mongodb-server-keyring.gpg
+      ```
+
+  * Sample command
+
+    ```bash
+    root@u22:~# apt-key list
+    Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+    /etc/apt/trusted.gpg.d/ubuntu-keyring-2012-cdimage.gpg
+    ------------------------------------------------------
+    pub   rsa4096 2012-05-11 [SC]
+          8439 38DF 228D 22F7 B374  2BC0 D94A A3F0 EFE2 1092
+    uid           [ unknown] Ubuntu CD Image Automatic Signing Key (2012) <cdimage@ubuntu.com>
+
+    /etc/apt/trusted.gpg.d/ubuntu-keyring-2018-archive.gpg
+    ------------------------------------------------------
+    pub   rsa4096 2018-09-17 [SC]
+          F6EC B376 2474 EDA9 D21B  7022 8719 20D1 991B C93C
+    uid           [ unknown] Ubuntu Archive Automatic Signing Key (2018) <ftpmaster@ubuntu.com>
+
+    root@u22:~# cd /etc/apt/trusted.gpg.d
+    root@u22:/etc/apt/trusted.gpg.d# ll
+    total 16
+    drwxr-xr-x 2 root root 4096 Nov 28 23:33 ./
+    drwxr-xr-x 8 root root 4096 Nov 28 23:37 ../
+    -rw-r--r-- 1 root root 2794 Mar 26  2021 ubuntu-keyring-2012-cdimage.gpg
+    -rw-r--r-- 1 root root 1733 Mar 26  2021 ubuntu-keyring-2018-archive.gpg
+    root@u22:/etc/apt/trusted.gpg.d# curl -sSL https://www.mongodb.org/static/pgp/server-6.0.asc | gpg --dearmor -o mongodb-server-keyring.gpg
+    root@u22:/etc/apt/trusted.gpg.d# apt-key list
+    Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+    /etc/apt/trusted.gpg.d/mongodb-server-keyring.gpg
+    -------------------------------------------------
+    pub   rsa4096 2022-02-23 [SC] [expires: 2027-02-22]
+          39BD 841E 4BE5 FB19 5A65  400E 6A26 B1AE 64C3 C388
+    uid           [ unknown] MongoDB 6.0 Release Signing Key <packaging@mongodb.com>
+
+    /etc/apt/trusted.gpg.d/ubuntu-keyring-2012-cdimage.gpg
+    ------------------------------------------------------
+    pub   rsa4096 2012-05-11 [SC]
+          8439 38DF 228D 22F7 B374  2BC0 D94A A3F0 EFE2 1092
+    uid           [ unknown] Ubuntu CD Image Automatic Signing Key (2012) <cdimage@ubuntu.com>
+
+    /etc/apt/trusted.gpg.d/ubuntu-keyring-2018-archive.gpg
+    ------------------------------------------------------
+    pub   rsa4096 2018-09-17 [SC]
+          F6EC B376 2474 EDA9 D21B  7022 8719 20D1 991B C93C
+    uid           [ unknown] Ubuntu Archive Automatic Signing Key (2018) <ftpmaster@ubuntu.com>
+    ```
+
+
 ### APT - Interactive settings
 * Ref [F_00_PRE_00_disable_apt_interactive_mode.sh](https://github.com/charlietag/ubuntu_preparation/blob/main/functions/F_00_PRE_00_disable_apt_interactive_mode.sh)
 * **needrestart**
