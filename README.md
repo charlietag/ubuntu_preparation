@@ -1108,3 +1108,6 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.0.0
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v0.0.0...v1.0.0
       * First release of ubuntu_preparation
+  * tag: v1.0.1
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.0...v1.0.1
+      * Review and modify Readme document
