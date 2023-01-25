@@ -1295,3 +1295,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.0.1
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.0...v1.0.1
       * Review and modify Readme document
+* 2023/01/26
+  * tag: v1.0.2
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.1...v1.0.2
+      * Add notes about ppa and gpg keyring
