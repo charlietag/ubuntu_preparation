@@ -907,17 +907,29 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
     * `resolvectl`
 
 ### gnupg2 (gpg)
+* Public key types
+  * **Binary (dearmor)**
+    * **CAN BE** imported by `gpg --import redis-archive-keyring.gpg`
+    * curl -fsSL https://packages.redis.io/gpg | `gpg --dearmor` -o /usr/share/keyrings/redis-archive-keyring.gpg (binary)
+  * **ASCII**
+    * **CAN BE** imported by `gpg --import redis.asc`
+    * `gpg --enarmor` < redis-archive-keyring.gpg > redis.asc
+
+
 * List `public` keys under `~/.gnupg`
   * `gpg -k`
+
 * List `private` keys under ~/.gnupg
   * `gpg -K`
+
 * Display content of `public` from key files (ascII or binary)
   * `gpg --show-keys {redis.gpg|redis.asc}`
   * Originally
     * `gpg import {plain ascii[redis.asc] | gpg bin file[redis.gpg]}`
     * Then `gpg -k`
+
 * Sample
-  * Enarmored ascII (key.asc) transfor to bin file (key.gpg)
+  * `enarmor` ascII (key.asc) transfor to bin file (key.gpg)
 
     ```bash
     curl -fsSL https://packages.redis.io/gpg | gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
