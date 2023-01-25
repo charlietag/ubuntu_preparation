@@ -908,13 +908,31 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
 
 ### gnupg2 (gpg)
 * Public key types
-  * **Binary (dearmor)**
-    * **CAN BE** imported by `gpg --import redis-archive-keyring.gpg`
-    * curl -fsSL https://packages.redis.io/gpg | `gpg --dearmor` -o /usr/share/keyrings/redis-archive-keyring.gpg (binary)
-  * **ASCII**
-    * **CAN BE** imported by `gpg --import redis.asc`
-    * `gpg --enarmor` < redis-archive-keyring.gpg > redis.asc
+  * **Binary (--dearmor)**
+    * **CAN BE** imported by
 
+      ```bash
+      gpg --import redis-archive-keyring.gpg
+      ```
+
+    * Command
+
+      ```bash
+      curl -fsSL https://packages.redis.io/gpg | gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+      ```
+
+  * **ASCII (--enarmor)**
+    * **CAN BE** imported by
+
+      ```bash
+      gpg --import redis.asc
+      ```
+
+    * Command
+
+    ```bash
+    gpg --enarmor < redis-archive-keyring.gpg > redis.asc
+    ```
 
 * List `public` keys under `~/.gnupg`
   * `gpg -k`
