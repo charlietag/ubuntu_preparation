@@ -30,11 +30,11 @@ Table of Contents
   * [Ubuntu notes](#ubuntu-notes)
     + [Network](#network)
     + [APT - Interactive settings](#apt---interactive-settings)
-    + [ssh client known hosts hash](#ssh-client-known-hosts-hash)
     + [APT command](#apt-command)
     + [DPKG usage](#dpkg-usage)
     + [Package name convention](#package-name-convention)
     + [snapd](#snapd)
+    + [ssh client known hosts hash](#ssh-client-known-hosts-hash)
     + [Editor](#editor)
     + [User manipulation](#user-manipulation)
 - [CHANGELOG](#changelog)
@@ -905,6 +905,25 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * check current DNS setting
     * `resolvectl`
 
+### gnupg2 (gpg)
+* List `public` keys under `~/.gnupg`
+  * `gpg -k`
+* List `private` keys under ~/.gnupg
+  * `gpg -K`
+* Display content of `public` from key files (ascII or binary)
+  * `gpg --show-keys {redis.gpg|redis.asc}`
+  * Originally
+    * `gpg import {plain ascii[redis.asc] | gpg bin file[redis.gpg]}`
+    * Then `gpg -k`
+* Sample
+  * Enarmored ascII (key.asc) transfor to bin file (key.gpg)
+
+    ```bash
+    curl -fsSL https://packages.redis.io/gpg | gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+    ```
+
+> How to do the following at once
+> gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 
 ### APT - Interactive settings
 * Ref [F_00_PRE_00_disable_apt_interactive_mode.sh](https://github.com/charlietag/ubuntu_preparation/blob/main/functions/F_00_PRE_00_disable_apt_interactive_mode.sh)
@@ -915,23 +934,6 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
 * **ucf**
   * When install some packages (like openssh-server), this will check if the config files are modified and prompt window to ask user to decide whether to override the config files
     * Ref. [askubuntu-automatically-keep-current-sshd-config-file-when-upgrading-openssh-server](https://askubuntu.com/questions/1421676/automatically-keep-current-sshd-config-file-when-upgrading-openssh-server)
-
-### ssh client known hosts hash
-
-* **/etc/ssh/ssh_config**
-  * By default - debian based ssh client , `HashKnownHosts=yes`, for some cases you might want to set it to `no`
-  * Otherwise, you need to find public key of hosts by command as below
-    * Check existence
-
-      ```bash
-      ssh-keygen -F dev.server.name
-      ```
-
-    * Remove existence
-
-      ```bash
-      ssh-keygen -R dev.server.name
-      ```
 
 ### APT command
 
@@ -1032,6 +1034,23 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
     ```bash
     systemctl daemon-reload
     ```
+
+### ssh client known hosts hash
+
+* **/etc/ssh/ssh_config**
+  * By default - debian based ssh client , `HashKnownHosts=yes`, for some cases you might want to set it to `no`
+  * Otherwise, you need to find public key of hosts by command as below
+    * Check existence
+
+      ```bash
+      ssh-keygen -F dev.server.name
+      ```
+
+    * Remove existence
+
+      ```bash
+      ssh-keygen -R dev.server.name
+      ```
 
 ### Editor
 
