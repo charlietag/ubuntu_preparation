@@ -59,7 +59,7 @@ This is a small light bash project.  Suit small companies which have only few se
 # Environment
   * Ubuntu 22.04
     * ubuntu_preparation
-      * release : `master` `v1.x.x`
+      * release : `main` `v1.x.x`
 
 # Notice
   * Before [ubuntu_security](https://github.com/charlietag/ubuntu_security)
@@ -149,6 +149,14 @@ This is a small light bash project.  Suit small companies which have only few se
       ├── F_01_ENV_02_os_01_env.cfg
       ├── F_01_ENV_04_ssh_config.cfg
       └── _gitconfig.cfg
+      ```
+
+    * **IP / DNS / NTP** (server in **Local** / server in **Cloud**) for who needs **customization** IP, DNS, NTP
+
+      ```bash
+      databag/
+      ├── F_01_ENV_02_os_00_ip.cfg
+      └── F_01_ENV_02_os_01_env.cfg
       ```
 
   * Verify config files (with syntax color).
@@ -1302,3 +1310,6 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.0.3
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.2...v1.0.3
       * Remove comments
+  * tag: v1.0.4
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.3...v1.0.4
+      * Add more info into Readme
