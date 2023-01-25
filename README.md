@@ -883,10 +883,8 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * By default - no more NetworkManager, use **netplan + Systemd-networkd** instead
     * Ref. https://netplan.io/
     * Ref. [99-network-config_static.yaml](https://github.com/charlietag/ubuntu_preparation/blob/main/templates/F_01_ENV_02_os_00_ip/etc/netplan/99-network-config_static.yaml)
-
   * [https://netplan.io/](https://netplan.io/)
-    * ![netplan_design_overview.svg](https://assets.ubuntu.com/v1/a1a80854-netplan_design_overview.svg)
-    * <img src="https://assets.ubuntu.com/v1/a1a80854-netplan_design_overview.svg" data-canonical-src="https://assets.ubuntu.com/v1/a1a80854-netplan_design_overview.svg" width="10%">
+    * <img src="https://assets.ubuntu.com/v1/a1a80854-netplan_design_overview.svg" data-canonical-src="https://assets.ubuntu.com/v1/a1a80854-netplan_design_overview.svg" width="30%">
 
       * Netplan currently works with these supported renderers
         * [NetworkManager](https://help.ubuntu.com/community/NetworkManager)
