@@ -34,6 +34,7 @@ Table of Contents
     + [APT command](#apt-command)
     + [DPKG usage](#dpkg-usage)
     + [Package name convention](#package-name-convention)
+    + [Official 3rd party repo (Launchpad - PPA)](#official-3rd-party-repo-launchpad---ppa)
     + [snapd](#snapd)
     + [ssh client known hosts hash](#ssh-client-known-hosts-hash)
     + [Editor](#editor)
