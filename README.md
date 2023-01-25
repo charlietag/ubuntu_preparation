@@ -993,16 +993,16 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
     userdel -r {user}
     ```
 
-  * (Alternative , **NOT** prefered) use ~~perl script~~ - deluser
+  * (Alternative , **NOT** prefered) use *perl script* - deluser
 
     ```bash
     deluser --remove-home {user}
     ```
 
 * Delete user (**DANGER**)
-  * **DANGER DO NOT USE** ~~perl script~~
+  * **DANGER DO NOT USE** *perl script*
     * find / belongs to username and delete it
-      * ~deluser --remove-all-files {user}~
+      * ~~deluser --remove-all-files {user}~~
 
 * Lock user
 
