@@ -13,6 +13,10 @@
 
 if [[ "${disable_apt_interactive_mode}" = "y" ]]; then
   task_copy_using_cat
+
+  # /etc/profile.d/zz99-disable_apt_interactive_mode.sh rendered
+  # export DEBIAN_FRONTEND again for this session
+  export DEBIAN_FRONTEND="noninteractive"
 fi
 
 # --------------------------------------------------

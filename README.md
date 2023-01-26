@@ -1072,6 +1072,8 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * When install some packages (like openssh-server), this will check if the config files are modified and prompt window to ask user to decide whether to override the config files
     * Ref. [askubuntu-automatically-keep-current-sshd-config-file-when-upgrading-openssh-server](https://askubuntu.com/questions/1421676/automatically-keep-current-sshd-config-file-when-upgrading-openssh-server)
 
+* **DEBIAN_FRONTEND="noninteractive"**
+  * Ignore settings above , just skip all interactive config prompt
 ### APT command
 
 * Remove package
@@ -1313,3 +1315,6 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.0.4
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.3...v1.0.4
       * Add more info into Readme
+  * tag: v1.0.5
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.4...v1.0.5
+      * Add `export DEBIAN_FRONTEND="noninteractive"`
