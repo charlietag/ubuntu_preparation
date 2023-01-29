@@ -888,6 +888,19 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
 
 ## Ubuntu notes
 
+### crontab environment
+
+* Default SHELL and PATH
+  * `/etc/crontab`
+
+    ```bash
+    # make sure crontab use bash and PATH is correct
+    sed -i /SHELL/d /etc/crontab
+    sed  '1s/^/SHELL\=\/bin\/bash\n/' -i /etc/crontab
+
+    sed -re 's/^#PATH\=/PATH\=/g' -i /etc/crontab
+    ```
+
 ### Network
 * **Network** for Ubuntu 22
   * By default - no more NetworkManager, use **netplan + Systemd-networkd** instead
@@ -1322,3 +1335,6 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.0.6
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.5...v1.0.6
       * Remove CentOS related notes
+  * tag: v1.0.7
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.6...v1.0.7
+      * Default crontab env var

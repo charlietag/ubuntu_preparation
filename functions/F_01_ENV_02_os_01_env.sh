@@ -29,6 +29,14 @@ local if_chrony_found="$(dpkg -l chrony 2>/dev/null | grep "ii")"
 local if_timesyncd_found="$(dpkg -l systemd-timesyncd | grep "ii")"
 
 # ------------------------------------
+# /etc/crontab check
+# ------------------------------------
+# make sure crontab use bash and PATH is correct
+sed -i /SHELL/d /etc/crontab
+sed  '1s/^/SHELL\=\/bin\/bash\n/' -i /etc/crontab
+sed -re 's/^#PATH\=/PATH\=/g' -i /etc/crontab
+
+# ------------------------------------
 # Chrony
 # ------------------------------------
 if [[ -n "${if_chrony_found}" ]]; then
