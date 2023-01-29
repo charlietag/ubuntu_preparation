@@ -27,7 +27,7 @@ pkgs_list="${pkgs_list} lsb-release gnupg2"
 pkgs_list="${pkgs_list} bind9-dnsutils"
 
 # Performance tools
-pkgs_list="${pkgs_list} sysstat iotop atop"
+pkgs_list="${pkgs_list} sysstat iotop"
 
 pkgs_list="${pkgs_list} bash screen git tree vim mtr lsof net-tools wget"
 
