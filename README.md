@@ -28,6 +28,7 @@ Table of Contents
     + [Reference (mariadb.com)](#reference-mariadbcom)
     + [How to Upgrade](#how-to-upgrade)
   * [Ubuntu notes](#ubuntu-notes)
+    + [crontab environment](#crontab-environment)
     + [Network](#network)
     + [gnupg2 (gpg)](#gnupg2-gpg)
     + [APT - Interactive settings](#apt---interactive-settings)
@@ -1338,3 +1339,6 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.0.7
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.6...v1.0.7
       * Default crontab env var
+  * tag: v1.0.8
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.7...v1.0.8
+      * ToC changed
