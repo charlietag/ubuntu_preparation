@@ -1318,3 +1318,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.0.5
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.4...v1.0.5
       * Add `export DEBIAN_FRONTEND="noninteractive"`
+* 2023/01/30
+  * tag: v1.0.6
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.5...v1.0.6
+      * Remove CentOS related notes

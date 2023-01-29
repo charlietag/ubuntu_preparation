@@ -58,7 +58,7 @@ echo -e "${host_contents_new}" > ${target_host}
 # Print out msg and result
 # ----------------------------------------
 echo "for fail2ban WARNING !"
-echo "  - Ref. https://github.com/charlietag/os_security#fail2ban-usage"
+echo "  - Ref. https://github.com/charlietag/ubuntu_security#fail2ban-usage"
 echo "  * Classify /etc/hosts"
 echo "  * Add current hostname into /etc/hosts"
 echo ""
