@@ -902,6 +902,15 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
     sed -re 's/^#PATH\=/PATH\=/g' -i /etc/crontab
     ```
 
+* Default command argv (most deference CentOS vs Ubuntu)
+  * `/etc/default/*`
+  * Sample
+
+    ```bash
+    # cat /etc/default/useradd | grep -vE '^#'
+    SHELL=/bin/sh
+    ```
+
 ### Network
 * **Network** for Ubuntu 22
   * By default - no more NetworkManager, use **netplan + Systemd-networkd** instead
@@ -1348,3 +1357,6 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.0.10
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.9...v1.0.10
       * Default `ufw disable`
+  * tag: v1.0.11
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.10...v1.0.11
+      * add desc about /etc/default/*
