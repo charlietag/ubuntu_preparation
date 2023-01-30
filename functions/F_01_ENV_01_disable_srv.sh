@@ -16,6 +16,13 @@ do
     echo "Stopping service \"${disabled_service}\" ..."
     echo "-----------------------------"
     echo -e "${disable_msg}"
+
+
+    if [[ "${disabled_service}" = "ufw" ]] || [[ "${disabled_service}" = "ufw.service" ]]; then
+      ufw disable
+    fi
+
+
     systemctl stop ${disabled_service}
     echo ""
     echo ""
