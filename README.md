@@ -206,7 +206,7 @@ I'm a lazy person.  I want to install **ALL** and give me default configurations
   reboot
   ```
 
-* disable geoipupdate timer (for some cases) - [ubuntu_security](https://github.com/charlietag/ubuntu_security) make this default
+* disable geoipupdate timer (for some cases) - [ubuntu_preparation](https://github.com/charlietag/ubuntu_preparation) makes this default
 
   ```bash
   systemctl list-unit-files |grep -i ^geoipupdate | awk '{print $1}' | xargs | xargs -I{} bash -c "systemctl stop {}; systemctl disable {}"
