@@ -1345,18 +1345,8 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.0.6
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.5...v1.0.6
       * Remove CentOS related notes
-  * tag: v1.0.7
-    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.6...v1.0.7
       * Default crontab env var
-  * tag: v1.0.8
-    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.7...v1.0.8
       * ToC changed
-  * tag: v1.0.9
-    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.8...v1.0.9
       * Move atop command to ubuntu_security
-  * tag: v1.0.10
-    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.9...v1.0.10
       * Default `ufw disable`
-  * tag: v1.0.11
-    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.10...v1.0.11
       * add desc about /etc/default/*
