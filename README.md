@@ -206,6 +206,12 @@ I'm a lazy person.  I want to install **ALL** and give me default configurations
   reboot
   ```
 
+* disable geoipupdate timer (for some cases) - [ubuntu_security](https://github.com/charlietag/ubuntu_security) make this default
+
+  ```bash
+  systemctl list-unit-files |grep -i ^geoipupdate | awk '{print $1}' | xargs | xargs -I{} bash -c "systemctl stop {}; systemctl disable {}"
+  ```
+
 * Default project path
   * DEFAULT user for rails/laravel developer is not ssh allowed
     * /etc/ssh/sshd_config
@@ -1350,3 +1356,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
       * Move atop command to ubuntu_security
       * Default `ufw disable`
       * add desc about /etc/default/*
+* 2023/01/31
+  * tag: v1.0.7
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.6...v1.0.7
+      * Disable geoipdate timer by default

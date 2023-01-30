@@ -42,7 +42,6 @@ pkgs_list="${pkgs_list} unixodbc unixodbc-dev libodbc1 odbcinst1debian2 tdsodbc"
 pkgs_list="${pkgs_list} freetds-bin freetds-common freetds-dev libct4 libsybdb5"
 
 # For GeoIP purpose
-# RHEL 9 - no GeoIP, move to remi
 pkgs_list="${pkgs_list} geoip-bin geoip-database geoipupdate"
 pkgs_list="${pkgs_list} libgeoip-dev"
 
@@ -55,3 +54,6 @@ pkgs_list="${pkgs_list} libpcre2-dev"
 #Package Start to Install
 #-----------------------------------------------------------------------------------------
 apt install -y ${pkgs_list}
+
+# disable geoipupdate timer
+# systemctl list-unit-files |grep -i ^geoipupdate | awk '{print $1}' | xargs | xargs -I{} bash -c "systemctl stop {}; systemctl disable {}"
