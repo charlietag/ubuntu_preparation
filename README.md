@@ -1228,7 +1228,12 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * Pros - Easy to use
   * Cons - needs more disk spaces
 * Almost a lot of Desktop UI features are based on Snapd
-* Cannot be removed, especial rails package `libvips` is based on Snapd
+* ~~Cannot be removed, especial rails package `libvips` is based on Snapd~~
+* Remove snapd totally
+  * Remove snapd steps
+    * Ref. [F_00_PRE_00_pkgs_remove_snapd.sh](https://github.com/charlietag/ubuntu_preparation/blob/main/functions/F_00_PRE_00_pkgs_remove_snapd.sh)
+  * LinuxMint disable snapd by default
+    * Ref. [disabled-snap-store-in-linux-mint-20](https://linuxmint-user-guide.readthedocs.io/en/latest/snap.html#disabled-snap-store-in-linux-mint-20)
 
 * Note
   * If `apt remove snapd` (**NOT RECOMMEND**) is triggered, the `systemd` is changed, the follow command should be executed
@@ -1360,3 +1365,8 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.0.7
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.6...v1.0.7
       * Disable geoipdate timer by default
+* 2023/02/01
+  * tag: v1.0.8
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.7...v1.0.8
+      * RVM installer from rvm.io to raw.githubusercontent.com
+      * Remove `snapd` totally
