@@ -1,6 +1,7 @@
 local remove_pkg_names=""
 
-# snapd will be needed while installing libvips
+# ~~snapd will be needed while installing libvips~~
+#   remove snapd through specific script: F_00_PRE_00_pkgs_remove_snapd.sh
 
 # local remove_pkg_names=(
 #   "snapd"
