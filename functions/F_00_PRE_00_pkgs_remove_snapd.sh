@@ -19,9 +19,9 @@ file /snap /var/snap /var/lib/snapd /var/cache/snapd /usr/lib/snapd ~/snap
 
 # Avoid ubuntu install snapd back
 #   apt pref config ref. https://www.debian.org/doc/manuals/apt-howto/ch-apt-get.en.html
-echo "creating file /etc/apt/preferences.d/nosnap.pref"
+echo "--- creating file /etc/apt/preferences.d/nosnap.pref ---"
 
-cat <<EOF | sudo tee /etc/apt/preferences.d/nosnap.pref
+cat <<EOF | tee /etc/apt/preferences.d/nosnap.pref
 # To prevent repository packages from triggering the installation of Snap,
 # this file forbids snapd from being installed by APT.
 # For more information: https://linuxmint-user-guide.readthedocs.io/en/latest/snap.html
@@ -36,3 +36,7 @@ systemctl daemon-reload
 
 
 echo "Snap removed"
+
+echo "--- apt update again ---"
+apt clean
+apt update
