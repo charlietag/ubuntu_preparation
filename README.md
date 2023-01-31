@@ -1236,7 +1236,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
     * Ref. [disabled-snap-store-in-linux-mint-20](https://linuxmint-user-guide.readthedocs.io/en/latest/snap.html#disabled-snap-store-in-linux-mint-20)
 
 * Note
-  * If `apt remove snapd` (**NOT RECOMMEND**) is triggered, the `systemd` is changed, the follow command should be executed
+  * If `apt remove snapd` ~~(**NOT RECOMMEND**)~~ is triggered, the `systemd` is changed, the follow command should be executed
 
     ```bash
     systemctl daemon-reload
