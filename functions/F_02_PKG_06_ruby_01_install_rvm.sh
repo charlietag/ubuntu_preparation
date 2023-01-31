@@ -63,7 +63,8 @@ for ((i=1; ; i++)); do
   fi
 
   # ---------- Install RVM -----------
-  su -l $current_user -c "\curl -sSL https://get.rvm.io | bash -s ${rvm_version}"
+  # su -l $current_user -c "\curl -sSL https://get.rvm.io | bash -s ${rvm_version}"
+  su -l $current_user -c "\curl -sSL https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer | bash -s ${rvm_version}"
 done
 echo ""
 ############### Install RVM retry Loop #############
