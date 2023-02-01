@@ -11,7 +11,7 @@
 # --------------------------------------------------------
 
 # --------------------DB-------------------------------
-systemctl start redis
+systemctl start redis-server.service
 systemctl start mariadb
 echo -n "starting mariadb and redis"
 sleep 1; echo -n "."; sleep 1; echo -n "."; sleep 1; echo -n "."; echo ""
@@ -63,7 +63,7 @@ echo "gem 'sd_notify', group: 'production'" >> ${web_sites}/myrails/Gemfile
 su -l $current_user -c "cd ${web_sites}/myrails && bundle install"
 
 # --------------------DB-------------------------------
-systemctl stop redis
+systemctl stop redis-server.service
 systemctl stop mariadb
 echo -n "stopping mariadb and redis"
 sleep 1; echo -n "."; sleep 1; echo -n "."; sleep 1; echo -n "."; echo ""
