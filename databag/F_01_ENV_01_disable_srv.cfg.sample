@@ -12,8 +12,7 @@ local disabled_services
 # cups:   default installed in RHEL, but not installed in Ubuntu
 # apport: just like kdump in RHEL
 # ufw:    just like firewalld in RHEL
-# chrony: chronyd is an alias of chrony, will dissapear if chrony is disabled
-disabled_services=(${disabled_services[@]} chrony ufw postfix apport)
+disabled_services=(${disabled_services[@]} ufw postfix apport)
 
 # systemd-resolved (NSS)
 # systemd-resolved: New tools like Name Service Switch NSS, but supports DNSSEC , DNS over TLS
@@ -21,3 +20,12 @@ disabled_services=(${disabled_services[@]} chrony ufw postfix apport)
 
 disabled_services=(${disabled_services[@]} iscsid.service open-iscsi.service iscsid.socket ModemManager.service multipathd.service multipathd.socket udisks2.service)
 
+# -------------------------------------------------------------------------------------------------------
+# DO NOT Disable chrony here
+# -------------------------------------------------------------------------------------------------------
+#
+# chrony: chronyd is an alias of chrony, will dissapear if chrony is disabled
+# disabled_services=(${disabled_services[@]} chrony)
+
+# chrony service is already setup by:
+#       F_01_ENV_02_os_01_env.sh
