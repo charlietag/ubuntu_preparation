@@ -89,6 +89,7 @@ apt install -y \
 echo "systemctl disable apache2.service......"
 systemctl stop apache2.service
 systemctl disable apache2.service
+systemctl mask apache2.service
 echo ""
 
 echo "systemctl disable php${php_version}-fpm.service......"
