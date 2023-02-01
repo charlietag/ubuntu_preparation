@@ -1377,3 +1377,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.0.10
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.9...v1.0.10
       * systemctl mask apache
+* 2023/02/02
+  * tag: v1.0.11
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.10...v1.0.11
+      * Optimize redis installation
