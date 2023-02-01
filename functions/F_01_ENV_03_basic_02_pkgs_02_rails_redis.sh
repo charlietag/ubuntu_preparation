@@ -14,7 +14,7 @@ if [[ "${use_redis_io_repo}" = "y" ]]; then
   apt update
 fi
 
-apt install redis
+apt install -y redis
 
 
 #-----------------------------------------------------------------------------------------
