@@ -56,25 +56,8 @@ pkgs_list="${pkgs_list} imagemagick libmagickwand-dev"
 # libvips
 pkgs_list="${pkgs_list} libvips libvips-tools libjpeg-dev"
 
-# redis
-test -f /usr/share/keyrings/redis-archive-keyring.gpg && rm -f /usr/share/keyrings/redis-archive-keyring.gpg
-curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
-
-test -f /etc/apt/sources.list.d/redis.list && rm -f /etc/apt/sources.list.d/redis.list
-echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
-
-apt update
-
-pkgs_list="${pkgs_list} redis"
-
-
 #-----------------------------------------------------------------------------------------
 #Package Start to Install
 #-----------------------------------------------------------------------------------------
 apt install -y ${pkgs_list}
 
-
-#-----------------------------------------------------------------------------------------
-# Disable redis by default
-#-----------------------------------------------------------------------------------------
-systemctl disable redis-server.service
