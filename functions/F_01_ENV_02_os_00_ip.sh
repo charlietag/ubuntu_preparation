@@ -40,5 +40,5 @@ fi
 #-----------------------------------------------------------------------------------------
 cat /dev/null > /etc/resolv.conf
 for nameserver in ${nameservers[@]}; do
-  echo "nameserver $nameserver" > /etc/resolv.conf
+  echo "nameserver $nameserver" >> /etc/resolv.conf
 done

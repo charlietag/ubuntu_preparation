@@ -1381,3 +1381,6 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.0.11
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.10...v1.0.11
       * Optimize redis installation
+  * tag: v1.0.12
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.11...v1.0.12
+      * typo
