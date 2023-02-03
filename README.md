@@ -1384,3 +1384,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.0.12
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.11...v1.0.12
       * typo
+* 2023/02/03
+  * tag: v1.0.13
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.12...v1.0.13
+      * Optimize installation code

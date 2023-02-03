@@ -34,8 +34,8 @@ fi
 # UCF_FORCE_CONFFOLD=1 apt-get install -y openssh-server
 
 # Ref. https://askubuntu.com/questions/104899/make-apt-get-or-aptitude-run-with-y-but-not-prompt-for-replacement-of-configu
-# sudo apt-get update
-# sudo apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" install mypackage1 mypackage2
+# apt-get update
+# apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" install -y mypackage1 mypackage2
 
 # Ref. https://serverfault.com/questions/259226/automatically-keep-current-version-of-config-files-when-apt-get-install
 # This seems to be dangerous, when doing distro-upgrading
