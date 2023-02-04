@@ -95,7 +95,7 @@ This is a small light bash project.  Suit small companies which have only few se
 
         ```bash
         cat << EOF >> /home/{user}/.bashrc
-        PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+        PS1='\${debian_chroot:+(\$debian_chroot)}\u@\h:\w\\$ '
         EOF
         ```
 
