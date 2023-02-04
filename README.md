@@ -1106,7 +1106,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
 ### APT command
 
 * Remove package
-  * Remove packages only (Mostly used)
+  * Remove packages only
 
     ```bash
     apt remove -y {package}
@@ -1132,7 +1132,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
     apt autoremove -y {package}
     ```
 
-  * Combined usage
+  * Combined usage (Mostly used)
 
     ```bash
     apt autoremove -y --purge {package}
@@ -1140,6 +1140,12 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
 
     ```bash
     apt remove --purge --autoremove -y {package}
+    ```
+
+  * Remove **all** unused packages (Useful)
+
+    ```bash
+    apt autoremove -y --purge
     ```
 
 ### DPKG usage
