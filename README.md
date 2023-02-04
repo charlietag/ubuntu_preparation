@@ -85,7 +85,12 @@ This is a small light bash project.  Suit small companies which have only few se
   * What does this not cover, DO the following manually
     * Login user
       * Change password of root
-      * Add GENERAL USER and setup password of GENERAL USER
+      * Add GENERAL USER and setup password of GENERAL USER ([link](https://github.com/charlietag/ubuntu_preparation#user-manipulation))
+
+        ```bash
+        useradd -m -s /bin/bash {user}
+        ```
+
     * /etc/ssh/sshd_config
       * PermitRootLogin no
       * PasswordAuthentication yes
