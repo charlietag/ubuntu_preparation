@@ -1419,3 +1419,8 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.15...v1.0.16
       * Add `search` argv into `/etc/resolv.conf` (first line) for temp use
       * And `/etc/resolv.conf` max nameserver entries is 3
+* 2023/02/06
+  * tag: v1.0.17
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.16...v1.0.17
+      * link-local: [  ]  # To avoid that netplan create Zero Configuration Network 169.254.0.0 and generate IPv6 IP
+      * Ref. https://netplan.io/reference

@@ -3,6 +3,8 @@
 # default renderer is networkd (NetworkManager is already move to snapd)
 # so FORCE to use systemd-networkd here
 # force to use ipv4 only (link-local)
+#   link-local: [  ]  # To avoid that netplan create Zero Configuration Network 169.254.0.0 and generate IPv6 IP
+#     Ref. https://netplan.io/reference
 # although 'use-dns' can be set to false, but when command 'resolvectl' executed, systemd-resolv.service will be started
 #   so leave it to default use-dns: true (using systemd-resolv)
 # ----------------------------------------------------
@@ -13,7 +15,7 @@
 #  version: 2
 #  ethernets:
 #    {{this_network_interface}}:
-#      link-local: [ ipv4 ]
+#      link-local: [  ]
 #      addresses:
 #        - {{this_ip}}
 #      routes:
@@ -30,7 +32,7 @@ network:
   version: 2
   ethernets:
     {{this_network_interface}}:
-      link-local: [ ipv4 ]
+      link-local: [  ]
       dhcp4: true
       nameservers:
         search: [ {{search}} ]
