@@ -1415,3 +1415,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.0.15
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.14...v1.0.15
       * Add `search` argv into `/etc/resolv.conf` for temp use
+  * tag: v1.0.16
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.15...v1.0.16
+      * Add `search` argv into `/etc/resolv.conf` (first line) for temp use
+      * And `/etc/resolv.conf` max nameserver entries is 3
