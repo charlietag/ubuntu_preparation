@@ -1411,3 +1411,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.0.14
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.13...v1.0.14
       * Modify README.md
+* 2023/02/05
+  * tag: v1.0.15
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.14...v1.0.15
+      * Add `search` argv into `/etc/resolv.conf` for temp use

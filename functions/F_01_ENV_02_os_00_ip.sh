@@ -42,3 +42,7 @@ cat /dev/null > /etc/resolv.conf
 for nameserver in ${nameservers[@]}; do
   echo "nameserver $nameserver" >> /etc/resolv.conf
 done
+
+if [[ -n "${searches}" ]]; then
+  echo "search ${searches}" >> /etc/resolv.conf
+fi
