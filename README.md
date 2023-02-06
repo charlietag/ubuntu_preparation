@@ -1424,3 +1424,12 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.16...v1.0.17
       * link-local: [  ]  # To avoid that netplan create Zero Configuration Network 169.254.0.0 and generate IPv6 IP
       * Ref. https://netplan.io/reference
+* 2023/02/07
+  * tag: v1.1.0
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.17...v1.1.0
+      * Add redmine default plugin:
+        * redmine_checklists-3_1_22-light
+        * redmine_issues_tree-5.0.x
+        * redmine_x_lightbox2
+        * redmine_dashboard
+        * redmine_issue_templates
