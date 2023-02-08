@@ -160,7 +160,7 @@ This is a small light bash project.  Suit small companies which have only few se
 
       ```bash
       databag/
-      ├── F_01_ENV_02_os_01_env.cfg
+      ├── F_00_OS_02_os_env.cfg
       ├── F_01_ENV_04_ssh_config.cfg
       └── _gitconfig.cfg
       ```
@@ -169,8 +169,8 @@ This is a small light bash project.  Suit small companies which have only few se
 
       ```bash
       databag/
-      ├── F_01_ENV_02_os_00_ip.cfg
-      └── F_01_ENV_02_os_01_env.cfg
+      ├── F_00_OS_01_ip.cfg
+      └── F_00_OS_02_os_env.cfg
       ```
 
   * Verify config files (with syntax color).
@@ -934,7 +934,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
 * **Network** for Ubuntu 22
   * By default - no more NetworkManager, use **netplan + Systemd-networkd** instead
     * Ref. https://netplan.io/
-    * Ref. [99-network-config_static.yaml](https://github.com/charlietag/ubuntu_preparation/blob/main/templates/F_01_ENV_02_os_00_ip/etc/netplan/99-network-config_static.yaml)
+    * Ref. [99-network-config_static.yaml](https://github.com/charlietag/ubuntu_preparation/blob/main/templates/F_00_OS_01_ip/etc/netplan/99-network-config_static.yaml)
   * [https://netplan.io/](https://netplan.io/)
     * <img src="https://assets.ubuntu.com/v1/a1a80854-netplan_design_overview.svg" data-canonical-src="https://assets.ubuntu.com/v1/a1a80854-netplan_design_overview.svg" width="30%">
 
@@ -1392,7 +1392,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.0.9
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.8...v1.0.9
       * Install redis through another script
-      * Do not disable chrony by default, `F_01_ENV_02_os_01_env` will decide whether enable , or disable chrony
+      * Do not disable chrony by default, `F_00_OS_02_os_env` will decide whether enable , or disable chrony
   * tag: v1.0.10
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.9...v1.0.10
       * systemctl mask apache
@@ -1433,3 +1433,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
         * redmine_x_lightbox2
         * redmine_dashboard
         * redmine_issue_templates
+* 2023/02/09
+  * tag: v1.1.1
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.1.0...v1.1.1
+      * rename function for env config
