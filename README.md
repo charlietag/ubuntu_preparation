@@ -160,7 +160,7 @@ This is a small light bash project.  Suit small companies which have only few se
 
       ```bash
       databag/
-      ├── F_00_OS_02_os_env.cfg
+      ├── F_00_OS_02_env.cfg
       ├── F_01_ENV_04_ssh_config.cfg
       └── _gitconfig.cfg
       ```
@@ -170,7 +170,7 @@ This is a small light bash project.  Suit small companies which have only few se
       ```bash
       databag/
       ├── F_00_OS_01_ip.cfg
-      └── F_00_OS_02_os_env.cfg
+      └── F_00_OS_02_env.cfg
       ```
 
   * Verify config files (with syntax color).
@@ -1392,7 +1392,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.0.9
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.8...v1.0.9
       * Install redis through another script
-      * Do not disable chrony by default, `F_00_OS_02_os_env` will decide whether enable , or disable chrony
+      * Do not disable chrony by default, `F_00_OS_02_env` will decide whether enable , or disable chrony
   * tag: v1.0.10
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.0.9...v1.0.10
       * systemctl mask apache
