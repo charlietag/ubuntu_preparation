@@ -50,4 +50,8 @@ set -x
 # done
 
 netplan apply
+if [[ $? -ne 0 ]]; then
+  echo "Network setup failed"
+  exit 1
+fi
 set +x
