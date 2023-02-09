@@ -1440,3 +1440,4 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.1.2
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.1.1...v1.1.2
       * do `netplan generate` first (sometimes, *netplan try*, *netplan apply*, will kill current ssh session)
+      * *apt upgrade* trigger netplan upgrade, and this may cause netplan generate and `/etc/resolv.conf` will be modified
