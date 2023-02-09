@@ -38,12 +38,16 @@ fi
 #-----------------------------------------------------------------------------------------
 # Change nameserver for temp
 #-----------------------------------------------------------------------------------------
-cat /dev/null > /etc/resolv.conf
+set -x
+# cat /dev/null > /etc/resolv.conf
+#
+# if [[ -n "${searches}" ]]; then
+#   echo "search ${searches}" >> /etc/resolv.conf
+# fi
+#
+# for ns in ${nameservers[@]}; do
+#   echo "nameserver ${ns}" >> /etc/resolv.conf
+# done
 
-if [[ -n "${searches}" ]]; then
-  echo "search ${searches}" >> /etc/resolv.conf
-fi
-
-for nameserver in ${nameservers[@]}; do
-  echo "nameserver $nameserver" >> /etc/resolv.conf
-done
+netplan apply
+set +x

@@ -1437,3 +1437,6 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.1.1
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.1.0...v1.1.1
       * rename function for env config
+  * tag: v1.1.2
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.1.1...v1.1.2
+      * do `netplan apply` first
