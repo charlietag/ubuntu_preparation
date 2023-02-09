@@ -39,17 +39,20 @@ fi
 # Change nameserver for temp
 #-----------------------------------------------------------------------------------------
 set -x
-# cat /dev/null > /etc/resolv.conf
-#
-# if [[ -n "${searches}" ]]; then
-#   echo "search ${searches}" >> /etc/resolv.conf
-# fi
-#
-# for ns in ${nameservers[@]}; do
-#   echo "nameserver ${ns}" >> /etc/resolv.conf
-# done
+cat /dev/null > /etc/resolv.conf
 
-netplan apply
+if [[ -n "${searches}" ]]; then
+  echo "search ${searches}" >> /etc/resolv.conf
+fi
+
+for ns in ${nameservers[@]}; do
+  echo "nameserver ${ns}" >> /etc/resolv.conf
+done
+
+# sometimes netplan apply , netplay try , will kill current ssh session
+#netplan apply
+
+netplan generate
 if [[ $? -ne 0 ]]; then
   echo "Network setup failed"
   exit 1

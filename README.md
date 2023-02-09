@@ -1439,4 +1439,4 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
       * rename function for env config
   * tag: v1.1.2
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.1.1...v1.1.2
-      * do `netplan apply` first
+      * do `netplan generate` first (sometimes, *netplan try*, *netplan apply*, will kill current ssh session)
