@@ -24,6 +24,7 @@ Table of Contents
     + [Customized files](#customized-files)
     + [(Method 1) Upgrading from a git checkout](#method-1-upgrading-from-a-git-checkout)
     + [(Method 2) Upgrading from a fresh installation](#method-2-upgrading-from-a-fresh-installation)
+  * [Uninstall Redmine Plugins](#uninstall-redmine-plugins)
   * [Upgrading MariaDB](#upgrading-mariadb)
     + [Reference (mariadb.com)](#reference-mariadbcom)
     + [How to Upgrade](#how-to-upgrade)
@@ -834,6 +835,26 @@ After this installation repo, the server will setup with "Nginx + Puma (socket)"
 * Finally, clear browser's cached data (To avoid strange CSS error)
   * Chrome -> History -> Clear History -> Choose ONLY "Cached images and files"
 
+## Uninstall Redmine Plugins
+
+Ref.  https://www.redmine.org/projects/redmine/wiki/plugins#Uninstalling-a-plugin
+
+* Backup current redmine
+  * Database
+    * `mysqldump -u {db_user} -p --lock-all-tables --skip-tz-utc -B redmine > redmine_$(date +"%Y%m%d")_skip-tz-utc.sql`
+  * Application & files
+    * `cp -a redmine redmine_bak`
+
+* **Steps of uninstalling {plugin_name}**
+  * Uninstall from database
+
+    ```bash
+    bundle exec rake redmine:plugins:migrate NAME={plugin_name} VERSION=0 RAILS_ENV=production
+    ```
+
+  * Remove your plugin from the plugins folder: #{RAILS_ROOT}/plugins.
+  * Restart Redmine
+
 ## Upgrading MariaDB
 
 For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is my note about this.
@@ -1441,3 +1462,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.1.1...v1.1.2
       * do `netplan generate` first (sometimes, *netplan try*, *netplan apply*, will kill current ssh session)
       * *apt upgrade* trigger netplan upgrade, and this may cause netplan generate and `/etc/resolv.conf` will be modified
+* 2023/02/11
+  * tag: v1.1.3
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.1.2...v1.1.3
+      * add note - how to uninstall redmine plugins
