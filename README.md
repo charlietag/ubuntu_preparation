@@ -1466,3 +1466,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.1.3
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.1.2...v1.1.3
       * add note - how to uninstall redmine plugins
+* 2023/02/12
+  * tag: v1.1.4
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.1.3...v1.1.4
+      * Add defaut alias setup for podman
