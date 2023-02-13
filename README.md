@@ -1470,3 +1470,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.1.4
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.1.3...v1.1.4
       * Add defaut alias setup for podman
+* 2023/02/14
+  * tag: v1.1.5
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.1.4...v1.1.5
+      * Optimize nginx default server setting
