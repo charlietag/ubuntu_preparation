@@ -440,7 +440,7 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
   * nodejs 18 (Ref. https://nodejs.org/en/)
   * Nginx 1.22 (Ref. https://nginx.org/)
   * Redis 7 (Ref. https://redis.io/)
-  * Ruby 3.2.0 +YJIT (rvm)
+  * Ruby 3.2.1 +YJIT (rvm)
   * Rails 7.0
     * puma 5 (systemd integrated, puma-systemd-mgr, ~~puma-mgr~~)
   * Redmine 5.0.4
@@ -1474,3 +1474,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.1.5
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.1.4...v1.1.5
       * Optimize nginx default server setting
+* 2023/02/19
+  * tag: v1.2.0
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.1.5...v1.2.0
+      * Ruby version 3.2.0 -> 3.2.1
