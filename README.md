@@ -435,7 +435,7 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
 ## Installed Packages
   * PHP 8.1
   * PHP-FPM
-  * Laravel 9.x (Ref. https://laravel.com/)
+  * Laravel 10.x (Ref. https://laravel.com/)
   * MariaDB 10.6 (equals to MySQL 5.7)
   * nodejs 18 (Ref. https://nodejs.org/en/)
   * Nginx 1.22 (Ref. https://nginx.org/)
@@ -1478,3 +1478,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.2.0
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.1.5...v1.2.0
       * Ruby version 3.2.0 -> 3.2.1
+* 2023/02/20
+  * tag: v1.2.1
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.2.0...v1.2.1
+      * Laravel 9.x -> 10.x
