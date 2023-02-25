@@ -1482,3 +1482,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.2.1
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.2.0...v1.2.1
       * Laravel 9.x -> 10.x
+* 2023/02/26
+  * tag: v1.2.2
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.2.1...v1.2.2
+      * Change login message
