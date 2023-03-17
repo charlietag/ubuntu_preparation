@@ -33,6 +33,7 @@ alias tt='tmux -2'
 alias tn_s='tmux -2 new -s'
 alias ta='tmux -2 a'
 alias tl='tmux ls'
+alias tls='ps aux |grep -E "tmux[[:space:]]+"'
 
 # Git aliases
 alias gl='git log --graph --stat --decorate --all'
