@@ -22,7 +22,7 @@ local redmine_db_name="redmine"
 
 # --- Redmine 5.x ---
 local redmine_ruby_version="3.1.3"
-local redmine_version="5.0.4"
+local redmine_version="5.0.5"
 
 # Specify gem:bundler version here
 # ex. 2.1 presents ~> 2.1.0

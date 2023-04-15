@@ -440,10 +440,10 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
   * nodejs 18 (Ref. https://nodejs.org/en/)
   * Nginx 1.22 (Ref. https://nginx.org/)
   * Redis 7 (Ref. https://redis.io/)
-  * Ruby 3.2.1 +YJIT (rvm)
+  * Ruby 3.2.2 +YJIT (rvm)
   * Rails 7.0
     * puma 5 (systemd integrated, puma-systemd-mgr, ~~puma-mgr~~)
-  * Redmine 5.0.4
+  * Redmine 5.0.5
     * ruby 3.1.3
     * rails 6.1.7
   * Useful tools
@@ -1490,3 +1490,8 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.2.3
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.2.2...v1.2.3
       * `alias tls='ps aux |grep -E "tmux[[:space:]]+"'`
+* 2023/04/15
+  * tag: v1.2.4
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.2.3...v1.2.4
+      * ruby 3.2.1 -> 3.2.2
+      * redmine 5.0.4 -> 5.0.5
