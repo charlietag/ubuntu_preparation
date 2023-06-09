@@ -1499,3 +1499,6 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.2.5
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.2.4...v1.2.5
       * add php-bz2
+  * tag: v1.2.6
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.2.5...v1.2.6
+      * create database charset default utf8(utf8mb3) -> utf8mb4
