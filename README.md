@@ -1495,3 +1495,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.2.3...v1.2.4
       * ruby 3.2.1 -> 3.2.2
       * redmine 5.0.4 -> 5.0.5
+* 2023/06/10
+  * tag: v1.2.5
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.2.4...v1.2.5
+      * add php-bz2
