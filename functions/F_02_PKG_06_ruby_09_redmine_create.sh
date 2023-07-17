@@ -163,7 +163,7 @@ if [[ -z "${redmine_db_pass}" ]]; then
   # mysql -u root -e "CREATE DATABASE ${redmine_db_name} CHARACTER SET utf8;"
   mysql -u root -e "CREATE DATABASE ${redmine_db_name} CHARACTER SET utf8mb4;"
 else
-  mysql -u root -p${redmine_db_pass} -e "CREATE DATABASE ${redmine_db_name} CHARACTER SET utf8;"
+  mysql -u root -p${redmine_db_pass} -e "CREATE DATABASE ${redmine_db_name} CHARACTER SET utf8mb4;"
 fi
 
 ## using command "rails db:create" can also prevent stange plugin (like EasyGantt) from ruiing redmine.

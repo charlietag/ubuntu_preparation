@@ -805,9 +805,9 @@ After this installation repo, the server will setup with "Nginx + Puma (socket)"
 
   ```bash
   if [[ -z "${redmine_db_pass}" ]]; then
-    mysql -u root -e "CREATE DATABASE ${redmine_db_name} CHARACTER SET utf8;"
+    mysql -u root -e "CREATE DATABASE ${redmine_db_name} CHARACTER SET utf8mb4;"
   else
-    mysql -u root -p${redmine_db_pass} -e "CREATE DATABASE ${redmine_db_name} CHARACTER SET utf8;"
+    mysql -u root -p${redmine_db_pass} -e "CREATE DATABASE ${redmine_db_name} CHARACTER SET utf8mb4;"
   fi
   ```
 
@@ -1502,3 +1502,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.2.6
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.2.5...v1.2.6
       * create database charset default utf8(utf8mb3) -> utf8mb4
+* 2023/07/18
+  * tag: v1.2.7
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.2.6...v1.2.7
+      * Add notes about: create database charset default utf8(utf8mb3) -> utf8mb4
