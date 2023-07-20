@@ -438,7 +438,7 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
   * Laravel 10.x (Ref. https://laravel.com/)
   * MariaDB 10.6 (equals to MySQL 5.7)
   * nodejs 18 (Ref. https://nodejs.org/en/)
-  * Nginx 1.22 (Ref. https://nginx.org/)
+  * Nginx 1.24 (Ref. https://nginx.org/)
   * Redis 7 (Ref. https://redis.io/)
   * Ruby 3.2.2 +YJIT (rvm)
   * Rails 7.0
@@ -1506,3 +1506,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.2.7
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.2.6...v1.2.7
       * Add notes about: create database charset default utf8(utf8mb3) -> utf8mb4
+* 2023/07/21
+  * tag: v1.2.8
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.2.7...v1.2.8
+      * Revise Readme - Nginx default version 1.22 -> 1.24
