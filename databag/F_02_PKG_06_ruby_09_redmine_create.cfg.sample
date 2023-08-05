@@ -47,9 +47,10 @@ local redmine_bundler_version="2.4"
 # -- Disable default --
 #  "https://github.com/haru/redmine_code_review/archive/1.0.0.zip"
 #  "https://github.com/tkusukawa/redmine_work_time/archive/0.4.0.zip"
-#  "https://github.com/akiko-pusu/redmine_issue_templates/archive/1.1.0.zip"
 #  "https://raw.githubusercontent.com/charlietag/github_share_folder/master/redmine_plugins/redmine_agile-1_6_4-light.zip"
 #  "https://raw.githubusercontent.com/charlietag/github_share_folder/master/redmine_plugins/redmine_ckeditor-1.2.4.zip"
+
+#  "https://raw.githubusercontent.com/charlietag/github_share_folder/master/redmine_plugins/redmineup_tags-2_0_13-light.zip"
 local redmine_plugins=(
   "https://raw.githubusercontent.com/charlietag/github_share_folder/master/redmine_plugins/redmine_checklists-3_1_22-light.zip"
   "https://raw.githubusercontent.com/charlietag/github_share_folder/master/redmine_plugins/redmine_issues_tree-5.0.x.zip"

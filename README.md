@@ -1517,3 +1517,6 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.2.10
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.2.9...v1.2.10
       * Redmine plugin: redmine_ckeditor `disabled by default`
+  * tag: v1.2.11
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.2.10...v1.2.11
+      * Redmine plugin: redmineup_tags-2_0_13-light `disabled by default`
