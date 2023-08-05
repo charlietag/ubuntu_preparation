@@ -1510,3 +1510,7 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.2.8
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.2.7...v1.2.8
       * Revise Readme - Nginx default version 1.22 -> 1.24
+* 2023/08/05
+  * tag: v1.2.9
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.2.8...v1.2.9
+      * Redmine plugin: redmine_ckeditor
