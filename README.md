@@ -1415,7 +1415,7 @@ Similar with `bundler`
 
 * Excute command within venv (easier way), after making sure poetry env is created (`poetry env list`)
   * `poetry shell`
-  * Then all python command is withing `venv`
+  * Then all python command is within `venv`
 
 * New poetry project
   * `poetry new poetry-demo`
