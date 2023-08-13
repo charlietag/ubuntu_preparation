@@ -31,8 +31,8 @@ function set_prompt_setting {
 
 
     # --- venv folder check ---
-    local python_venv_name="$(echo $VIRTUAL_ENV_PROMPT | sed -re 's/-py[[:digit:]\.]+//g' | sed -re 's/-/_/g' | sed -re 's/[\(|\)]+//g')"
-    local python_venv_check="$(pwd | sed -re 's/[-]+/_/g' | grep -i "${python_venv_name}")"
+    local python_venv_name="$(echo $VIRTUAL_ENV_PROMPT | sed -re 's/-py[[:digit:]\.]+//g' | sed -re 's/[-]+/_/g' | sed -re 's/[_]+/_/g' | sed -re 's/[\(|\)]+//g')"
+    local python_venv_check="$(pwd | sed -re 's/[-]+/_/g' | sed -re 's/[_]+/_/g' | grep -i "${python_venv_name}")"
 
     if [[ -z "${python_venv_check}" ]]; then
       local python_venv_check_msg="${prompt_setting_red}NOT IN Python_Venv !${prompt_setting_color_end}"
