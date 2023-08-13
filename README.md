@@ -41,6 +41,10 @@ Table of Contents
     + [ssh client known hosts hash](#ssh-client-known-hosts-hash)
     + [Editor](#editor)
     + [User manipulation](#user-manipulation)
+  * [Python notes](#python-notes)
+    + [pyenv](#pyenv)
+    + [poetry](#poetry)
+    + [pip](#pip)
 - [CHANGELOG](#changelog)
 
 # Ubuntu Linux Server OS Preparation
