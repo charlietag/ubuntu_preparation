@@ -1,0 +1,14 @@
+# Specify python user
+local current_user="pythonuser"
+
+_task_check_and_useradd
+
+
+local python_version="3.11"
+
+# ----------------------------------------------------
+# DO NOT MODIFY HERE
+# ----------------------------------------------------
+# User home dir
+. ${PLUGINS}/plugin_load_databag.sh __current_user_home.cfg
+

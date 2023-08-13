@@ -1,0 +1,2 @@
+# Source master config
+. ${PLUGINS}/plugin_load_databag.sh _python.cfg

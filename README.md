@@ -446,6 +446,9 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
   * Redmine 5.0.5
     * ruby 3.1.3
     * rails 6.1.7
+  * Python 3.11 (pyenv)
+    * pyenv (https://github.com/pyenv/pyenv)
+    * poetry (https://python-poetry.org/)
   * Useful tools
     * Enhanced tail
       * multitail
@@ -1367,6 +1370,37 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   lslogin
   ```
 
+## Python notes
+
+### pyenv
+
+Similar with `rvm`
+
+* List all versions
+  * `rvm list known`
+  * `pyenv install -l | grep -E "[[:space:]]+[[:digit:]\.]+$"`
+
+* Install specific version
+  * `rvm install 3.2`
+  * `pyenv install 3.11`
+
+* Switch version for current **session**
+  * `rvm use 3.2`
+  * `pyenv shell 3.11`
+
+* Change **DEFAULT** version
+  * `rvm use 3.2 --default`
+  * `pyenv global 3.11` (config locates `$(pyenv root)/version`)
+
+* Change version for current **folder**
+  * Just edit version in file `folder/.ruby-version`
+  * In pyenv, edit version in file `folder/.python-version` (can just use command `pyenv local 3.11`)
+
+### poetry
+
+Similar with `bundler`
+
+* poetry
 
 # CHANGELOG
 * 2022/11/27
@@ -1520,3 +1554,8 @@ For some/**view** cases, we need to upgrade MariaDB without data lost.  Here is 
   * tag: v1.2.11
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.2.10...v1.2.11
       * Redmine plugin: redmineup_tags-2_0_13-light `disabled by default`
+* 2023/08/13
+  * tag: v1.3.0
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.2.11...v1.3.0
+      * by default install pyenv , poetry
+      * Setup python bash prompt for pyenv, poetry, tmux for python venv
