@@ -1398,9 +1398,74 @@ Similar with `rvm`
 
 ### poetry
 
+* Install poetry
+  * (Python > 3.7) `curl -sSL https://install.python-poetry.org | python3 -`
+  * If you install poetry through pyenv python (ie. 3.11), DO NOT uninstall the version(ie. 3.11), otherwise poetry will not be able to use (cannot find python3.11.so)...
+
 Similar with `bundler`
 
-* poetry
+* Execute command within venv
+  * `bundle exec rails`
+  * `poetry run flask run`
+    * Sample template(flask) [link](https://github.com/gandresto/poetry-flask-template)
+
+* Excute command within venv (easier way), after making sure poetry env is created (`poetry env list`)
+  * `poetry shell`
+  * Then all python command is withing `venv`
+
+* New poetry project
+  * `poetry new poetry-demo`
+* Make sure project is using correct python version (ex. `^3.11``) for both `pyenv (.python-version)` and `poetry (pyproject.toml)`
+
+  ```bash
+  cd poetry-demo
+  cat pyproject.toml |grep python | grep '3.11'
+  pyenv local 3.11
+  ```
+
+* Create venv (ex. using Python 3.11) using `poetry`
+
+  ```bash
+  cd poetry-demo
+  poetry env use python
+  ```
+
+* Make sure venv is created
+  * `poetry env list`
+
+* Install packages (`poetry.lock` generated)
+  * `poetry install`
+
+* Add packages into project (`poetry.lock` updated)
+  * `bundle add rails`
+  * `poetry add django`
+
+### pip
+
+Conclusion for below: **Just use poetry to manage python packages**
+
+* If pip package(ie. panda) is not installed by user `root`
+  * (general user) pip will store the changes under user home folder, will not effect global version
+* If pip package(ie. panda) **IS** installed by user `root`
+  * pip will detect if package is already installed
+    * if no, install local (pip install `panda`--user)
+    * if yes, try to install under `/usr/local/lib/python3.10/dist-packages`, and if no writeable priv, it will install with `--user` by default
+* show detail info
+
+  ```bash
+  $ pip show panda
+  Name: panda
+  Version: 0.3.1
+  Summary: A Python implementation of the Panda REST interface
+  Home-page: http://www.pandastream.com
+  Author: pandastream.com
+  Author-email: support@pandastream.com
+  License: MIT
+  Location: /usr/local/lib/python3.10/dist-packages
+  Requires: requests, setuptools
+  Required-by:
+  ```
+
 
 # CHANGELOG
 * 2022/11/27
