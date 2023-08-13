@@ -1628,3 +1628,6 @@ Conclusion for below: **Just use poetry to manage python packages**
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.2.11...v1.3.0
       * by default install pyenv , poetry
       * Setup python bash prompt for pyenv, poetry, tmux for python venv
+  * tag: v1.3.1
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.3.0...v1.3.1
+      * fix venv path verification
