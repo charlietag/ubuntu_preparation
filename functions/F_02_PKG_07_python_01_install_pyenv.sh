@@ -13,6 +13,9 @@ if [[ -n "${pyenv_check}" ]]; then
   echo "pyenv is installed successfully!"
 else
   su -l $current_user -c "git clone https://github.com/pyenv/pyenv.git ~/.pyenv"
+
+  # ---------- copy pyenv bash config -----------
+  task_copy_using_cat_user_home
 fi
 
 # ---------- python -----------
