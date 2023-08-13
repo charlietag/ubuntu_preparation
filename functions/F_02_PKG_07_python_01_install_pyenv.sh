@@ -8,7 +8,7 @@ echo "      Install pyenv & poetry"
 echo "========================================="
 
 # ---------- pyenv -----------
-local pyenv_check="$(su -l $current_user -c "command -v pyenv" | grep "pyenv")"
+local pyenv_check="$(su -l $current_user -c "source ~/.bash_user/.pyenv_bashrc.sh && command -v pyenv" | grep "pyenv")"
 if [[ -n "${pyenv_check}" ]]; then
   echo "pyenv is installed successfully!"
 else
@@ -19,28 +19,28 @@ else
 fi
 
 # ---------- python -----------
-local pyenv_check="$(su -l $current_user -c "command -v pyenv" | grep "pyenv")"
+local pyenv_check="$(su -l $current_user -c "source ~/.bash_user/.pyenv_bashrc.sh && command -v pyenv" | grep "pyenv")"
 if [[ -n "${pyenv_check}" ]]; then
-  su -l $current_user -c "pyenv install ${python_version}"
+  su -l $current_user -c "source ~/.bash_user/.pyenv_bashrc.sh && pyenv install ${python_version}"
+  su -l $current_user -c "source ~/.bash_user/.pyenv_bashrc.sh && pyenv global ${python_version}"
 else
   echo "pyenv installation failed"
   exit
 fi
 
 # ---------- poetry -----------
-local python_check="$(su -l $current_user -c "python -V" | grep "${python_version}")"
+local python_check="$(su -l $current_user -c "source ~/.bash_user/.pyenv_bashrc.sh && python -V" | grep "${python_version}")"
 if [[ -n "${python_check}" ]]; then
-  su -l $current_user -c "pyenv global ${python_version}"
-  su -l $current_user -c "pip install --upgrade pip setuptools"
+  su -l $current_user -c "source ~/.bash_user/.pyenv_bashrc.sh && pip install --upgrade pip setuptools"
 
-  su -l $current_user -c "curl -sSL https://install.python-poetry.org | python3 -"
+  su -l $current_user -c "source ~/.bash_user/.pyenv_bashrc.sh && curl -sSL https://install.python-poetry.org | python3 -"
 else
   echo "python(${python_version}) installation failed"
   exit
 fi
 
 # ---------- poetry check -----------
-local poetry_check="$(su -l $current_user -c "command -v poetry" | grep "poetry")"
+local poetry_check="$(su -l $current_user -c "source ~/.bash_user/.pyenv_bashrc.sh && command -v poetry" | grep "poetry")"
 if [[ -n "${poetry_check}" ]]; then
   echo "pyenv is installed successfully!"
 else
