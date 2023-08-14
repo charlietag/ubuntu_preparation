@@ -1631,3 +1631,7 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v1.3.1
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.3.0...v1.3.1
       * fix venv path verification
+* 2023/08/15
+  * tag: v1.3.2
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.3.1...v1.3.2
+      * make alias command for pyenv and poetry

@@ -1,5 +1,6 @@
-alias ppv='pyenv'
+alias pyy='pyenv'
 
-alias ppy='poetry'
-alias penv='poetry env'
-alias pshell='poetry shell'
+alias poo='poetry'
+alias prr='poetry run'
+alias pvv='poetry env'
+alias pll='poetry shell'
