@@ -1429,7 +1429,7 @@ Similar with `bundler`
   * `cat pyproject.toml |grep python | grep '3.11'`
   * `poetry env use python`
   * `poetry install`
-  * Reference ([]())
+  * Reference ([poetry-new_project](https://github.com/charlietag/ubuntu_preparation/blob/main/templates/F_02_PKG_07_python_00_user_pythonuser/user_home/bin/poetry-new_project))
 
 * Make sure project is using correct python version (ex. `^3.11``) for both `pyenv (.python-version)` and `poetry (pyproject.toml)`
 
