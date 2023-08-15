@@ -1410,15 +1410,27 @@ Similar with `bundler`
 
 * Execute command within venv
   * `bundle exec rails`
-  * `poetry run django-admin.py startproject basic_django .`
+  * `poetry run django-admin startproject basic_django .`
     * Sample template(Django) [link](https://builtwithdjango.com/blog/basic-django-setup)
 
 * Excute command within venv (easier way), after making sure poetry env is created (`poetry env list`)
   * `poetry shell`
   * Then all python command is within `venv`
 
+* New poetry Pypi package (not for create project --- use `poetry init -n` instead for project)
+  * similliar with `bundle gem ruby-gem-demo`
+  * `poetry new pip-package-demo`
+
 * New poetry project
-  * `poetry new poetry-demo`
+  * `mkdir project-demo`
+  * `cd project-demo`
+  * `pyenv local 3.11`
+  * `poetry init -n` (do not use -q, quiet, otherwise it will include current project as package while poetry install)
+  * `cat pyproject.toml |grep python | grep '3.11'`
+  * `poetry env use python`
+  * `poetry install`
+  * Reference ([]())
+
 * Make sure project is using correct python version (ex. `^3.11``) for both `pyenv (.python-version)` and `poetry (pyproject.toml)`
 
   ```bash

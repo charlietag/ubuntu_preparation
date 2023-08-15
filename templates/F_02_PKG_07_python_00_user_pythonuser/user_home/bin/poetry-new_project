@@ -1,0 +1,40 @@
+#!/bin/bash
+check_pyenv="$(command -v pyenv)"
+check_poetry="$(command -v poetry)"
+
+if [[ -z "${check_pyenv}" ]] || [[ -z "${check_poetry}" ]]; then
+    echo "pyenv or poetry not found!"
+    exit
+fi
+
+THIS_PYTHON_VER="$(python -V | grep -Eo '[[:digit:]\.]+')"
+
+PROJECT_NAME=$1
+
+echo "-----------------------------------------------------"
+echo "Creating Project ${PROJECT_NAME}"
+echo "-----------------------------------------------------"
+mkdir ${PROJECT_NAME}
+if [[ -d ${PROJECT_NAME} ]]; then
+    cd $PROJECT_NAME
+    pyenv local $THIS_PYTHON_VER
+    poetry init -n
+    sed -re "/python[[:space:]]+=/ s/[[:digit:]\.]+/${THIS_PYTHON_VER}/g" -i pyproject.toml
+    sed -re '/packages[[:space:]]+=[[:space:]]+[[:print:]]+include/d' -i pyproject.toml
+    poetry env use $THIS_PYTHON_VER
+    poetry install
+fi
+
+echo ""
+echo ""
+
+
+
+# ----------------------------
+# Note
+# ----------------------------
+# quiet, will include this project package, require additional option`poetry install --no-root`
+# poetry init -q
+
+# no interaction
+# poetry init -n
