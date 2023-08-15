@@ -181,7 +181,7 @@ shopt -s no_empty_cmd_completion
 #------------------------------------------------------
 #               User customized bash setting
 #------------------------------------------------------
-BASH_FILES="$(find $HOME/.bash_user -mindepth 1 -maxdepth 1 -type f -name "*.sh")"
+BASH_FILES="$(find $HOME/.bash_user -mindepth 1 -maxdepth 1 -type f -name "*.sh" | sort -n)"
 if [[ -n "${BASH_FILES}" ]]; then
   for BASH_FILE in $BASH_FILES; do
     source $BASH_FILE

@@ -1410,8 +1410,8 @@ Similar with `bundler`
 
 * Execute command within venv
   * `bundle exec rails`
-  * `poetry run flask run`
-    * Sample template(flask) [link](https://github.com/gandresto/poetry-flask-template)
+  * `poetry run django-admin.py startproject basic_django .`
+    * Sample template(Django) [link](https://builtwithdjango.com/blog/basic-django-setup)
 
 * Excute command within venv (easier way), after making sure poetry env is created (`poetry env list`)
   * `poetry shell`
