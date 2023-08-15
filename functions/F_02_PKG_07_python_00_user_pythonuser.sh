@@ -9,8 +9,8 @@ helper_env_user_base
 
 task_copy_using_cat_user_home
 
-if [[ -f ${current_user}/bin/poetry-new_project ]]; then
-  chmod 755 ${current_user}/bin/poetry-new_project
+if [[ -f ${current_user_home}/bin/poetry-new_project ]]; then
+  chmod 755 ${current_user_home}/bin/poetry-new_project
 fi
 # --- already installed while installing pkgs_container ---
 # Ref. https://packaging.python.org/en/latest/guides/installing-using-linux-tools/#debian-ubuntu
