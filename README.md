@@ -1636,3 +1636,8 @@ Conclusion for below: **Just use poetry to manage python packages**
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.3.1...v1.3.2
       * make alias command for pyenv and poetry
       * python venv in tmux automatically activate
+* 2023/08/16
+  * tag: v1.3.3
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.3.2...v1.3.3
+      * source .bash_user/ script in order
+      * optimize `poetry env info --path`
