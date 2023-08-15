@@ -1,7 +1,8 @@
-alias pyy='pyenv'
+alias pvv='pyenv'
 
-alias poo='poetry'
-alias pnn='poetry run'
-alias pvv='poetry env'
-alias pkk='poetry lock'
-alias pll='poetry shell'
+alias pyy='poetry'
+
+alias prun='poetry run'
+alias penv='poetry env'
+alias plock='poetry lock'
+alias pshell='poetry shell'
