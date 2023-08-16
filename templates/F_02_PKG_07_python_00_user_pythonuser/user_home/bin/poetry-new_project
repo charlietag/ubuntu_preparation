@@ -11,6 +11,7 @@ THIS_PYTHON_VER="$(python -V | grep -Eo '[[:digit:]\.]+')"
 
 PROJECT_NAME=$1
 
+echo ""
 echo "-----------------------------------------------------"
 echo "Creating Project ${PROJECT_NAME}"
 echo "-----------------------------------------------------"
