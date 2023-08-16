@@ -26,8 +26,8 @@ function set_prompt_setting {
 
   if [[ -n "${VIRTUAL_ENV_PROMPT}" ]]; then
     # --- prompt for venv ---
-    local python_venv="${prompt_setting_dark_green}${VIRTUAL_ENV_PROMPT}${prompt_setting_color_end}"
-    prompt_for_this="${prompt_for_this} ${python_venv}"
+    # local python_venv="${prompt_setting_dark_green}${VIRTUAL_ENV_PROMPT}${prompt_setting_color_end}"
+    # prompt_for_this="${prompt_for_this} ${python_venv}"
 
 
     # --- venv folder check ---
@@ -35,7 +35,7 @@ function set_prompt_setting {
     local python_venv_check="$(pwd | sed -re 's/[-]+/_/g' | sed -re 's/[_]+/_/g' | sed -re 's/[\.]+/_/g' | grep -i "${python_venv_name}")"
 
     if [[ -z "${python_venv_check}" ]]; then
-      local python_venv_check_msg="${prompt_setting_red}NOT IN Python_Venv !${prompt_setting_color_end}"
+      local python_venv_check_msg="${prompt_setting_red}NOT IN Python_Venv --- ${VIRTUAL_ENV_PROMPT} !${prompt_setting_color_end}"
       prompt_for_this="${prompt_for_this} ${python_venv_check_msg}"
     fi
 
