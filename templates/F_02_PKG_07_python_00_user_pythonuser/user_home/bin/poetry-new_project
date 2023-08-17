@@ -3,17 +3,29 @@ check_pyenv="$(command -v pyenv)"
 check_poetry="$(command -v poetry)"
 
 if [[ -z "${check_pyenv}" ]] || [[ -z "${check_poetry}" ]]; then
+    echo ""
     echo "pyenv or poetry not found!"
+    echo ""
     exit
 fi
 
-THIS_PYTHON_VER="$(python -V | grep -Eo '[[:digit:]\.]+')"
+THIS_PYTHON_VER="$(python -V 2>/dev/null| grep -Eo '[[:digit:]\.]+')"
+if [[ -z "${THIS_PYTHON_VER}" ]]; then
+    echo ""
+    echo "python is not installed correctly !"
+    echo ""
+    exit
+fi
 
 PROJECT_NAME=$1
 
 if [[ -z "${PROJECT_NAME}" ]] || [[ "${PROJECT_NAME}" = "-h" ]] || [[ "${PROJECT_NAME}" = "--help" ]]; then
-  echo "poetry-new_project [ -h | --help ],     show this help"
-  echo "poetry-new_project [ project_name ],    create poetry empty project named project_name"
+  echo ""
+  echo "poetry-new_project    [ -h | --help ],             show this help"
+  echo ""
+  echo "poetry-new_project    [ project_name ],            create poetry empty project named project_name"
+  echo ""
+  echo ""
   exit
 fi
 
