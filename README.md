@@ -1654,3 +1654,7 @@ Conclusion for below: **Just use poetry to manage python packages**
       * source .bash_user/ script in order
       * optimize `poetry env info --path`
       * add script `poetry-new_project` for creating a new empty project (not **package**) in one command
+* 2023/08/17
+  * tag: v1.3.4
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.3.3...v1.3.4
+      * poetry-new_project - add help

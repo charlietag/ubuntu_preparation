@@ -11,6 +11,12 @@ THIS_PYTHON_VER="$(python -V | grep -Eo '[[:digit:]\.]+')"
 
 PROJECT_NAME=$1
 
+if [[ -z "${PROJECT_NAME}" ]] || [[ "${PROJECT_NAME}" = "-h" ]] || [[ "${PROJECT_NAME}" = "--help" ]]; then
+  echo "poetry-new_project [ -h | --help ],     show this help"
+  echo "poetry-new_project [ project_name ],    create poetry empty project named project_name"
+fi
+
+
 echo ""
 echo "-----------------------------------------------------"
 echo "Creating Project ${PROJECT_NAME}"
