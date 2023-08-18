@@ -18,6 +18,7 @@ if [[ -z "${THIS_PYTHON_VER}" ]]; then
 fi
 
 PROJECT_NAME=$1
+PROJECT_NAME="$(echo "${PROJECT_NAME}" | sed -re 's/[[:space:]]+/-/g')"
 
 if [[ -z "${PROJECT_NAME}" ]] || [[ "${PROJECT_NAME}" = "-h" ]] || [[ "${PROJECT_NAME}" = "--help" ]]; then
   echo ""

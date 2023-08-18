@@ -1658,3 +1658,7 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v1.3.4
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.3.3...v1.3.4
       * poetry-new_project - add help
+* 2023/08/18
+  * tag: v1.3.5
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.3.4...v1.3.5
+      * poetry-new_project - add empty project check
