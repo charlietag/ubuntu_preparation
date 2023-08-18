@@ -30,6 +30,12 @@ if [[ -z "${PROJECT_NAME}" ]] || [[ "${PROJECT_NAME}" = "-h" ]] || [[ "${PROJECT
   exit
 fi
 
+PROJECT_NAME="$(echo "${PROJECT_NAME}" | grep -E '^[[:alpha:]]')"
+if [[ -z "${PROJECT_NAME}" ]]; then
+  echo "Please start with letter as 'project name' !"
+  exit
+fi
+
 
 echo ""
 echo "-----------------------------------------------------"
