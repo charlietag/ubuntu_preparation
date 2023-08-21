@@ -15,6 +15,7 @@ unset PS1
 #------------------------------------------------------
 function set_prompt_setting {
   local prompt_setting_red="\e[1;31m"
+  local prompt_setting_magenta="\e[1;35m"
   local prompt_setting_dark_green="\e[0;32m"
   local prompt_setting_dark_yellow="\e[33m"
   local prompt_setting_dark_cyan="\e[36m"
@@ -26,7 +27,7 @@ function set_prompt_setting {
 
   if [[ -n "${VIRTUAL_ENV_PROMPT}" ]]; then
     # --- prompt for venv ---
-    local python_venv="${prompt_setting_dark_green}${VIRTUAL_ENV_PROMPT}${prompt_setting_color_end}"
+    local python_venv="${prompt_setting_magenta}${VIRTUAL_ENV_PROMPT}${prompt_setting_color_end}"
     prompt_for_this="${prompt_for_this} ${python_venv}"
 
 
