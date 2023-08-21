@@ -1,3 +1,4 @@
+# Move this script AFTER customized bash prompt to enable python default venv_prompot
 # this script is designed for "poetry" in TMUX
 
 
