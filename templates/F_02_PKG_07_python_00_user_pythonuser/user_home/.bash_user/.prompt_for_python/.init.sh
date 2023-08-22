@@ -30,7 +30,7 @@ function set_prompt_setting {
 
   if [[ -n "${VIRTUAL_ENV_PROMPT}" ]]; then
     # --- prompt for venv ---
-    local python_venv="${prompt_setting_background_purple}${VIRTUAL_ENV_PROMPT}${prompt_setting_color_end}"
+    local python_venv="${prompt_setting_background_green}${VIRTUAL_ENV_PROMPT}${prompt_setting_color_end}"
     prompt_for_this="${prompt_for_this} ${python_venv}"
 
 
