@@ -1670,3 +1670,6 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v1.3.7
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.3.6...v1.3.7
       * change venv_prompt color
+  * tag: v1.3.8
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.3.7...v1.3.8
+      * Add alias for `poetry show --tree`
