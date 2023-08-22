@@ -1666,3 +1666,7 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v1.3.6
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.3.5...v1.3.6
       * Use customized venv_prompt
+* 2023/08/23
+  * tag: v1.3.7
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.3.6...v1.3.7
+      * change venv_prompt color
