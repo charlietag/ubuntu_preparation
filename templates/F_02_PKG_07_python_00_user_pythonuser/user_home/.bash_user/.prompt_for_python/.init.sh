@@ -18,6 +18,7 @@ function set_prompt_setting {
   local prompt_setting_magenta="\e[1;35m"
   local prompt_setting_background_green="\e[1;42m"
   local prompt_setting_background_purple="\e[1;45m"
+  local prompt_setting_background_red="\e[1;41m"
   local prompt_setting_dark_green="\e[0;32m"
   local prompt_setting_dark_yellow="\e[33m"
   local prompt_setting_dark_cyan="\e[36m"
@@ -29,7 +30,7 @@ function set_prompt_setting {
 
   if [[ -n "${VIRTUAL_ENV_PROMPT}" ]]; then
     # --- prompt for venv ---
-    local python_venv="${prompt_setting_background_green}${VIRTUAL_ENV_PROMPT}${prompt_setting_color_end}"
+    local python_venv="${prompt_setting_background_purple}${VIRTUAL_ENV_PROMPT}${prompt_setting_color_end}"
     prompt_for_this="${prompt_for_this} ${python_venv}"
 
 
@@ -38,7 +39,7 @@ function set_prompt_setting {
     local python_venv_check="$(pwd | sed -re 's/[-]+/_/g' | sed -re 's/[_]+/_/g' | sed -re 's/[\.]+/_/g' | grep -i "${python_venv_name}")"
 
     if [[ -z "${python_venv_check}" ]]; then
-      local python_venv_check_msg="${prompt_setting_red}NOT IN Python Venv${prompt_setting_color_end}"
+      local python_venv_check_msg="${prompt_setting_background_red}NOT IN Python Venv${prompt_setting_color_end}"
       prompt_for_this="${prompt_for_this} ${python_venv_check_msg}"
     fi
 
