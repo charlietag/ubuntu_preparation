@@ -1677,3 +1677,7 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v1.3.9
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.3.8...v1.3.9
       * optimize python poetry venv prompt script
+* 2023/09/04
+  * tag: v1.3.10
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.3.9...v1.3.10
+      * vim tab spaces: set default to `2`, for python script set to `4`
