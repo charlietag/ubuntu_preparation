@@ -1685,7 +1685,8 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v1.3.11
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.3.10...v1.3.11
       * ALL USER ---> vim tab spaces: set default to `2`, for python script set to `4`
-* 2023/10/01
+* 2023/10/02
   * tag: v1.4.0
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.3.11...v1.4.0
       * NodeJS 18 -> 20
+      * tune snapd removal

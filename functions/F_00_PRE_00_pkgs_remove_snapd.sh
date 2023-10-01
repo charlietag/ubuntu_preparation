@@ -1,15 +1,20 @@
 
 # Remove packages
-snap list | tail -n +2 | awk '{print $1}' | grep -vE "^bare|^core|^snapd" | xargs -I{} bash -c "echo --- removing {} \(please wait for awhile\) ---; snap remove --purge {}; echo"
+snap list | tail -n +2 | awk '{print $1}' | grep -vE "^bare|^core|^snapd" | xargs -I{} bash -c "echo --- removing {} \(please wait for awhile\) ---; echo;  snap remove --purge {}; echo sleep 3 seconds...; sleep 3"
 
 # Remove base packagges
-snap list | tail -n +2 | awk '{print $1}' | xargs -I{} bash -c "echo --- removing {} \(please wait for awhile\) ---; snap remove --purge {}; echo"
+snap list | tail -n +2 | awk '{print $1}' | xargs -I{} bash -c "echo --- removing {} \(please wait for awhile\) ---; snap remove --purge {}; echo; echo sleep 3 seconds...; sleep 3"
 
 # Disable snapd services
 systemctl list-unit-files |grep snapd | awk '{print $1}' | xargs systemctl disable --now
 
+sleep 1
+
 # Remove snapd
 apt autoremove --purge -y snapd
+
+sleep 1
+
 rm -fr /root/snap
 
 echo "--- check snapd folders ---"
