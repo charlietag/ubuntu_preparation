@@ -2,5 +2,4 @@
 # Using 3rd repo
 # ###########################################################
 # NodeJS
-# Ref. https://nodejs.org/en/download/package-manager/#enterprise-linux-and-fedora
-local node_apt_repo="https://deb.nodesource.com/setup_18.x"
+local apt_node_major=20

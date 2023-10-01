@@ -13,7 +13,8 @@ if $(command -v nodejs > /dev/null); then
 fi
 
 if $(command -v yarn > /dev/null); then
-  if ! [[ -f /etc/apt/sources.list.d/yarn.list ]]; then
+  local if_apt_yarn_found="$(dpkg -l yarn 2>/dev/null | grep "ii")"
+  if [[ -n "${if_apt_yarn_found}" ]]; then
     echo "Yarn is already installed, through ubuntu repo !!"
     echo ""
     apt purge -y yarn
@@ -42,24 +43,21 @@ fi
 
 test -f /etc/apt/sources.list.d/nodesource.list && rm -f /etc/apt/sources.list.d/nodesource.list
 
-curl -fsSL ${node_apt_repo} | bash - && \
-apt-get install -y nodejs gcc g++ make
+
+# ------------------------------------------------
+# Ref. https://github.com/nodesource/distributions#debian-and-ubuntu-based-distributions
+apt install -y ca-certificates curl gnupg
+mkdir -p /etc/apt/keyrings
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_${apt_node_major}.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+apt update
+apt-get install -y nodejs
+# ------------------------------------------------
 
 
 # ---------- Yarn ---------
 ## To install the Yarn package manager, run:
-test -f /usr/share/keyrings/yarnkey.gpg && rm -f /usr/share/keyrings/yarnkey.gpg
-
-curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | tee /usr/share/keyrings/yarnkey.gpg >/dev/null
-
-
-
-
-test -f /etc/apt/sources.list.d/yarn.list && rm -f /etc/apt/sources.list.d/yarn.list
-
-echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | tee /etc/apt/sources.list.d/yarn.list
-apt-get update && apt-get -y install yarn
-
+npm install --global yarn
 
 # --------------------------------------------------------------------------------------
 # origin:   F_02_PKG_04_yarn_install.sh

@@ -220,7 +220,7 @@ I'm a lazy person.  I want to install **ALL** and give me default configurations
 * Command
 
   ```bash
-  ./start -a
+  ./start.sh -a
   reboot
   ```
 
@@ -441,7 +441,7 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
   * PHP-FPM
   * Laravel 10.x (Ref. https://laravel.com/)
   * MariaDB 10.6 (equals to MySQL 5.7)
-  * nodejs 18 (Ref. https://nodejs.org/en/)
+  * nodejs 20 (Ref. https://nodejs.org/en/)
   * Nginx 1.24 (Ref. https://nginx.org/)
   * Redis 7 (Ref. https://redis.io/)
   * Ruby 3.2.2 +YJIT (rvm)
@@ -1685,3 +1685,7 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v1.3.11
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.3.10...v1.3.11
       * ALL USER ---> vim tab spaces: set default to `2`, for python script set to `4`
+* 2023/10/01
+  * tag: v1.4.0
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.3.11...v1.4.0
+      * NodeJS 18 -> 20
