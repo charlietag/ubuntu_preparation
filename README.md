@@ -1482,6 +1482,13 @@ Conclusion for below: **Just use poetry to manage python packages**
   Required-by:
   ```
 
+### Upgrade pyenv and poetry
+
+* pyenv
+  * `cd ~/.pyenv ; git pull`
+* poetry
+  * `poetry self update`
+
 
 # CHANGELOG
 * 2022/11/27
