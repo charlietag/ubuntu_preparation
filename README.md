@@ -450,7 +450,7 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
   * Redmine 5.0.5
     * ruby 3.1.3
     * rails 6.1.7
-  * Python 3.11 (pyenv)
+  * Python 3.12 (pyenv)
     * pyenv (https://github.com/pyenv/pyenv)
     * poetry (https://python-poetry.org/)
   * Useful tools
@@ -1690,3 +1690,7 @@ Conclusion for below: **Just use poetry to manage python packages**
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.3.11...v1.4.0
       * NodeJS 18 -> 20
       * tune snapd removal
+* 2023/10/03
+  * tag: v1.5.0
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.4.0...v1.5.0
+      * Python 3.11 -> 3.12
