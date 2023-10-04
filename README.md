@@ -450,9 +450,9 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
   * Redmine 5.0.5
     * ruby 3.1.3
     * rails 6.1.7
-  * Python 3.12 (pyenv)
+  * Python 3.11 (pyenv)
     * pyenv (https://github.com/pyenv/pyenv)
-    * poetry (https://python-poetry.org/)
+  * poetry (https://python-poetry.org/)
   * Useful tools
     * Enhanced tail
       * multitail
@@ -1701,3 +1701,8 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v1.5.0
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.4.0...v1.5.0
       * Python 3.11 -> 3.12
+* 2023/10/04
+  * tag: v1.5.1
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.5.0...v1.5.1
+      * Install poetry using system python version, not python version from pyenv, in case, pyenv remove python version which is used by poetry and cause poetry fails to start
+      * Python 3.12 -> 3.11

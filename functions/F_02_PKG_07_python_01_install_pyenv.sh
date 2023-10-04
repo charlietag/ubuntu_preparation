@@ -15,6 +15,29 @@ else
   #     Start
   # ------------------------------------------
 
+  # ---------- poetry -----------
+  # local python_check="$(su -l $current_user -c "source ~/.bash_user/.31_pyenv_bashrc.sh && python -V" | grep "${python_version}")"
+  # if [[ -n "${python_check}" ]]; then
+  #   su -l $current_user -c "source ~/.bash_user/.31_pyenv_bashrc.sh && pip install --upgrade pip setuptools"
+  #
+  #   su -l $current_user -c "source ~/.bash_user/.31_pyenv_bashrc.sh && curl -sSL https://install.python-poetry.org | python3 -"
+  # else
+  #   echo "python(${python_version}) installation failed"
+  #   exit
+  # fi
+  su -l $current_user -c "pip3 install --upgrade pip setuptools"
+  su -l $current_user -c "curl -sSL https://install.python-poetry.org | python3 -"
+
+  # ---------- poetry check -----------
+  # local poetry_check="$(su -l $current_user -c "source ~/.bash_user/.31_pyenv_bashrc.sh && command -v poetry" | grep "poetry")"
+  local poetry_check="$(su -l $current_user -c "command -v poetry" | grep "poetry")"
+  if [[ -n "${poetry_check}" ]]; then
+    echo "poetry is installed successfully!"
+  else
+    echo "poetry installation failed"
+    exit
+  fi
+
   # ---------- pyenv -----------
   local pyenv_check="$(su -l $current_user -c "source ~/.bash_user/.31_pyenv_bashrc.sh && command -v pyenv" | grep "pyenv")"
   if [[ -n "${pyenv_check}" ]]; then
@@ -36,25 +59,6 @@ else
     exit
   fi
 
-  # ---------- poetry -----------
-  local python_check="$(su -l $current_user -c "source ~/.bash_user/.31_pyenv_bashrc.sh && python -V" | grep "${python_version}")"
-  if [[ -n "${python_check}" ]]; then
-    su -l $current_user -c "source ~/.bash_user/.31_pyenv_bashrc.sh && pip install --upgrade pip setuptools"
-
-    su -l $current_user -c "source ~/.bash_user/.31_pyenv_bashrc.sh && curl -sSL https://install.python-poetry.org | python3 -"
-  else
-    echo "python(${python_version}) installation failed"
-    exit
-  fi
-
-  # ---------- poetry check -----------
-  local poetry_check="$(su -l $current_user -c "source ~/.bash_user/.31_pyenv_bashrc.sh && command -v poetry" | grep "poetry")"
-  if [[ -n "${poetry_check}" ]]; then
-    echo "poetry is installed successfully!"
-  else
-    echo "poetry installation failed"
-    exit
-  fi
   # ------------------------------------------
   #     End
   # ------------------------------------------

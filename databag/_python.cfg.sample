@@ -4,7 +4,7 @@ local current_user="pythonuser"
 _task_check_and_useradd
 
 
-local python_version="3.12"
+local python_version="3.11"
 
 # ----------------------------------------------------
 # DO NOT MODIFY HERE
