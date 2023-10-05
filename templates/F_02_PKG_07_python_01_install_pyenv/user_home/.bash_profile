@@ -36,6 +36,11 @@ fi
 #     PATH="$HOME/.local/bin:$PATH"
 # fi
 
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+  PATH="$PATH:$HOME/.local/bin:$HOME/bin"
+fi
+export PATH
+
 #------------------------------------------------------
 #               pyenv
 #------------------------------------------------------
