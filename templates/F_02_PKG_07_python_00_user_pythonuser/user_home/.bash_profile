@@ -55,8 +55,14 @@ export PATH
 
 # so move pyenv init command from  .bash_user/ into .bash_profile (trigger before .bashrc)
 
-export PYENV_ROOT="$HOME/.pyenv"
-if [[ -d "${PYENV_ROOT}" ]]; then
-  command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init -)"
-fi
+. "$HOME/.bash_user/.pyenv_poetry/.31_pyenv_bashrc.sh"
+
+
+#------------------------------------------------------
+#               poetry
+#------------------------------------------------------
+# .bashrc will not be read, because of the following script in .bashrc
+
+# to make sure python venv activate runs after pyenv
+# so move poetry init command from  .bash_user/ into .bash_profile (trigger before .bashrc)
+. "$HOME/.bash_user/.pyenv_poetry/.32_python_venv_activate.sh"

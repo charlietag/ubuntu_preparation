@@ -1710,3 +1710,7 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v1.5.2
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.5.1...v1.5.2
       * Fix pyenv init script by trigger pyenv init in .bash_profile
+* 2023/10/06
+  * tag: v1.5.3
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.5.2...v1.5.3
+      * Fix poetry venv in tmux issue
