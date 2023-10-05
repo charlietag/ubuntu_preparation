@@ -1706,3 +1706,7 @@ Conclusion for below: **Just use poetry to manage python packages**
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.5.0...v1.5.1
       * Install poetry using system python version, not python version from pyenv, in case, pyenv remove python version which is used by poetry and cause poetry fails to start
       * Python 3.12 -> 3.11
+* 2023/10/05
+  * tag: v1.5.2
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.5.1...v1.5.2
+      * Fix pyenv init script by trigger pyenv init in .bash_profile
