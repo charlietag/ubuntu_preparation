@@ -445,7 +445,7 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
   * Nginx 1.24 (Ref. https://nginx.org/)
   * Redis 7 (Ref. https://redis.io/)
   * Ruby 3.2.2 +YJIT (rvm)
-  * Rails 7.0
+  * Rails 7.1
     * puma 5 (systemd integrated, puma-systemd-mgr, ~~puma-mgr~~)
   * Redmine 5.0.5
     * ruby 3.1.3
@@ -1714,3 +1714,7 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v1.5.3
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.5.2...v1.5.3
       * Fix poetry venv in tmux issue
+* 2023/10/25
+  * tag: v1.6.0
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.5.3...v1.6.0
+      * Rails default 7.1
