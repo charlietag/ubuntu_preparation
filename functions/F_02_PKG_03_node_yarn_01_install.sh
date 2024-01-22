@@ -21,6 +21,15 @@ if $(command -v yarn > /dev/null); then
   fi
 fi
 
+if $(command -v bun > /dev/null); then
+  local if_apt_bun_found="$(dpkg -l bun 2>/dev/null | grep "ii")"
+  if [[ -n "${if_apt_bun_found}" ]]; then
+    echo "Bun JS is already installed, through ubuntu repo !!"
+    echo ""
+    apt purge -y bun
+  fi
+fi
+
 
 
 
@@ -80,3 +89,6 @@ npm install --global yarn
 #npm install -g yarn
 
 # --------------------------------------------------------------------------------------
+
+# ---------- Bun JS ---------
+npm install -g bun

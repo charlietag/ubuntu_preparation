@@ -442,11 +442,13 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
   * Laravel 10.x (Ref. https://laravel.com/)
   * MariaDB 10.6 (equals to MySQL 5.7)
   * nodejs 20 (Ref. https://nodejs.org/en/)
+    * yarn 1.22 (npm)
+    * Bun JS latest (NPM - Ref. https://github.com/oven-sh/bun?tab=readme-ov-file#install)
   * Nginx 1.24 (Ref. https://nginx.org/)
   * Redis 7 (Ref. https://redis.io/)
-  * Ruby 3.2.2 +YJIT (rvm)
+  * Ruby 3.3.0 +YJIT (rvm-head)
   * Rails 7.1
-    * puma 5 (systemd integrated, puma-systemd-mgr, ~~puma-mgr~~)
+    * puma 6 (systemd integrated, puma-systemd-mgr, ~~puma-mgr~~)
   * Redmine 5.0.5
     * ruby 3.1.3
     * rails 6.1.7
@@ -467,6 +469,10 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
     * ref https://github.com/charlietag/vim_settings
   * TMUX Plugins
     * ref. https://github.com/charlietag/tmux_settings
+
+  * Coming Soon
+    * Ubuntu 24.04
+      * **VIM 9.1**
 
 ## Folder privilege
 After this installation repo, the server will setup with "Nginx + Puma (socket)" , "Nginx + PHP-FPM (socket)" , so your Rails, Laravel, can run on the same server.  The following is something you have to keep an eye on it.
@@ -1718,3 +1724,8 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v1.6.0
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.5.3...v1.6.0
       * Rails default 7.1
+* 2024/01/23
+  * tag: v1.7.0
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.6.0...v1.7.0
+      * Ruby default 3.3.0
+      * js engine default `Bun JS`
