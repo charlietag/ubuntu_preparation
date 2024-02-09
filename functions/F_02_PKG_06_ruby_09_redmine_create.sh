@@ -176,6 +176,7 @@ if [[ "${redmine_bundler_version}" = "latest" ]]; then
   echo "      gem install bundler , to get ${redmine_bundler_version}  # Bundler latest for Redmine 5.1 (rails 6)"
   echo "========================================="
   su -l $current_user -c "cd ${redmine_web_root} && (gem install bundler)"
+  local this_redmine_bundler_version="$(su -l $current_user -c "cd ${redmine_web_root} && gem list | grep '^bundler '" | grep -Eo "[[:digit:]\.]+" | sort -n | tail -n 1)"
   echo ""
 else
   echo "========================================="
@@ -183,11 +184,13 @@ else
   echo "========================================="
   # su -l $current_user -c "cd ${redmine_web_root} && (gem update --system ;  gem install bundler -v '~> ${redmine_bundler_version}.0')"
   su -l $current_user -c "cd ${redmine_web_root} && (gem install bundler -v '~> ${redmine_bundler_version}.0')"
+  local this_redmine_bundler_version="$(su -l $current_user -c "cd ${redmine_web_root} && gem list | grep '^bundler '" | grep -Eo "${redmine_bundler_version}.[[:digit:]\.]+" | sort -n | tail -n 1)"
   echo ""
 
 fi
 
-local this_redmine_bundler_version="$(su -l $current_user -c "cd ${redmine_web_root} && gem list | grep '^bundler '" | grep -Eo "${redmine_bundler_version}.[[:digit:]\.]+" | sort -n | tail -n 1)"
+# local this_redmine_bundler_version="$(su -l $current_user -c "cd ${redmine_web_root} && gem list | grep '^bundler '" | grep -Eo "${redmine_bundler_version}.[[:digit:]\.]+" | sort -n | tail -n 1)"
+
 echo "---------------------------------------------------------------------------"
 echo "Prepare Redmine (${redmine_version}), using Bundler (${this_redmine_bundler_version})"
 echo "---------------------------------------------------------------------------"
