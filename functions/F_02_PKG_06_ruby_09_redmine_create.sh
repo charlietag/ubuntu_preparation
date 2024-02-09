@@ -170,12 +170,22 @@ fi
 
 # ====== Start to install redmine gem =======
 # every step here, needs to change directory to ${redmine_web_root}, because this folder is under rvm gemset
-echo "========================================="
-echo "      gem install bundler -v ${redmine_bundler_version}  # Bundler 1.x for Redmine3.x (Rails 4) / Bundler 2.x for Redmine4.x (Rails 5)"
-echo "========================================="
-# su -l $current_user -c "cd ${redmine_web_root} && (gem update --system ;  gem install bundler -v '~> ${redmine_bundler_version}.0')"
-su -l $current_user -c "cd ${redmine_web_root} && (gem install bundler -v '~> ${redmine_bundler_version}.0')"
-echo ""
+
+if [[ "${redmine_bundler_version}" = "latest" ]]; then
+  echo "========================================="
+  echo "      gem install bundler , to get ${redmine_bundler_version}  # Bundler latest for Redmine 5.1 (rails 6)"
+  echo "========================================="
+  su -l $current_user -c "cd ${redmine_web_root} && (gem install bundler)"
+  echo ""
+else
+  echo "========================================="
+  echo "      gem install bundler -v ${redmine_bundler_version}  # Bundler 1.x for Redmine3.x (Rails 4) / Bundler 2.x for Redmine4.x (Rails 5)"
+  echo "========================================="
+  # su -l $current_user -c "cd ${redmine_web_root} && (gem update --system ;  gem install bundler -v '~> ${redmine_bundler_version}.0')"
+  su -l $current_user -c "cd ${redmine_web_root} && (gem install bundler -v '~> ${redmine_bundler_version}.0')"
+  echo ""
+
+fi
 
 local this_redmine_bundler_version="$(su -l $current_user -c "cd ${redmine_web_root} && gem list | grep '^bundler '" | grep -Eo "${redmine_bundler_version}.[[:digit:]\.]+" | sort -n | tail -n 1)"
 echo "---------------------------------------------------------------------------"
