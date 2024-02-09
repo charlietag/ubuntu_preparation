@@ -16,8 +16,8 @@ _task_check_and_useradd
 # (less secure way) comment out above to manually install through rvm.io
 
 # Specify rvm version
-# local rvm_version="1.29.12"
-local rvm_version="master"
+local rvm_version="1.29.12"
+# local rvm_version="master"
 
 # Specify ruby version (installing with rvm)
 #local ruby_version="2.6.0"

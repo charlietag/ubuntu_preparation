@@ -16,10 +16,15 @@ echo "========================================="
 # fi
 # -------------------------------------------------------------------------------------------------
 
+# ruby -e 'puts RbConfig::CONFIG["configure_args"]'
+#   Due to default precomipled rvm ruby use argv `--enable-load-relative` and this will cause foreman script failed, everytime `rails new project` (rails 7.1.3)
+#   add --disable-binary while rvm install
 if [[ "${ruby_version}" =~ "3.2" ]]; then
   su -l $current_user -c "rvm install ${ruby_version} -C \"--enable-yjit\""
+elif [[ "${ruby_version}" =~ "3.3" ]]; then
+  su -l $current_user -c "rvm install ${ruby_version} -C \"--enable-yjit\""
 else
-  su -l $current_user -c "rvm install ${ruby_version}"
+  su -l $current_user -c "rvm install ${ruby_version}" --disable-binary
 fi
 
 # ------------------------------------------------------------
