@@ -446,11 +446,11 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
     * Bun JS latest (NPM - Ref. https://github.com/oven-sh/bun?tab=readme-ov-file#install)
   * Nginx 1.24 (Ref. https://nginx.org/)
   * Redis 7 (Ref. https://redis.io/)
-  * Ruby 3.3.0 +YJIT (rvm-head)
+  * Ruby 3.3.0 +YJIT (rvm-stable)
   * Rails 7.1
     * puma 6 (systemd integrated, puma-systemd-mgr, ~~puma-mgr~~)
-  * Redmine 5.0.5
-    * ruby 3.1.3
+  * Redmine 5.1.1
+    * ruby 3.2.2
     * rails 6.1.7
   * Python 3.11 (pyenv)
     * pyenv (https://github.com/pyenv/pyenv)
@@ -1729,3 +1729,4 @@ Conclusion for below: **Just use poetry to manage python packages**
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.6.0...v1.7.0
       * Ruby default 3.3.0
       * js engine default `Bun JS`
+      * Redmine upgrade to 5.1, and only install basic plugin lightbox2, circle_theme
