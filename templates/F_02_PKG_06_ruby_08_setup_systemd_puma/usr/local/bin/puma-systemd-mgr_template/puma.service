@@ -1,4 +1,5 @@
 # Ref. https://github.com/puma/puma/blob/master/docs/systemd.md#service-configuration
+# Since puma 6.1, sd_notify feature is built-in, no need to install gem 'sd_notify'
 [Unit]
 Description=Puma HTTP Server - {{puma_service_name}}
 After=network.target

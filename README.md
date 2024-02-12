@@ -1724,9 +1724,10 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v1.6.0
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.5.3...v1.6.0
       * Rails default 7.1
-* 2024/01/23
+* 2024/02/12
   * tag: v1.7.0
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.6.0...v1.7.0
       * Ruby default 3.3.0
       * js engine default `Bun JS`
       * Redmine upgrade to 5.1, and only install basic plugin lightbox2, circle_theme
+      * remove gem `sd_notify` check, since puma 6.1, `sd_notify` is a built-in feature

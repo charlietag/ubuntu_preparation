@@ -1,4 +1,5 @@
 gem 'puma'
 
 # sd_notify - puma5 integrated with Systemd(type=notify)
-gem 'sd_notify', group: 'production'
+# since 6.1, puma built-in sd_notify feature
+# gem 'sd_notify', group: 'production'
