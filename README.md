@@ -1759,3 +1759,6 @@ Conclusion for below: **Just use poetry to manage python packages**
         ```bash
         rails new myrails -d trilogy -c bootstrap -j bun
         ```
+  * tag: v1.7.3
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.7.2...v1.7.3
+      * remove 'spring' from rails alias command, because since rails 7 spring is no long being used

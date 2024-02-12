@@ -16,31 +16,32 @@
 #   9 # output: Charlie
 # ```
 
-alias bess='
-  grep -q "spring" Gemfile.lock 2>/dev/null && \
-    { \
-      echo "==================================="; \
-      echo "     Spring Status"; \
-      echo "==================================="; \
-      bundle exec spring status ; \
-      echo ""; \
-    }
-  '
 
-alias besp='
-  grep -q "spring" Gemfile.lock 2>/dev/null && \
-    { \
-      echo "==================================="; \
-      echo "     Spring Stop"; \
-      echo "==================================="; \
-      bundle exec spring stop ; \
-      echo ""; \
-    }
-  '
+# -----------------------------------------------------------------------------
+# Rails 7.1 'spring' and 'yarn' are no longer being used
+# -----------------------------------------------------------------------------
 
+# alias bess='
+#   grep -q "spring" Gemfile.lock 2>/dev/null && \
+#     { \
+#       echo "==================================="; \
+#       echo "     Spring Status"; \
+#       echo "==================================="; \
+#       bundle exec spring status ; \
+#       echo ""; \
+#     }
+#   '
 
-alias be='bundle exec'
-alias bl='bundle exec rails'
+# alias besp='
+#   grep -q "spring" Gemfile.lock 2>/dev/null && \
+#     { \
+#       echo "==================================="; \
+#       echo "     Spring Stop"; \
+#       echo "==================================="; \
+#       bundle exec spring stop ; \
+#       echo ""; \
+#     }
+#   '
 
 #alias bv='
 #  grep -q "spring" Gemfile.lock 2>/dev/null && \
@@ -71,70 +72,47 @@ alias bl='bundle exec rails'
 #    }
 #  '
 
-alias bn='
-  grep -q "spring" Gemfile.lock 2>/dev/null && \
-    { \
-      echo "==================================="; \
-      echo "     Spring Stop"; \
-      echo "==================================="; \
-      bundle exec spring stop ; \
-      echo ""; \
-    }; \
-  grep -q "rails" Gemfile.lock 2>/dev/null && \
-    { \
-      echo "==================================="; \
-      echo "     rails tmp:clear"; \
-      echo "==================================="; \
-      bundle exec rails tmp:clear ; \
-      echo "" ; \
-      echo "==================================="; \
-      echo "     rails assets:clobber"; \
-      echo "==================================="; \
-      bundle exec rails assets:clobber ; \
-      echo ""; \
-    }
-  '
+# alias br='
+#   grep -q "spring" Gemfile.lock 2>/dev/null && \
+#     { \
+#       echo "==================================="; \
+#       echo "     Spring Stop"; \
+#       echo "==================================="; \
+#       bundle exec spring stop ; \
+#       echo ""; \
+#     }; \
+#   grep -q "rails" Gemfile.lock 2>/dev/null && \
+#     { \
+#       echo "==================================="; \
+#       echo "     rails tmp:clear"; \
+#       echo "==================================="; \
+#       bundle exec rails tmp:clear ; \
+#       echo "" ; \
+#       echo "==================================="; \
+#       echo "     rails assets:clobber"; \
+#       echo "==================================="; \
+#       bundle exec rails assets:clobber ; \
+#       echo "" ; \
+#       echo "==================================="; \
+#       echo "     rails assets:precompile RAILS_ENV=production"; \
+#       echo "==================================="; \
+#       bundle exec rails assets:precompile RAILS_ENV=production ; \
+#       echo "" ; \
+#       echo "==================================="; \
+#       echo "     yarn install again(under dev mode)"; \
+#       echo "     (because precomile do the yarn install under PROD mode)"; \
+#       echo "     (config/environments/development.rb:  config.webpacker.check_yarn_integrity = true)"; \
+#       echo "==================================="; \
+#       test -f package.json && yarn install ; \
+#       echo "" ; \
+#       echo "==================================="; \
+#       echo "     touch tmp/restart.txt"; \
+#       echo "==================================="; \
+#       bundle exec rails restart ; \
+#       echo ""; \
+#     }
+#   '
 
-alias br='
-  grep -q "spring" Gemfile.lock 2>/dev/null && \
-    { \
-      echo "==================================="; \
-      echo "     Spring Stop"; \
-      echo "==================================="; \
-      bundle exec spring stop ; \
-      echo ""; \
-    }; \
-  grep -q "rails" Gemfile.lock 2>/dev/null && \
-    { \
-      echo "==================================="; \
-      echo "     rails tmp:clear"; \
-      echo "==================================="; \
-      bundle exec rails tmp:clear ; \
-      echo "" ; \
-      echo "==================================="; \
-      echo "     rails assets:clobber"; \
-      echo "==================================="; \
-      bundle exec rails assets:clobber ; \
-      echo "" ; \
-      echo "==================================="; \
-      echo "     rails assets:precompile RAILS_ENV=production"; \
-      echo "==================================="; \
-      bundle exec rails assets:precompile RAILS_ENV=production ; \
-      echo "" ; \
-      echo "==================================="; \
-      echo "     yarn install again(under dev mode)"; \
-      echo "     (because precomile do the yarn install under PROD mode)"; \
-      echo "     (config/environments/development.rb:  config.webpacker.check_yarn_integrity = true)"; \
-      echo "==================================="; \
-      test -f package.json && yarn install ; \
-      echo "" ; \
-      echo "==================================="; \
-      echo "     touch tmp/restart.txt"; \
-      echo "==================================="; \
-      bundle exec rails restart ; \
-      echo ""; \
-    }
-  '
 
 # alias bs='
 #   grep -q "spring" Gemfile.lock 2>/dev/null && \
@@ -155,18 +133,57 @@ alias br='
 #     }
 #   '
 
+# -----------------------------------------------------------------------------
+#
 # -----------------------------------------------------
-# For Rails 7 compat
+# For Rails 7.1 compat
 # -----------------------------------------------------
-alias bs='
-  grep -q "spring" Gemfile.lock 2>/dev/null && \
+alias be='bundle exec'
+alias bl='bundle exec rails'
+
+alias bn='
+  grep -q "rails" Gemfile.lock 2>/dev/null && \
     { \
       echo "==================================="; \
-      echo "     Spring Stop"; \
+      echo "     rails tmp:clear"; \
       echo "==================================="; \
-      bundle exec spring stop ; \
+      bundle exec rails tmp:clear ; \
+      echo "" ; \
+      echo "==================================="; \
+      echo "     rails assets:clobber"; \
+      echo "==================================="; \
+      bundle exec rails assets:clobber ; \
       echo ""; \
-    }; \
+    }
+  '
+
+alias br='
+  grep -q "rails" Gemfile.lock 2>/dev/null && \
+    { \
+      echo "==================================="; \
+      echo "     rails tmp:clear"; \
+      echo "==================================="; \
+      bundle exec rails tmp:clear ; \
+      echo "" ; \
+      echo "==================================="; \
+      echo "     rails assets:clobber"; \
+      echo "==================================="; \
+      bundle exec rails assets:clobber ; \
+      echo "" ; \
+      echo "==================================="; \
+      echo "     rails assets:precompile RAILS_ENV=production"; \
+      echo "==================================="; \
+      bundle exec rails assets:precompile RAILS_ENV=production ; \
+      echo "" ; \
+      echo "==================================="; \
+      echo "     touch tmp/restart.txt"; \
+      echo "==================================="; \
+      bundle exec rails restart ; \
+      echo ""; \
+    }
+  '
+
+alias bs='
   test -f bin/dev && \
   { \
     cat Procfile.dev | grep -vE "^[[:space:]]*#" | grep -E '0\.0\.0\.0' && \
@@ -202,24 +219,6 @@ alias bs='
   }
   '
 
-# alias bdev='
-#   grep -q "spring" Gemfile.lock 2>/dev/null && \
-#     { \
-#       echo "==================================="; \
-#       echo "     Spring Stop"; \
-#       echo "==================================="; \
-#       bundle exec spring stop ; \
-#       echo ""; \
-#     }; \
-#   grep -q "rails" Gemfile.lock 2>/dev/null && \
-#     { \
-#       echo "==================================="; \
-#       echo "     Start Rails in Dev Mode"; \
-#       echo "==================================="; \
-#       bin/dev ; \
-#       echo ""; \
-#     }
-#   '
 
-alias bp='bin/importmap'
+# alias bp='bin/importmap'
 
