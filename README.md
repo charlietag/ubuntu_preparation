@@ -1731,3 +1731,18 @@ Conclusion for below: **Just use poetry to manage python packages**
       * js engine default `Bun JS`
       * Redmine upgrade to 5.1, and only install basic plugin lightbox2, circle_theme
       * remove gem `sd_notify` check, since puma 6.1, `sd_notify` is a built-in feature
+  * tag: v1.7.1
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.7.0...v1.7.1
+      * Avoid use rvm [precompiled ruby version](https://rubies.travis-ci.org/), in **Rails 7.1.3 (default yjit enabled)**
+        * Why
+          * Within Rails 7.1.3, **--enable-load-relative** in ruby, will cause command **foreman** crash, everytime run command `rails new new_project -d trilogy -c bootstrap -j bun`
+        * How to install ruby using rvm then
+          * `rvm install ${ruby_version} --disable-binary`
+          * `rvm install ${ruby_version} -C "--enable-yjit"`
+        * How to check **--enable-load-relative** is not used
+          * Check command
+            * `ruby -e 'puts RbConfig::CONFIG["configure_args"]'`
+          * precompiled
+            * `'--prefix=/usr/share/rvm/rubies/ruby-3.2.2' '--enable-load-relative' '--sysconfdir=/etc' '--disable-install-doc' '--enable-shared'`
+          * compile manually
+            * `'--prefix=/home/rubyuser/.rvm/rubies/ruby-3.3.0' '--enable-yjit' '--disable-install-doc' '--enable-shared'`
