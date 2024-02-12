@@ -482,7 +482,7 @@ After this installation repo, the server will setup with "Nginx + Puma (socket)"
   * Rails Project
 
     ```bash
-    rails new <rails_project> -d mysql -j esbuild -c bootstrap
+    rails new <rails_project> -d trilogy -j bun -c bootstrap
     cd <rails_project>
     chown -R ${current_user}.${current_user} log tmp
     ```
@@ -501,7 +501,7 @@ After this installation repo, the server will setup with "Nginx + Puma (socket)"
   * Rails
 
     ```bash
-    rails new <rails_project> -d mysql -j esbuild -c bootstrap
+    rails new <rails_project> -d trilogy -j bun -c bootstrap
     ```
 
   * **Rails 7 has intergrated with stimulusjs, stop using jquery**
@@ -1752,4 +1752,10 @@ Conclusion for below: **Just use poetry to manage python packages**
 
         ```bash
         sed "/web:/ s/$/ -b 0.0.0.0 -p 3000/" -i Procfile.dev
+        ```
+
+      * Default: create a rails test project - myrails
+
+        ```bash
+        rails new myrails -d trilogy -c bootstrap -j bun
         ```
