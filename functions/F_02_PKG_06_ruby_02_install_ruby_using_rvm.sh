@@ -24,7 +24,7 @@ if [[ "${ruby_version}" =~ "3.2" ]]; then
 elif [[ "${ruby_version}" =~ "3.3" ]]; then
   su -l $current_user -c "rvm install ${ruby_version} -C \"--enable-yjit\""
 else
-  su -l $current_user -c "rvm install ${ruby_version}" --disable-binary
+  su -l $current_user -c "rvm install ${ruby_version} --disable-binary"
 fi
 
 # ------------------------------------------------------------
