@@ -1748,4 +1748,8 @@ Conclusion for below: **Just use poetry to manage python packages**
             * `'--prefix=/home/rubyuser/.rvm/rubies/ruby-3.3.0' '--enable-yjit' '--disable-install-doc' '--enable-shared'`
   * tag: v1.7.2
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.7.1...v1.7.2
-      * Fix typo
+      * Modify rubyuser alias, by default listen on 0.0.0.0:3000
+
+        ```bash
+        sed "/web:/ s/$/ -b 0.0.0.0 -p 3000/" -i Procfile.dev
+        ```

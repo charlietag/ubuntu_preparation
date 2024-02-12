@@ -181,7 +181,12 @@ alias bs='
         echo "==================================="; \
         echo "     check Procfile.dev"; \
         echo "==================================="; \
+        sed "/web:/ s/$/ -b 0.0.0.0 -p 3000/" -i Procfile.dev; \
         cat Procfile.dev | grep rails ; \
+        echo "==================================="; \
+        echo "     Start Rails in Dev Mode"; \
+        echo "==================================="; \
+        bin/dev ; \
         echo ""; \
       }; \
   } || \
