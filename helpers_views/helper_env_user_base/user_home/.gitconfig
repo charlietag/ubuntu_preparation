@@ -30,13 +30,13 @@
     rs = rebase --skip
     ra = rebase --abort
 [push]
-  default = simple
+    default = simple
 [pull]
-  rebase = false
+    rebase = false
 [init]
-  # main / master
-  defaultBranch = ${git_default_branch}
-# Ref. https://bun.sh/docs/install/lockfile
-[diff "lockb"]
-  textconv = bun
-  binary = true
+    # main / master
+    defaultBranch = ${git_default_branch}
+[diff \"lockb\"]
+    # Ref. https://bun.sh/docs/install/lockfile
+    textconv = bun
+    binary = true
