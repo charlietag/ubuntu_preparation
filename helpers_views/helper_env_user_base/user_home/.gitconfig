@@ -36,3 +36,7 @@
 [init]
   # main / master
   defaultBranch = ${git_default_branch}
+# Ref. https://bun.sh/docs/install/lockfile
+[diff "lockb"]
+  textconv = bun
+  binary = true

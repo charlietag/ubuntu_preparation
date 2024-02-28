@@ -1762,3 +1762,7 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v1.7.3
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.7.2...v1.7.3
       * remove 'spring' from rails alias command, because since rails 7 spring is no long being used
+* 2024/02/12
+  * tag: v1.7.4
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.7.3...v1.7.4
+      * Add git config for bun lockdb diff ([link](https://bun.sh/docs/install/lockfile))
