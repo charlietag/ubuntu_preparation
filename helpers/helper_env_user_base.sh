@@ -9,6 +9,8 @@ local current_user_home="$(getent passwd "$current_user" | cut -d':' -f6)"
 local files=($(ls -a $HELPER_VIEW_FOLDER/user_home | grep -E "^\.[A-Za-z0-9_]+[.]*[A-Za-z0-9_]*$"))
 
 sed -i '/bash_base\//d' $current_user_home/.bashrc
+sed -re '/^HIST[[:print:]]*SIZE[[:print:]]*=/ s/^#*/#/' -i $current_user_home/.bashrc
+
 echo 'source $HOME/.bash_base/.base.sh' >> $current_user_home/.bashrc
 
 for file in ${files[@]}

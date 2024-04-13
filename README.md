@@ -1766,3 +1766,7 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v1.7.4
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.7.3...v1.7.4
       * Add git config for bun lockdb diff ([link](https://bun.sh/docs/install/lockfile))
+* 2024/04/13
+  * tag: v1.7.5
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.7.4...v1.7.5
+      * Enlarge bash history size
