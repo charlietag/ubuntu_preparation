@@ -1770,3 +1770,13 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v1.7.5
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.7.4...v1.7.5
       * Enlarge bash history size
+* 2024/04/15
+  * tag: v1.7.6
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.7.5...v1.7.6
+      * Enhance nginx security ([Ref. Laravel Nginx](https://laravel.com/docs/11.x/deployment#nginx))
+
+        ```bash
+        add_header X-Frame-Options "SAMEORIGIN";
+        add_header X-Content-Type-Options "nosniff";
+        charset utf-8;
+        ```
