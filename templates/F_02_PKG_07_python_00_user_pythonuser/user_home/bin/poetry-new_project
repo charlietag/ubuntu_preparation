@@ -49,7 +49,12 @@ if [[ -d ${PROJECT_NAME} ]]; then
     sed -re "/python[[:space:]]+=/ s/[[:digit:]\.]+/${THIS_PYTHON_VER}/g" -i pyproject.toml
     sed -re '/packages[[:space:]]+=[[:space:]]+[[:print:]]+include/d' -i pyproject.toml
     poetry env use $THIS_PYTHON_VER
-    poetry install
+
+    # Ref. https://python-poetry.org/docs/basic-usage/#operating-modes
+    # [tool.poetry]
+    # package-mode = false
+    # Poetry does not try to install the project itself, but only its dependencies (same as poetry install --no-root)
+    poetry install --no-root
 fi
 
 echo ""

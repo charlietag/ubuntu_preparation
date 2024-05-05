@@ -1803,3 +1803,9 @@ Conclusion for below: **Just use poetry to manage python packages**
         * Python 3.11 to 3.12
         * Laravel 10 to 11
         * Add docker-ce installed
+* 2024/05/06
+  * tag: v2.0.1
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.0.0...v2.0.1
+      * By default: setup poetry using `--no-root`
+        * Ref. [poetry-new_project](https://github.com/charlietag/ubuntu_preparation/blob/main/templates/F_02_PKG_07_python_00_user_pythonuser/user_home/bin/poetry-new_project)
+        * Ref. [poetry#operating-modes](https://python-poetry.org/docs/basic-usage/#operating-modes)
