@@ -51,6 +51,7 @@ fi
 # curl --silent --location "${node_apt_repo}" | bash -
 
 test -f /etc/apt/sources.list.d/nodesource.list && rm -f /etc/apt/sources.list.d/nodesource.list
+test -f /etc/apt/keyrings/nodesource.gpg && rm -f /etc/apt/keyrings/nodesource.gpg
 
 
 # ------------------------------------------------
