@@ -11,7 +11,8 @@ pkgs_list="${pkgs_list} libsqlite3-dev sqlite3"
 
 # --- For compile latest ruby ---
 # suggested by rvm
-pkgs_list="${pkgs_list} libffi-dev libgdbm-dev libncurses5-dev libtool libyaml-dev zlib1g-dev libgmp-dev libreadline-dev"
+# libncurses5-dev does not exist in Ubuntu 24.04 (use libncurses-dev instead)
+pkgs_list="${pkgs_list} libffi-dev libgdbm-dev libncurses-dev libncurses5-dev libtool libyaml-dev zlib1g-dev libgmp-dev libreadline-dev"
 
 # suggested by gorails
 pkgs_list="${pkgs_list} libxml2-dev libxslt1-dev libcurl4-openssl-dev"

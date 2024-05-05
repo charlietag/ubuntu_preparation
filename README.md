@@ -1793,6 +1793,8 @@ Conclusion for below: **Just use poetry to manage python packages**
       * Packages upgrades
         * Nginx 1.24 to 1.26
         * Ruby 3.3.0 to 3.3.1
+          * `rvm autolibs disable`
+          * Ubuntu 24.04: Missing required packages: libncurses5-dev. Actually it's replaced by libncurses-dev
         * Redmine 5.1.1 to 5.1.2
         * Python 3.11 to 3.12
         * Laravel 10 to 11

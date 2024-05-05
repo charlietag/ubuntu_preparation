@@ -65,6 +65,14 @@ for ((i=1; ; i++)); do
   # ---------- Install RVM -----------
   # su -l $current_user -c "\curl -sSL https://get.rvm.io | bash -s ${rvm_version}"
   su -l $current_user -c "\curl -sSL https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer | bash -s ${rvm_version}"
+
+  # Ubuntu 24.04: Missing required packages: libncurses5-dev. Actually it's replaced by libncurses-dev
+  # The following will add config under: (see `rvm info`)
+  #     cat ${rvm_path}/user/db
+  #     User settings, overrides db settings and persists across installs.
+  #     autolibs=disable
+  # And this will avoid `rvm requirements` to check and install missing packages all the time
+  su -l $current_user -c "rvm autolibs disable"
 done
 echo ""
 ############### Install RVM retry Loop #############
