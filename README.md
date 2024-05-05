@@ -63,9 +63,12 @@ This is a small light bash project.  Suit small companies which have only few se
   * **NGINX + PUMA + PHP-FPM + MariaDB + Rails + Laravel + Redmine + Redis**
 
 # Environment
+  * Ubuntu 24.04
+    * ubuntu_preparation
+      * release : `main` `v2.x.x`
   * Ubuntu 22.04
     * ubuntu_preparation
-      * release : `main` `v1.x.x`
+      * release : `v1.x.x`
 
 # Notice
   * Before [ubuntu_security](https://github.com/charlietag/ubuntu_security)
@@ -437,22 +440,22 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
 # Note
 
 ## Installed Packages
-  * PHP 8.1
+  * PHP 8.3
   * PHP-FPM
-  * Laravel 10.x (Ref. https://laravel.com/)
-  * MariaDB 10.6 (equals to MySQL 5.7)
+  * Laravel 11.x (Ref. https://laravel.com/)
+  * MariaDB 10.11
   * nodejs 20 (Ref. https://nodejs.org/en/)
     * yarn 1.22 (npm)
     * Bun JS latest (NPM - Ref. https://github.com/oven-sh/bun?tab=readme-ov-file#install)
-  * Nginx 1.24 (Ref. https://nginx.org/)
+  * Nginx 1.26 (Ref. https://nginx.org/)
   * Redis 7 (Ref. https://redis.io/)
-  * Ruby 3.3.0 +YJIT (rvm-stable)
+  * Ruby 3.3.1 +YJIT (rvm-stable)
   * Rails 7.1
     * puma 6 (systemd integrated, puma-systemd-mgr, ~~puma-mgr~~)
-  * Redmine 5.1.1
+  * Redmine 5.1.2
     * ruby 3.2.2
-    * rails 6.1.7
-  * Python 3.11 (pyenv)
+    * rails 6.1
+  * Python 3.12 (pyenv)
     * pyenv (https://github.com/pyenv/pyenv)
   * poetry (https://python-poetry.org/)
   * Useful tools
@@ -464,15 +467,14 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
         * ls | ack keyword
         * ack -i keyword *
           * default options (-r, -R, --recurse             Recurse into subdirectories (default: on))
-  * Tmux 3.2a
+  * Tmux 3.4 (> 3.2a)
   * VIM Plugins
     * ref https://github.com/charlietag/vim_settings
   * TMUX Plugins
     * ref. https://github.com/charlietag/tmux_settings
 
-  * Coming Soon
-    * Ubuntu 24.04
-      * **VIM 9.1**
+  * Ubuntu 24.04
+    * **VIM 9.1**
 
 ## Folder privilege
 After this installation repo, the server will setup with "Nginx + Puma (socket)" , "Nginx + PHP-FPM (socket)" , so your Rails, Laravel, can run on the same server.  The following is something you have to keep an eye on it.
@@ -1780,3 +1782,17 @@ Conclusion for below: **Just use poetry to manage python packages**
         add_header X-Content-Type-Options "nosniff";
         charset utf-8;
         ```
+* 2024/05/05
+  * tag: v2.0.0
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v1.7.6...v2.0.0
+      * Ubuntu 22.04 to 24.04, packages upgrades (Built-in)
+        * PHP 8.1 to 8.3
+        * Mariadb 10.5 to 10.11
+        * Tmux 3.2a to 3.4
+        * VIM 8.2 to 9.1
+      * Packages upgrades
+        * Nginx 1.24 to 1.26
+        * Ruby 3.3.0 to 3.3.1
+        * Redmine 5.1.1 to 5.1.2
+        * Python 3.11 to 3.12
+        * Laravel 10 to 11
