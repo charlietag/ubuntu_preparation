@@ -19,7 +19,7 @@ apt install -y python3-pip python3-venv
 
 
 #-----------------------------------------------------------------------------------------
-# Podman 3.x
+# Podman 4.9
 #-----------------------------------------------------------------------------------------
 # Disable related services
 systemctl list-unit-files|grep podman | awk '{print $1}' | xargs echo  | xargs -I{} bash -c "systemctl stop {}; systemctl disable {}"

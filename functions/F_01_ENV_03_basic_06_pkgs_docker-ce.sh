@@ -40,3 +40,9 @@ echo "==============================="
 echo "  Installing Docker-CE..."
 echo "==============================="
 apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+#-----------------------------------------------------------------------------------------
+# Docker CE
+#-----------------------------------------------------------------------------------------
+# Disable related services
+systemctl list-unit-files|grep -i "docker" | awk '{print $1}' | xargs echo  | xargs -I{} bash -c "systemctl stop {}; systemctl disable {}"
