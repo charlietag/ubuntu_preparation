@@ -3,7 +3,7 @@
 # ***************************************************
 # * change your domain name here                    *
 # ***************************************************
-local server_name="redmine.ubuntu22.localdomain"  # ---> ex: myrails.ubuntu22.localdomain
+local server_name="redmine.ubuntu24.localdomain"  # ---> ex: myrails.ubuntu22.localdomain
 local site_app_name="redmine"                    # ---> ex: myrails
 
 

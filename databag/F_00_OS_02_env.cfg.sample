@@ -4,7 +4,7 @@
 local current_timezone="Asia/Taipei"
 
 # Network
-local host_name="ubuntu22.localdomain"
+local host_name="ubuntu24.localdomain"
 local disable_ipv6=1
 
 # -------- NTP ------
