@@ -38,7 +38,12 @@ pkgs_list="${pkgs_list} multitail ack"
 pkgs_list="${pkgs_list} openssl libssl-dev"
 
 # For sql server connection (freetds)
-pkgs_list="${pkgs_list} unixodbc unixodbc-dev libodbc1 odbcinst1debian2 tdsodbc"
+# Ubuntu 22.04
+# pkgs_list="${pkgs_list} unixodbc unixodbc-dev libodbc1 odbcinst1debian2 tdsodbc"
+#
+# Ubuntu 24.04
+pkgs_list="${pkgs_list} unixodbc unixodbc-dev libodbc2 odbcinst libodbcinst2 tdsodbc"
+
 pkgs_list="${pkgs_list} freetds-bin freetds-common freetds-dev libct4 libsybdb5"
 
 # For GeoIP purpose
