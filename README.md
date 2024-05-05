@@ -472,7 +472,9 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
     * ref https://github.com/charlietag/vim_settings
   * TMUX Plugins
     * ref. https://github.com/charlietag/tmux_settings
-
+  * Container
+    * Podman 4.9 (Built-in)
+    * Docker Engine ([Docker-CE](https://docs.docker.com/engine/install/ubuntu/))
   * Ubuntu 24.04
     * **VIM 9.1**
 
@@ -1800,3 +1802,4 @@ Conclusion for below: **Just use poetry to manage python packages**
           * Install [poetry](https://python-poetry.org/docs/#installing-with-pipx) through [pipx](https://pipx.pypa.io/stable/installation/#global-installation)
         * Python 3.11 to 3.12
         * Laravel 10 to 11
+        * Add docker-ce installed
