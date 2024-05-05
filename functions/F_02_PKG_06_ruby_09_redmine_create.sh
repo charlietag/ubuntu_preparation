@@ -7,6 +7,7 @@ echo "========================================="
 echo "      Install ruby ${redmine_ruby_version}"
 echo "========================================="
 # If rails 7.1.3, use `rvm install 3.3.0 --disable-binary`, to avoid ruby precompiled version compiled with `--enable-load-relative`
+su -l $current_user -c "rvm autolibs disable"
 su -l $current_user -c "rvm install ${redmine_ruby_version}"
 
 
