@@ -1,4 +1,4 @@
 # y - redis.io
 # n - ubuntu official repo - ubuntu.com
 
-local use_redis_io_repo="y"
+local use_redis_io_repo="n"
