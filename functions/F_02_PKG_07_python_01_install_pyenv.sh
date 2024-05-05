@@ -29,8 +29,23 @@ else
   #   echo "python(${python_version}) installation failed"
   #   exit
   # fi
-  su -l $current_user -c "pip3 install --upgrade pip setuptools"
-  su -l $current_user -c "curl -sSL https://install.python-poetry.org | python3 -"
+
+  local if_pipx_installed="$(dpkg -l pipx 2>/dev/null | grep -E "^ii")"
+  if [[ -z "${if_pipx_installed}" ]]; then
+    apt install -y pipx
+  fi
+
+  # --- install poetry through pipx (easier) ---
+  # check '/home/phpuser/.local/bin is already in PATH.'. no need, It's been added manually
+  # su -l $current_user -c "pipx ensurepath"
+
+  # install poetry
+  su -l $current_user -c "pipx install poetry"
+
+
+  # --- install poetry through installer ---
+  # su -l $current_user -c "pip3 install --upgrade pip setuptools"
+  # su -l $current_user -c "curl -sSL https://install.python-poetry.org | python3 -"
 
   # ---------- poetry check -----------
   # local poetry_check="$(su -l $current_user -c "source ~/.bash_user/.31_pyenv_bashrc.sh && command -v poetry" | grep "poetry")"

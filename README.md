@@ -1796,5 +1796,7 @@ Conclusion for below: **Just use poetry to manage python packages**
           * `rvm autolibs disable`
           * Ubuntu 24.04: Missing required packages: libncurses5-dev. Actually it's replaced by libncurses-dev
         * Redmine 5.1.1 to 5.1.2
+        * pipx
+          * Install [poetry](https://python-poetry.org/docs/#installing-with-pipx) through [pipx](https://pipx.pypa.io/stable/installation/#global-installation)
         * Python 3.11 to 3.12
         * Laravel 10 to 11
