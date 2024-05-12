@@ -488,7 +488,7 @@ After this installation repo, the server will setup with "Nginx + Puma (socket)"
     ```bash
     rails new <rails_project> -d trilogy -j bun -c bootstrap
     cd <rails_project>
-    chown -R ${current_user}.${current_user} log tmp
+    chown -R ${current_user}:${current_user} log tmp
     ```
 
   * Laravel Project
@@ -496,8 +496,8 @@ After this installation repo, the server will setup with "Nginx + Puma (socket)"
     ```bash
     composer create-project --prefer-dist laravel/laravel <laravel_project>
     cd <laravel_project>
-    chown -R ${current_user}.${current_user} storage
-    chown -R ${current_user}.${current_user} bootstrap/cache
+    chown -R ${current_user}:${current_user} storage
+    chown -R ${current_user}:${current_user} bootstrap/cache
     ```
 
 2. **Command**
@@ -1809,3 +1809,7 @@ Conclusion for below: **Just use poetry to manage python packages**
       * By default: setup poetry using `--no-root`
         * Ref. [poetry-new_project](https://github.com/charlietag/ubuntu_preparation/blob/main/templates/F_02_PKG_07_python_00_user_pythonuser/user_home/bin/poetry-new_project)
         * Ref. [poetry#operating-modes](https://python-poetry.org/docs/basic-usage/#operating-modes)
+* 2024/05/12
+  * tag: v2.0.2
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.0.1...v2.0.2
+      * To avoid warning. change command `chown -R user.user` to `chown -R user:user`

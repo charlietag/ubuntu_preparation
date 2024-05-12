@@ -32,4 +32,4 @@ mv composer*.phar composer
 #-----------------------------------------------------------------------------------------
 #Make sure user_home priv is correct
 #-----------------------------------------------------------------------------------------
-chown -R ${current_user}.${current_user} ${current_user_home}
+chown -R ${current_user}:${current_user} ${current_user_home}
