@@ -1813,3 +1813,7 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v2.0.2
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.0.1...v2.0.2
       * To avoid warning. change command `chown -R user.user` to `chown -R user:user`
+* 2024/05/21
+  * tag: v2.0.3
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.0.2...v2.0.3
+      * Add ntp sync status reference into script as comment

@@ -55,6 +55,16 @@ if [[ -n "${if_chrony_found}" ]]; then
     systemctl restart chrony
     systemctl enable chrony
   fi
+
+
+  echo "----- Check NTP(chrony) sync status -----"
+  echo ">>> chronyc sourcestats <<<"
+  chronyc sourcestats
+  echo ""
+
+  echo ">>> chronyc -n sourcestats <<<"
+  chronyc -n sourcestats
+  echo ""
 # ------------------------------------
 # timesyncd
 # ------------------------------------
@@ -65,4 +75,21 @@ elif [[ -n "${if_timesyncd_found}" ]]; then
   systemctl enable systemd-timesyncd
   timedatectl set-ntp yes
   timedatectl set-local-rtc 0
+
+  echo "----- Check NTP(systemd-timesyncd) sync status -----"
+  echo ">>> timedatectl <<<"
+  timedatectl
+  echo ""
+
+  echo ">>> timedatectl timesync-status <<<"
+  timedatectl timesync-status
+  echo ""
+
+# ------------------------------------
+# NTP (not under consideration)
+# ------------------------------------
+# config file: /etc/ntp.conf
+# ntpq -p
+# ntpq -pn (-n, do not resolve dns)
+
 fi
