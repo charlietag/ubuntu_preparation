@@ -449,10 +449,10 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
     * Bun JS latest (NPM - Ref. https://github.com/oven-sh/bun?tab=readme-ov-file#install)
   * Nginx 1.26 (Ref. https://nginx.org/)
   * Redis 7 (Ref. https://redis.io/)
-  * Ruby 3.3.1 +YJIT (rvm-stable)
+  * Ruby 3.3.4 +YJIT (rvm-stable)
   * Rails 7.1
     * puma 6 (systemd integrated, puma-systemd-mgr, ~~puma-mgr~~)
-  * Redmine 5.1.2
+  * Redmine 5.1.3
     * ruby 3.2.2
     * rails 6.1
   * Python 3.12 (pyenv)
@@ -1817,3 +1817,8 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v2.0.3
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.0.2...v2.0.3
       * Add ntp sync status reference into script as comment
+* 2024/07/18
+  * tag: v2.0.4
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.0.3...v2.0.4
+      * Redmine 5.1.3
+      * Ruby 3.3.4
