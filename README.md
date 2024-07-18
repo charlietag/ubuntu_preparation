@@ -1822,3 +1822,6 @@ Conclusion for below: **Just use poetry to manage python packages**
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.0.3...v2.0.4
       * Redmine 5.1.3
       * Ruby 3.3.4
+  * tag: v2.0.5
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.0.4...v2.0.5
+      * Ruby 3.3.4 to default version

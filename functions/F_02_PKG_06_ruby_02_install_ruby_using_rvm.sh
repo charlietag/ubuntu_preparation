@@ -28,6 +28,8 @@ else
   su -l $current_user -c "rvm install ${ruby_version} --disable-binary"
 fi
 
+su -l $current_user -c "rvm use ${ruby_version} --default"
+
 # ------------------------------------------------------------
 # do not gem update to avoid rails compatibility
 # ------------------------------------------------------------
