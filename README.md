@@ -1829,3 +1829,6 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v2.0.6
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.0.5...v2.0.6
       * add `*.lockb binary diff=lockb` into user_home/.gitattributes
+  * tag: v2.0.7
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.0.6...v2.0.7
+      * To activate `$HOME/.gitattributes`. Add 'git config --global core.attributesfile ~/.gitattributes'

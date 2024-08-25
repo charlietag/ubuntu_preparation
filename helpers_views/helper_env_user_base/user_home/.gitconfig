@@ -40,3 +40,5 @@
     # Ref. https://bun.sh/docs/install/lockfile
     textconv = bun
     binary = true
+[core]
+    attributesfile = /home/${current_user}/.gitattributes
