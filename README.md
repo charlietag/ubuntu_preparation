@@ -450,7 +450,7 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
   * Nginx 1.26 (Ref. https://nginx.org/)
   * Redis 7 (Ref. https://redis.io/)
   * Ruby 3.3.4 +YJIT (rvm-stable)
-  * Rails 7.1
+  * Rails 7.2
     * puma 6 (systemd integrated, puma-systemd-mgr, ~~puma-mgr~~)
   * Redmine 5.1.3
     * ruby 3.2.2
@@ -1831,4 +1831,7 @@ Conclusion for below: **Just use poetry to manage python packages**
       * add `*.lockb binary diff=lockb` into user_home/.gitattributes
   * tag: v2.0.7
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.0.6...v2.0.7
-      * To activate `$HOME/.gitattributes`. Add 'git config --global core.attributesfile ~/.gitattributes'
+      * To activate `$HOME/.gitattributes`. Add `git config --global core.attributesfile ~/.gitattributes`
+  * tag: v2.0.8
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.0.7...v2.0.8
+      * change default rails version to `7.2`
