@@ -1825,3 +1825,7 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v2.0.5
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.0.4...v2.0.5
       * Ruby 3.3.4 to default version
+* 2024/08/25
+  * tag: v2.0.6
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.0.5...v2.0.6
+      * add `*.lockb binary diff=lockb` into user_home/.gitattributes
