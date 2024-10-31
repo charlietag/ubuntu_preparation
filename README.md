@@ -444,7 +444,7 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
   * PHP-FPM
   * Laravel 11.x (Ref. https://laravel.com/)
   * MariaDB 10.11
-  * nodejs 20 (Ref. https://nodejs.org/en/)
+  * nodejs 22 (Ref. https://nodejs.org/en/)
     * yarn 1.22 (npm)
     * Bun JS latest (NPM - Ref. https://github.com/oven-sh/bun?tab=readme-ov-file#install)
   * Nginx 1.26 (Ref. https://nginx.org/)
@@ -455,7 +455,7 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
   * Redmine 5.1.3
     * ruby 3.2.2
     * rails 6.1
-  * Python 3.12 (pyenv)
+  * Python 3.13 (pyenv)
     * pyenv (https://github.com/pyenv/pyenv)
   * poetry (https://python-poetry.org/)
   * Useful tools
@@ -1839,3 +1839,8 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v2.0.9
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.0.8...v2.0.9
       * change default ruby version to `3.3.5`
+* 2024/10/31
+  * tag: v2.1.0
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.0.9...v2.1.0
+      * change default python version to `3.13`
+      * change default nodejs version to `22`

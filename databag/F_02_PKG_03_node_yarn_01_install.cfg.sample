@@ -2,4 +2,4 @@
 # Using 3rd repo
 # ###########################################################
 # NodeJS
-local apt_node_major=20
+local apt_node_major=22
