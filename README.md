@@ -1850,3 +1850,6 @@ Conclusion for below: **Just use poetry to manage python packages**
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.1.0...v2.2.0
       * change default rails version to `8.0`
       * change default redmine version to `6.0.1`
+  * tag: v2.2.1
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.2.0...v2.2.1
+      * Disable 3rd themes and plugins of redmine
