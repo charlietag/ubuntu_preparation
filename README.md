@@ -450,7 +450,7 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
   * Nginx 1.26 (Ref. https://nginx.org/)
   * Redis 7 (Ref. https://redis.io/)
     * Use Ubuntu official repo
-  * Ruby 3.3.5 +YJIT (rvm-stable)
+  * Ruby 3.3.6 +YJIT (rvm-stable)
   * Rails 8.0
     * puma 6 (systemd integrated, puma-systemd-mgr, ~~puma-mgr~~)
   * Redmine 6.0.1
@@ -1853,3 +1853,7 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v2.2.1
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.2.0...v2.2.1
       * Disable 3rd themes and plugins of redmine
+* 2024/11/23
+  * tag: v2.3.0
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.2.1...v2.3.0
+      * change default ruby version to `3.3.6`
