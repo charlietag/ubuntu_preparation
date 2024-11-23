@@ -445,8 +445,9 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
   * Laravel 11.x (Ref. https://laravel.com/)
   * MariaDB 10.11
   * nodejs 22 (Ref. https://nodejs.org/en/)
+    * npm@latest
     * yarn 1.22 (npm)
-    * Bun JS latest (NPM - Ref. https://github.com/oven-sh/bun?tab=readme-ov-file#install)
+    * Bun JS 1.1.20 (NPM - Ref. https://github.com/oven-sh/bun?tab=readme-ov-file#install)
   * Nginx 1.26 (Ref. https://nginx.org/)
   * Redis 7 (Ref. https://redis.io/)
     * Use Ubuntu official repo
@@ -1857,3 +1858,5 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v2.3.0
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.2.1...v2.3.0
       * change default ruby version to `3.3.6`
+      * Upgrade npm before install packages (`npm install -g npm@latest`)
+      * fix bun version while installing `bun` through `npm`

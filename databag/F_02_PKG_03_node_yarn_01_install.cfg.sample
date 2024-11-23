@@ -3,3 +3,6 @@
 # ###########################################################
 # NodeJS
 local apt_node_major=22
+
+# bun.sh version
+local bun_version="1.1.20"
