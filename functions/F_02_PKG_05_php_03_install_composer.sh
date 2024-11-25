@@ -12,7 +12,9 @@ local home_bin="${current_user_home}/bin"
 test -d $home_bin || mkdir -p $home_bin
 cd $home_bin
 
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+# php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+wget -q -O composer-setup.php https://getcomposer.org/installer
+
 local expected_signature=$(wget -q -O - https://composer.github.io/installer.sig)
 local actual_signature=$(php -r "echo hash_file('SHA384', 'composer-setup.php');")
 

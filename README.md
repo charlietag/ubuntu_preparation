@@ -1860,3 +1860,7 @@ Conclusion for below: **Just use poetry to manage python packages**
       * change default ruby version to `3.3.6`
       * Upgrade npm before install packages (`npm install -g npm@latest`)
       * fix bun version while installing `bun` through `npm`
+* 2024/11/25
+  * tag: v2.3.1
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.3.0...v2.3.1
+      * Get php composer-setup file through `wget` instead of `php`
