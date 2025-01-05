@@ -451,7 +451,7 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
   * Nginx 1.26 (Ref. https://nginx.org/)
   * Redis 7 (Ref. https://redis.io/)
     * Use Ubuntu official repo
-  * Ruby 3.3.6 +YJIT (rvm-stable)
+  * Ruby 3.4.1 +YJIT (rvm-stable)
   * Rails 8.0
     * puma 6 (systemd integrated, puma-systemd-mgr, ~~puma-mgr~~)
   * Redmine 6.0.1
@@ -1864,3 +1864,7 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v2.3.1
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.3.0...v2.3.1
       * Get php composer-setup file through `wget` instead of `php`
+* 2025/01/05
+  * tag: v2.3.2
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.3.1...v2.3.2
+      * Ruby 3.4.1 to default version
