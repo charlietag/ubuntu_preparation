@@ -36,7 +36,7 @@ local redmine_db_name="redmine"
 
 # --- Redmine 6.0 ---
 local redmine_ruby_version="3.3.5"
-local redmine_version="6.0.1"
+local redmine_version="6.0.5"
 
 
 local redmine_bundler_version="latest"
