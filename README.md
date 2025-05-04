@@ -442,19 +442,19 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
 ## Installed Packages
   * PHP 8.3
   * PHP-FPM
-  * Laravel 11.x (Ref. https://laravel.com/)
+  * Laravel 12.x (Ref. https://laravel.com/)
   * MariaDB 10.11
   * nodejs 22 (Ref. https://nodejs.org/en/)
     * npm@latest
     * yarn 1.22 (npm)
     * Bun JS 1.2.4 (NPM - Ref. https://github.com/oven-sh/bun?tab=readme-ov-file#install)
-  * Nginx 1.26 (Ref. https://nginx.org/)
+  * Nginx 1.28 (Ref. https://nginx.org/)
   * Redis 7 (Ref. https://redis.io/)
     * Use Ubuntu official repo
   * Ruby 3.4.2 +YJIT (rvm-stable)
   * Rails 8.0
     * puma 6 (systemd integrated, puma-systemd-mgr, ~~puma-mgr~~)
-  * Redmine 6.0.1
+  * Redmine 6.0.5
     * ruby 3.3.5
     * rails 7.2
   * Python 3.13 (pyenv)
@@ -1873,3 +1873,7 @@ Conclusion for below: **Just use poetry to manage python packages**
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.3.2...v2.4.0
       * Ruby 3.4.2 to default version
       * bun js default set to 1.2.4
+* 2025/05/05
+  * tag: v2.5.0
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.4.0...v2.5.0
+      * Laravel 11 -> 12
