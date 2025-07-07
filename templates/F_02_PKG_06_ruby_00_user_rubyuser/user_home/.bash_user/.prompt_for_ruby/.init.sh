@@ -24,7 +24,7 @@ function set_ruby {
   #  rvm_prompt="${ruby_dark_yellow}($($HOME/.rvm/bin/rvm-prompt))${ruby_color_end}"
   #fi
   local ruby_ver=""
-  ruby_ver="$(ruby -v --yjit 2>/dev/null| grep -Eo 'ruby[[:space:]]+[[:digit:]\.]+|\+YJIT' | xargs echo)"
+  ruby_ver="$(ruby -v --yjit 2>/dev/null| grep -Eo 'ruby[[:space:]]+[[:digit:]\.]+|\+YJIT|\+PRISM' | xargs echo)"
   test -z "${ruby_ver}" && ruby_ver="$(ruby -v 2>/dev/null| grep -Eo 'ruby[[:space:]]+[[:digit:]\.]+')"
 
   rvm_prompt="${ruby_dark_yellow}(${ruby_ver})${ruby_color_end}"

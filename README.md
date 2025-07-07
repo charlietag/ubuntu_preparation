@@ -1882,3 +1882,7 @@ Conclusion for below: **Just use poetry to manage python packages**
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.5.0...v2.5.1
       * Ruby 3.4.2 -> 3.4.4
       * bun.sh 1.2.4 -> 1.2.16
+* 2025/07/07
+  * tag: v2.5.2
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.5.1...v2.5.2
+      * Ruby 3.4.4 (For bash prompt - add +PRISM detection)
