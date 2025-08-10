@@ -447,7 +447,7 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
   * nodejs 22 (Ref. https://nodejs.org/en/)
     * npm@latest
     * yarn 1.22 (npm)
-    * Bun JS 1.2.16 (NPM - Ref. https://github.com/oven-sh/bun?tab=readme-ov-file#install)
+    * Bun JS 1.2.20 (NPM - Ref. https://github.com/oven-sh/bun?tab=readme-ov-file#install)
   * Nginx 1.28 (Ref. https://nginx.org/)
   * Redis 7 (Ref. https://redis.io/)
     * Use Ubuntu official repo
@@ -1890,3 +1890,7 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v2.5.3
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.5.2...v2.5.3
       * bun `1.2.16` to `1.2.18`
+* 2025/08/10
+  * tag: v2.5.4
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.5.3...v2.5.4
+      * bun `1.2.18` to `1.2.20`
