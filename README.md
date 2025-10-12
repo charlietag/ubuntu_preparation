@@ -1894,3 +1894,7 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v2.5.4
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.5.3...v2.5.4
       * bun `1.2.18` to `1.2.20`
+* 2025/10/12
+  * tag: v2.5.5
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.5.4...v2.5.5
+      * bun `1.2.20` to `1.3.0`
