@@ -23,12 +23,12 @@ local rvm_version="1.29.12"
 #local ruby_version="2.6.0"
 # local ruby_version="3.2.2"
 # local ruby_version="3.3.6"
-local ruby_version="3.4.4"
+local ruby_version="3.4.7"
 
 # Specify rails version here
 # ex. 5.0 presents ~> 5.0.0
 # ex. 4.2 presents ~> 4.2.0
-local rails_version="8.0"
+local rails_version="8.1"
 
 # --- Ruby & Ruby on Rails compatibility reference ---
 # https://github.com/rails/rails/blob/master/.travis.yml

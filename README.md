@@ -447,17 +447,17 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
   * nodejs 22 (Ref. https://nodejs.org/en/)
     * npm@latest
     * yarn 1.22 (npm)
-    * Bun JS 1.2.20 (NPM - Ref. https://github.com/oven-sh/bun?tab=readme-ov-file#install)
+    * Bun JS 1.3.1 (NPM - Ref. https://github.com/oven-sh/bun?tab=readme-ov-file#install)
   * Nginx 1.28 (Ref. https://nginx.org/)
   * Redis 7 (Ref. https://redis.io/)
     * Use Ubuntu official repo
-  * Ruby 3.4.4 +YJIT (rvm-stable)
-  * Rails 8.0
-    * puma 6 (systemd integrated, puma-systemd-mgr, ~~puma-mgr~~)
-  * Redmine 6.0.5
+  * Ruby 3.4.7 +YJIT +PRISM (rvm-stable)
+  * Rails 8.1
+    * puma 7 (systemd integrated, puma-systemd-mgr, ~~puma-mgr~~)
+  * Redmine 6.1.0
     * ruby 3.3.5
     * rails 7.2
-  * Python 3.13 (pyenv)
+  * Python 3.14 (pyenv)
     * pyenv (https://github.com/pyenv/pyenv)
   * poetry (https://python-poetry.org/)
   * Useful tools
@@ -509,50 +509,6 @@ After this installation repo, the server will setup with "Nginx + Puma (socket)"
     ```bash
     rails new <rails_project> -d trilogy -j bun -c bootstrap
     ```
-
-  * **Rails 7 has intergrated with stimulusjs, stop using jquery**
-  * Rails 5.1 has dropped dependency on jQuery, you might want it back via yarn
-
-    1. Add npm of jquery using Yarn
-
-        ```bash
-        cd <rails_project>
-        yarn add jquery
-        ```
-
-    2. Setup jquery npm for asset pipeline
-
-        ```bash
-        vi <rails_project>/app/assets/javascripts/application.js
-        ```
-
-        ```bash
-        //= require rails-ujs
-        //= require turbolinks
-        //= require jquery/dist/jquery
-        //= require bootstrap/dist/js/bootstrap
-        //= require_tree .
-        ```
-
-    3. Yarn works with rails 5.1 asset pipeline as below
-      * Usage for default path:  <rails_project>/node_modules/{pkg_name}/dist/{pkgname}.{js,css}
-
-        ```bash
-        //= require jquery
-        ```
-
-      * If package is different from this rule, ex: bootstrap.  You might specify explicitly **(better)**
-
-        ```bash
-        //= require jquery
-        ```
-
-        ```bash
-        //= require jquery/dist/jquery
-        //= require bootstrap/dist/js/bootstrap
-        ```
-
-
 
   * Laravel
 
@@ -1898,3 +1854,11 @@ Conclusion for below: **Just use poetry to manage python packages**
   * tag: v2.5.5
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.5.4...v2.5.5
       * bun `1.2.20` to `1.3.0`
+* 2025/10/26
+  * tag: v2.5.5
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.5.5...v2.6.0
+      * bun `1.3.0` to `1.3.1`
+      * ruby `3.4.4` to `3.4.7`
+      * rails `8.0` to `8.1`
+      * python `3.13` to `3.14`
+      * redmine `6.0.1` to `6.1.0`
