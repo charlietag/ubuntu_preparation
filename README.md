@@ -447,11 +447,11 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
   * nodejs 22 (Ref. https://nodejs.org/en/)
     * npm@latest
     * yarn 1.22 (npm)
-    * Bun JS 1.3.1 (NPM - Ref. https://github.com/oven-sh/bun?tab=readme-ov-file#install)
+    * Bun JS 1.3 (NPM - Ref. https://github.com/oven-sh/bun?tab=readme-ov-file#install)
   * Nginx 1.28 (Ref. https://nginx.org/)
   * Redis 7 (Ref. https://redis.io/)
     * Use Ubuntu official repo
-  * Ruby 3.4.7 +YJIT +PRISM (rvm-stable)
+  * Ruby 4.0.0 +YJIT +PRISM (rvm-stable)
   * Rails 8.1
     * puma 7 (systemd integrated, puma-systemd-mgr, ~~puma-mgr~~)
   * Redmine 6.1.0
@@ -463,11 +463,11 @@ HELPER_VIEW_FOLDER : /root/ubuntu_preparation/helpers_views/helper_debug
   * Useful tools
     * Enhanced tail
       * multitail
-        * multitail /var/log/nginx/*.access.log
+        * `multitail /var/log/nginx/*.access.log`
     * Enhanced grep
       * ack
-        * ls | ack keyword
-        * ack -i keyword *
+        * `ls | ack keyword`
+        * `ack -i keyword *`
           * default options (-r, -R, --recurse             Recurse into subdirectories (default: on))
   * Tmux 3.4 (> 3.2a)
   * VIM Plugins
@@ -1786,7 +1786,7 @@ Conclusion for below: **Just use poetry to manage python packages**
 * 2024/08/25
   * tag: v2.0.6
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.0.5...v2.0.6
-      * add `*.lockb binary diff=lockb` into user_home/.gitattributes
+      * add `\*.lockb binary diff=lockb` into user_home/.gitattributes
   * tag: v2.0.7
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.0.6...v2.0.7
       * To activate `$HOME/.gitattributes`. Add `git config --global core.attributesfile ~/.gitattributes`
@@ -1855,10 +1855,15 @@ Conclusion for below: **Just use poetry to manage python packages**
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.5.4...v2.5.5
       * bun `1.2.20` to `1.3.0`
 * 2025/10/26
-  * tag: v2.5.5
+  * tag: v2.6.0
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.5.5...v2.6.0
       * bun `1.3.0` to `1.3.1`
       * ruby `3.4.4` to `3.4.7`
       * rails `8.0` to `8.1`
       * python `3.13` to `3.14`
       * redmine `6.0.1` to `6.1.0`
+* 2026/01/04
+  * tag: v2.7.0
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.6.0...v2.7.0
+      * bun `1.3.1` to `1.3.5`
+      * ruby `3.4.7` to `4.0.0`
