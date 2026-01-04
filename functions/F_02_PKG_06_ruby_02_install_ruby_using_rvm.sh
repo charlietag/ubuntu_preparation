@@ -20,15 +20,20 @@ echo "========================================="
 #   Due to default precomipled rvm ruby use argv `--enable-load-relative` and this will cause foreman script failed, everytime `rails new project` (rails 7.1.3)
 #   add --disable-binary while rvm install
 su -l $current_user -c "rvm autolibs disable"
-if [[ "${ruby_version}" =~ "3.2" ]]; then
-  su -l $current_user -c "rvm install ${ruby_version} -C \"--enable-yjit\""
-elif [[ "${ruby_version}" =~ "3.3" ]]; then
-  su -l $current_user -c "rvm install ${ruby_version} -C \"--enable-yjit\""
-else
-  su -l $current_user -c "rvm install ${ruby_version} --disable-binary"
-fi
 
-su -l $current_user -c "rvm use ${ruby_version} --default"
+
+# rvm --disable-binary, tells the Ruby Version Manager (RVM) to compile Ruby from source instead of downloading a pre-compiled binary package
+# if [[ "${ruby_version}" =~ "3.2" ]]; then
+#   su -l $current_user -c "rvm install ${ruby_version} -C \"--enable-yjit\""
+# elif [[ "${ruby_version}" =~ "3.3" ]]; then
+#   su -l $current_user -c "rvm install ${ruby_version} -C \"--enable-yjit\""
+# else
+#   su -l $current_user -c "rvm install ${ruby_version} --disable-binary"
+# fi
+
+su -l $current_user -c "rvm install ruby-${ruby_version}"
+
+su -l $current_user -c "rvm use ruby-${ruby_version} --default"
 
 # ------------------------------------------------------------
 # do not gem update to avoid rails compatibility

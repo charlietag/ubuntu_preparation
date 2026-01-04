@@ -31,7 +31,18 @@ function set_ruby {
 
   local prompt_for_ruby="${rvm_prompt}"
 
-  [[ -f "Gemfile.lock" ]] && rails_ver="$(cat Gemfile.lock |sed 's/ //g' |grep -E '^rails\([[:digit:]]+' | sed 's/(/ /g' | tr -d ')')"
+  # [[ -f "Gemfile.lock" ]] && rails_ver="$(cat Gemfile.lock |sed 's/ //g' |grep -E '^rails\([[:digit:]]+' | sed 's/(/ /g' | tr -d ')')"
+
+
+  # --- awk to get rails version from Gemfile.lock ---
+  # awk '
+  # match($0, /^[[:space:]]*rails[[:space:]]*\(([0-9.]+)\)[[:space:]]*$/, m) {
+  #   print "rails", m[1]
+  # }
+  # ' Gemfile.lock
+  # --- awk to get rails version from Gemfile.lock ---
+  [[ -f "Gemfile.lock" ]] && rails_ver="$(awk 'match($0, /^[[:space:]]*rails[[:space:]]*\(([0-9.]+)\)[[:space:]]*$/, m) {print "rails", m[1]}' Gemfile.lock)"
+
 
   if [[ -n "${rails_ver}" ]]; then
     rails_ver="${ruby_dark_cyan}(${rails_ver})${ruby_color_end}"

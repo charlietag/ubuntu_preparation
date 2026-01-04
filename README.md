@@ -1867,3 +1867,6 @@ Conclusion for below: **Just use poetry to manage python packages**
     * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.6.0...v2.7.0
       * bun `1.3.1` to `1.3.5`
       * ruby `3.4.7` to `4.0.0`
+  * tag: v2.7.1
+    * changelog: https://github.com/charlietag/ubuntu_preparation/compare/v2.7.0...v2.7.1
+      * fix rails version prompt script
